@@ -2,56 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/hospital-database/</loc>
+    <loc>https://hbpsp8repo.github.io/specifications/hospital-database/</loc>
     <lastmod>2017-02-03T17:18:42+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/algorithm-factory/</loc>
+    <loc>https://hbpsp8repo.github.io/specifications/algorithm-factory/</loc>
     <lastmod>2017-02-03T17:18:32+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/data-capture/</loc>
+    <loc>https://hbpsp8repo.github.io/specifications/data-capture/</loc>
     <lastmod>2017-02-03T16:34:51+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/data-factory/</loc>
+    <loc>https://hbpsp8repo.github.io/specifications/data-factory/</loc>
     <lastmod>2017-02-03T16:34:51+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://hbpsp8repo.github.io/specifications/</loc>
     <lastmod>2017-02-03T16:30:51+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/algorithm-factory/</loc>
+    <loc>https://hbpsp8repo.github.io/specifications/algorithm-factory/</loc>
     <lastmod>2017-02-03T17:18:32+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/data-capture/</loc>
+    <loc>https://hbpsp8repo.github.io/specifications/data-capture/</loc>
     <lastmod>2017-02-03T16:34:51+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/data-factory/</loc>
+    <loc>https://hbpsp8repo.github.io/specifications/data-factory/</loc>
     <lastmod>2017-02-03T16:34:51+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/hospital-database/</loc>
+    <loc>https://hbpsp8repo.github.io/specifications/hospital-database/</loc>
     <lastmod>2017-02-03T17:18:42+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://hbpsp8repo.github.io/specifications/</loc>
     <lastmod>2017-02-03T17:18:42+01:00</lastmod>
     <priority>0</priority>
   </url>
