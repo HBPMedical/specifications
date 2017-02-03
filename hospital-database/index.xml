@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hospital-databases on MIP specifications</title>
-    <link>http://localhost:1313/hospital-database/index.xml</link>
+    <link>https://hbpsp8repo.github.io/specifications/hospital-database/index.xml</link>
     <description>Recent content in Hospital-databases on MIP specifications</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Fri, 03 Feb 2017 17:18:42 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/hospital-database/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hbpsp8repo.github.io/specifications/hospital-database/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hospital Database</title>
-      <link>http://localhost:1313/hospital-database/</link>
+      <link>https://hbpsp8repo.github.io/specifications/hospital-database/</link>
       <pubDate>Fri, 03 Feb 2017 17:18:42 +0100</pubDate>
       
-      <guid>http://localhost:1313/hospital-database/</guid>
+      <guid>https://hbpsp8repo.github.io/specifications/hospital-database/</guid>
       <description>
 
 &lt;h3 id=&#34;chapter-x&#34;&gt;Chapter X&lt;/h3&gt;
