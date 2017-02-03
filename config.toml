@@ -1,4 +1,4 @@
-baseurl = "http://localhost:1313/"
+baseurl = "https://hbpsp8repo.github.io/specifications/"
 canonifyurls = true
 googleAnalytics = "UA-80660232-2"
 languageCode = "en-uk"
