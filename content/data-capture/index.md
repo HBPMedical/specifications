@@ -1,4 +1,5 @@
 ---
+chapter: true
 title: Specifications for Data Capture
 date: '2017-02-03T16:34:51+02:00'
 weight: 0

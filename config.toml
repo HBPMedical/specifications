@@ -3,7 +3,7 @@ canonifyurls = true
 googleAnalytics = "UA-80660232-2"
 languageCode = "en-uk"
 metadataformat = "yaml"
-theme = "hugo-material-docs"
+theme = "hugo-theme-learn"
 title = "MIP specifications"
 [blackfriday]
 fractions = true
@@ -36,6 +36,7 @@ permalink = "#"
 provider = ""
 repo_url = "https://github.com/HBPSP8Repo/specifications"
 version = ""
+editURL = "https://github.com/HBPSP8Repo/specifications/edit/master/content/"
 [params.font]
 code = "Ubuntu Mono"
 text = "Ubuntu"
