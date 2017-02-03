@@ -1,7 +1,10 @@
 ---
 chapter: true
-title: Specifications for Data Factory
+title: Data Factory
+icon: <b>2. </b>
 date: '2017-02-03T16:34:51+02:00'
+prev: /data-capture/output
+next: /algorithm-factory
 weight: 0
 draft: false
 ---

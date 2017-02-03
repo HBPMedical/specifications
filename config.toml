@@ -1,4 +1,4 @@
-baseurl = "https://hbpsp8repo.github.io/specifications/"
+baseurl = "http://localhost:1313/"
 canonifyurls = true
 googleAnalytics = "UA-80660232-2"
 languageCode = "en-uk"
@@ -37,6 +37,7 @@ provider = ""
 repo_url = "https://github.com/HBPSP8Repo/specifications"
 version = ""
 editURL = "https://github.com/HBPSP8Repo/specifications/edit/master/content/"
+menu = [ "data-capture", "data-factory", "algorithm-factory", "hospital-database" ]
 [params.font]
 code = "Ubuntu Mono"
 text = "Ubuntu"

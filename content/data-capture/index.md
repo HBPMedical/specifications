@@ -1,7 +1,9 @@
 ---
 chapter: true
-title: Specifications for Data Capture
+title: Data Capture
+icon: <b>1. </b>
 date: '2017-02-03T16:34:51+02:00'
+next: /data-capture/output
 weight: 0
 draft: false
 ---

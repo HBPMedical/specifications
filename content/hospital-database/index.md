@@ -1,10 +1,9 @@
 ---
 chapter: true
 date: 2017-02-03T17:18:42+01:00
-icon: <b>X. </b>
-next: /next/path
-prev: /prev/path
-title: index
+icon: <b>4. </b>
+prev: /data-factory
+title: Hospital Database
 weight: 0
 ---
 
