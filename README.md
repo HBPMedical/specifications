@@ -1,2 +1,3 @@
-# specifications
+# Specifications
+
 Specifications for the MIP platform
