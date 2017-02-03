@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MIP specifications</title>
+    <link>http://localhost:1313/index.xml</link>
+    <description>Recent content on MIP specifications</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <copyright>Released under the MIT license</copyright>
+    <lastBuildDate>Fri, 03 Feb 2017 17:18:42 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>index</title>
+      <link>http://localhost:1313/hospital-database/</link>
+      <pubDate>Fri, 03 Feb 2017 17:18:42 +0100</pubDate>
+      
+      <guid>http://localhost:1313/hospital-database/</guid>
+      <description>
+
+&lt;h3 id=&#34;chapter-x&#34;&gt;Chapter X&lt;/h3&gt;
+
+&lt;h1 id=&#34;some-chapter-title&#34;&gt;Some Chapter title&lt;/h1&gt;
+
+&lt;p&gt;Lorem ipsum&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>index</title>
+      <link>http://localhost:1313/algorithm-factory/</link>
+      <pubDate>Fri, 03 Feb 2017 17:18:32 +0100</pubDate>
+      
+      <guid>http://localhost:1313/algorithm-factory/</guid>
+      <description>
+
+&lt;h3 id=&#34;chapter-x&#34;&gt;Chapter X&lt;/h3&gt;
+
+&lt;h1 id=&#34;some-chapter-title&#34;&gt;Some Chapter title&lt;/h1&gt;
+
+&lt;p&gt;Lorem ipsum&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Specifications for Data Capture</title>
+      <link>http://localhost:1313/data-capture/</link>
+      <pubDate>Fri, 03 Feb 2017 16:34:51 +0200</pubDate>
+      
+      <guid>http://localhost:1313/data-capture/</guid>
+      <description>
+
+&lt;h2 id=&#34;goals&#34;&gt;Goals&lt;/h2&gt;
+
+&lt;p&gt;The main role of the &lt;strong&gt;Data Capture&lt;/strong&gt; is to take data coming several clinical systems in a hospital, collect that data and remove any identifying information from them, then export that data as a collection of CSV files and DICOM/Nifti files to be processed by the &lt;a href=&#34;../data-factory&#34;&gt;&lt;strong&gt;Data Factory&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  disparate clinical data =&amp;gt; collection + de-identification =&amp;gt; export to exchange directory
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Specifications for Data Factory</title>
+      <link>http://localhost:1313/data-factory/</link>
+      <pubDate>Fri, 03 Feb 2017 16:34:51 +0200</pubDate>
+      
+      <guid>http://localhost:1313/data-factory/</guid>
+      <description>
+
+&lt;h2 id=&#34;goals&#34;&gt;Goals&lt;/h2&gt;
+
+&lt;p&gt;The main role of the &lt;strong&gt;Data Factory&lt;/strong&gt; is to take data coming from &lt;a href=&#34;../data-capture&#34;&gt;&lt;strong&gt;Data capture&lt;/strong&gt;&lt;/a&gt; , process it offline (without any user interaction) then store the results into a database of the &lt;strong&gt;Hospital Database Bundle&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  anonymised data =&amp;gt; pre-processing + ETL + automated curation =&amp;gt; data store
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MIP specs</title>
+      <link>http://localhost:1313/</link>
+      <pubDate>Fri, 03 Feb 2017 16:30:51 +0200</pubDate>
+      
+      <guid>http://localhost:1313/</guid>
+      <description>
+
+&lt;h2 id=&#34;specification-for-the-medical-informatics-platform&#34;&gt;Specification for the Medical Informatics Platform&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
