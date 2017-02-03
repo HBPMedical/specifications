@@ -2,20 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MIP specifications</title>
-    <link>https://hbpsp8repo.github.io/specifications/index.xml</link>
+    <link>http://localhost:1313/index.xml</link>
     <description>Recent content on MIP specifications</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <copyright>Released under the MIT license</copyright>
-    <lastBuildDate>Fri, 03 Feb 2017 17:18:42 +0100</lastBuildDate>
-    <atom:link href="https://hbpsp8repo.github.io/specifications/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Feb 2017 18:07:35 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>index</title>
-      <link>https://hbpsp8repo.github.io/specifications/hospital-database/</link>
+      <title>output</title>
+      <link>http://localhost:1313/data-capture/output/</link>
+      <pubDate>Fri, 03 Feb 2017 18:07:35 +0100</pubDate>
+      
+      <guid>http://localhost:1313/data-capture/output/</guid>
+      <description>&lt;p&gt;The &lt;strong&gt;Data Capture&lt;/strong&gt; should export its data into a folder made available to the &lt;a href=&#34;../data-factory&#34;&gt;&lt;strong&gt;Data Factory&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+  ├── DICOM
+  │   └── 20161029
+  │       └── scan_research_id
+  │           └── dicom_name_generated_01.dcm
+  │           └── dicom_name_generated_02.dcm
+  │           └── dicom_name_generated_03.dcm
+  └── EHR
+      └── 20161029
+          ├── table1.csv
+          └── table2.csv
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;notices warning&#34; &gt;&lt;p&gt;After de-identification, we should ensure that patient IDs present in the EHR data match patient IDs present in the DICOM headers.&lt;/p&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Hospital Database</title>
+      <link>http://localhost:1313/hospital-database/</link>
       <pubDate>Fri, 03 Feb 2017 17:18:42 +0100</pubDate>
       
-      <guid>https://hbpsp8repo.github.io/specifications/hospital-database/</guid>
+      <guid>http://localhost:1313/hospital-database/</guid>
       <description>
 
 &lt;h3 id=&#34;chapter-x&#34;&gt;Chapter X&lt;/h3&gt;
@@ -27,11 +55,11 @@
     </item>
     
     <item>
-      <title>index</title>
-      <link>https://hbpsp8repo.github.io/specifications/algorithm-factory/</link>
+      <title>Algorithm Factory</title>
+      <link>http://localhost:1313/algorithm-factory/</link>
       <pubDate>Fri, 03 Feb 2017 17:18:32 +0100</pubDate>
       
-      <guid>https://hbpsp8repo.github.io/specifications/algorithm-factory/</guid>
+      <guid>http://localhost:1313/algorithm-factory/</guid>
       <description>
 
 &lt;h3 id=&#34;chapter-x&#34;&gt;Chapter X&lt;/h3&gt;
@@ -43,11 +71,11 @@
     </item>
     
     <item>
-      <title>Specifications for Data Capture</title>
-      <link>https://hbpsp8repo.github.io/specifications/data-capture/</link>
+      <title>Data Capture</title>
+      <link>http://localhost:1313/data-capture/</link>
       <pubDate>Fri, 03 Feb 2017 16:34:51 +0200</pubDate>
       
-      <guid>https://hbpsp8repo.github.io/specifications/data-capture/</guid>
+      <guid>http://localhost:1313/data-capture/</guid>
       <description>
 
 &lt;h2 id=&#34;goals&#34;&gt;Goals&lt;/h2&gt;
@@ -60,11 +88,11 @@
     </item>
     
     <item>
-      <title>Specifications for Data Factory</title>
-      <link>https://hbpsp8repo.github.io/specifications/data-factory/</link>
+      <title>Data Factory</title>
+      <link>http://localhost:1313/data-factory/</link>
       <pubDate>Fri, 03 Feb 2017 16:34:51 +0200</pubDate>
       
-      <guid>https://hbpsp8repo.github.io/specifications/data-factory/</guid>
+      <guid>http://localhost:1313/data-factory/</guid>
       <description>
 
 &lt;h2 id=&#34;goals&#34;&gt;Goals&lt;/h2&gt;
@@ -78,10 +106,10 @@
     
     <item>
       <title>MIP specs</title>
-      <link>https://hbpsp8repo.github.io/specifications/</link>
+      <link>http://localhost:1313/</link>
       <pubDate>Fri, 03 Feb 2017 16:30:51 +0200</pubDate>
       
-      <guid>https://hbpsp8repo.github.io/specifications/</guid>
+      <guid>http://localhost:1313/</guid>
       <description>
 
 &lt;h2 id=&#34;specification-for-the-medical-informatics-platform&#34;&gt;Specification for the Medical Informatics Platform&lt;/h2&gt;

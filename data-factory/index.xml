@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data-factories on MIP specifications</title>
-    <link>https://hbpsp8repo.github.io/specifications/data-factory/index.xml</link>
+    <link>http://localhost:1313/data-factory/index.xml</link>
     <description>Recent content in Data-factories on MIP specifications</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Fri, 03 Feb 2017 16:34:51 +0200</lastBuildDate>
-    <atom:link href="https://hbpsp8repo.github.io/specifications/data-factory/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/data-factory/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Specifications for Data Factory</title>
-      <link>https://hbpsp8repo.github.io/specifications/data-factory/</link>
+      <title>Data Factory</title>
+      <link>http://localhost:1313/data-factory/</link>
       <pubDate>Fri, 03 Feb 2017 16:34:51 +0200</pubDate>
       
-      <guid>https://hbpsp8repo.github.io/specifications/data-factory/</guid>
+      <guid>http://localhost:1313/data-factory/</guid>
       <description>
 
 &lt;h2 id=&#34;goals&#34;&gt;Goals&lt;/h2&gt;

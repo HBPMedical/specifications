@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data-captures on MIP specifications</title>
-    <link>https://hbpsp8repo.github.io/specifications/data-capture/index.xml</link>
+    <link>http://localhost:1313/data-capture/index.xml</link>
     <description>Recent content in Data-captures on MIP specifications</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Fri, 03 Feb 2017 16:34:51 +0200</lastBuildDate>
-    <atom:link href="https://hbpsp8repo.github.io/specifications/data-capture/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/data-capture/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Specifications for Data Capture</title>
-      <link>https://hbpsp8repo.github.io/specifications/data-capture/</link>
+      <title>Data Capture</title>
+      <link>http://localhost:1313/data-capture/</link>
       <pubDate>Fri, 03 Feb 2017 16:34:51 +0200</pubDate>
       
-      <guid>https://hbpsp8repo.github.io/specifications/data-capture/</guid>
+      <guid>http://localhost:1313/data-capture/</guid>
       <description>
 
 &lt;h2 id=&#34;goals&#34;&gt;Goals&lt;/h2&gt;
@@ -24,6 +24,34 @@
 
 &lt;pre&gt;&lt;code&gt;  disparate clinical data =&amp;gt; collection + de-identification =&amp;gt; export to exchange directory
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>output</title>
+      <link>http://localhost:1313/data-capture/output/</link>
+      <pubDate>Fri, 03 Feb 2017 18:07:35 +0100</pubDate>
+      
+      <guid>http://localhost:1313/data-capture/output/</guid>
+      <description>&lt;p&gt;The &lt;strong&gt;Data Capture&lt;/strong&gt; should export its data into a folder made available to the &lt;a href=&#34;../data-factory&#34;&gt;&lt;strong&gt;Data Factory&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+  ├── DICOM
+  │   └── 20161029
+  │       └── scan_research_id
+  │           └── dicom_name_generated_01.dcm
+  │           └── dicom_name_generated_02.dcm
+  │           └── dicom_name_generated_03.dcm
+  └── EHR
+      └── 20161029
+          ├── table1.csv
+          └── table2.csv
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;notices warning&#34; &gt;&lt;p&gt;After de-identification, we should ensure that patient IDs present in the EHR data match patient IDs present in the DICOM headers.&lt;/p&gt;
+&lt;/div&gt;
+
 </description>
     </item>
     

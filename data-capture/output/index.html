@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Data Capture</title>
+    <title>output</title>
     <link href="http://localhost:1313//css/nucleus.css" rel="stylesheet">
     <link href="http://localhost:1313//css/font-awesome.min.css" rel="stylesheet">
     <link href="http://localhost:1313//css/hybrid.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     
 
   </head>
-  <body class="" data-url="/data-capture/">
+  <body class="" data-url="/data-capture/output/">
     <nav id="sidebar">
   <div id="header-wrapper">
     <div id="header">
@@ -70,7 +70,7 @@ Medical Informatics Platform
       
       
 
-      <li class="dd-item active parent" data-nav-id="/data-capture/">
+      <li class="dd-item  parent" data-nav-id="/data-capture/">
         <a href="http://localhost:1313/data-capture/">
           <span>
             
@@ -86,7 +86,7 @@ Medical Informatics Platform
           
           
           
-            <li class="dd-item " data-nav-id="/data-capture/output/">
+            <li class="dd-item active" data-nav-id="/data-capture/output/">
               <a href="http://localhost:1313/data-capture/output/">
                 <span>output     </i></span>
               </a>
@@ -184,7 +184,7 @@ Medical Informatics Platform
                 
                 
               <div id="top-github-link">
-                  <a class="github-link" href="https://github.com/HBPSP8Repo/specifications/edit/master/content/data-capture/index.md" target="blank">
+                  <a class="github-link" href="https://github.com/HBPSP8Repo/specifications/edit/master/content/data-capture/output.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Edit this page
                   </a>
@@ -198,6 +198,8 @@ Medical Informatics Platform
                       </a>
                   </span>
                 
+                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
+                
                 
                 
                 
@@ -208,43 +210,61 @@ Medical Informatics Platform
                   
                     
                     
+                <a href="http://localhost:1313/data-capture/" itemprop="url"><span itemprop="title">Data Capture</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
                   
                 
                   
                 
-                <span itemprop="title"> Data Capture</span>
+                <span itemprop="title"> output</span>
               </div>
+              
+                  <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
               
 
             </div>
             
-              <div id="chapter">
-            
     	        <div id="body-inner">
                 
+                <h1>output</h1>
+                
 
+<p>The <strong>Data Capture</strong> should export its data into a folder made available to the <a href="../data-factory"><strong>Data Factory</strong></a></p>
 
+<pre><code>
+  ├── DICOM
+  │   └── 20161029
+  │       └── scan_research_id
+  │           └── dicom_name_generated_01.dcm
+  │           └── dicom_name_generated_02.dcm
+  │           └── dicom_name_generated_03.dcm
+  └── EHR
+      └── 20161029
+          ├── table1.csv
+          └── table2.csv
 
-<h2 id="goals">Goals</h2>
-
-<p>The main role of the <strong>Data Capture</strong> is to take data coming several clinical systems in a hospital, collect that data and remove any identifying information from them, then export that data as a collection of CSV files and DICOM/Nifti files to be processed by the <a href="../data-factory"><strong>Data Factory</strong></a>.</p>
-
-<pre><code>  disparate clinical data =&gt; collection + de-identification =&gt; export to exchange directory
 </code></pre>
 
+<div class="notices warning" ><p>After de-identification, we should ensure that patient IDs present in the EHR data match patient IDs present in the DICOM headers.</p>
+</div>
 
-      
-        </div> 
+
+
       
       </div>
     </div>
 
     <div id="navigation">
         
-        
-        <a class="nav nav-next" href="http://localhost:1313//data-capture/output" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="http://localhost:1313//data-capture"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="http://localhost:1313//data-factory" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

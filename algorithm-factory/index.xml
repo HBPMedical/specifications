@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Algorithm-factories on MIP specifications</title>
-    <link>https://hbpsp8repo.github.io/specifications/algorithm-factory/index.xml</link>
+    <link>http://localhost:1313/algorithm-factory/index.xml</link>
     <description>Recent content in Algorithm-factories on MIP specifications</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Fri, 03 Feb 2017 17:18:32 +0100</lastBuildDate>
-    <atom:link href="https://hbpsp8repo.github.io/specifications/algorithm-factory/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/algorithm-factory/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>index</title>
-      <link>https://hbpsp8repo.github.io/specifications/algorithm-factory/</link>
+      <title>Algorithm Factory</title>
+      <link>http://localhost:1313/algorithm-factory/</link>
       <pubDate>Fri, 03 Feb 2017 17:18:32 +0100</pubDate>
       
-      <guid>https://hbpsp8repo.github.io/specifications/algorithm-factory/</guid>
+      <guid>http://localhost:1313/algorithm-factory/</guid>
       <description>
 
 &lt;h3 id=&#34;chapter-x&#34;&gt;Chapter X&lt;/h3&gt;
