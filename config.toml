@@ -1,3 +1,46 @@
-title = "MIP specifications"
-languageCode = "en-uk"
 baseurl = "http://localhost:1313/"
+canonifyurls = true
+googleAnalytics = "UA-80660232-2"
+languageCode = "en-uk"
+metadataformat = "yaml"
+theme = "hugo-material-docs"
+title = "MIP specifications"
+[blackfriday]
+fractions = true
+plainIDAnchors = true
+smartDashes = true
+smartypants = true
+[[menu.main]]
+name = "Data Capture"
+url = "/data-capture"
+weight = 10
+[[menu.main]]
+name = "Data Factory"
+url = "/data-factory"
+weight = 20
+[[menu.main]]
+name = "MIP specifications"
+url = "/"
+weight = 0
+
+[params]
+author = "HBP SP8 team"
+copyright = "Released under the MIT license"
+custom_css = []
+custom_js = []
+description = "Specifications for the Medical Informatics Platform of the Human Brain Project."
+favicon = ""
+highlight_css = ""
+logo = "images/hbp.png"
+permalink = "#"
+provider = ""
+repo_url = "https://github.com/HBPSP8Repo/specifications"
+version = ""
+[params.font]
+code = "Ubuntu Mono"
+text = "Ubuntu"
+[params.palette]
+accent = "teal"
+primary = "red"
+[social]
+github = "HBPSP8Repo"
