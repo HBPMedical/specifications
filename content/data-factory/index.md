@@ -4,7 +4,7 @@ title: Data Factory
 icon: <b>2. </b>
 date: '2017-02-03T16:34:51+02:00'
 prev: /data-capture/output
-next: /algorithm-factory
+next: /data-factory/input
 weight: 0
 draft: false
 ---
