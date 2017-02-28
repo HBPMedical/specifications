@@ -8,3 +8,4 @@ fi
 
 $DOCKER run --rm -P -v $(pwd):/src -v $(pwd)/../specifications.pages/:/output/ jojomi/hugo:0.18
 
+sudo chown -R $USER:$USER ../specifications.pages/
