@@ -2,62 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/data-capture/output/</loc>
+    <loc>https://hbpmedical.github.io/specifications/data-factory/output/</loc>
+    <lastmod>2017-02-24T16:16:30+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hbpmedical.github.io/specifications/data-factory/input/</loc>
+    <lastmod>2017-02-24T16:15:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hbpmedical.github.io/specifications/data-capture/output/</loc>
     <lastmod>2017-02-03T18:07:35+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/hospital-database/</loc>
+    <loc>https://hbpmedical.github.io/specifications/hospital-database/</loc>
     <lastmod>2017-02-03T17:18:42+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/algorithm-factory/</loc>
+    <loc>https://hbpmedical.github.io/specifications/algorithm-factory/</loc>
     <lastmod>2017-02-03T17:18:32+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/data-capture/</loc>
+    <loc>https://hbpmedical.github.io/specifications/data-capture/</loc>
     <lastmod>2017-02-03T16:34:51+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/data-factory/</loc>
+    <loc>https://hbpmedical.github.io/specifications/data-factory/</loc>
     <lastmod>2017-02-03T16:34:51+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/</loc>
+    <loc>https://hbpmedical.github.io/specifications/</loc>
     <lastmod>2017-02-03T16:30:51+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/algorithm-factory/</loc>
+    <loc>https://hbpmedical.github.io/specifications/algorithm-factory/</loc>
     <lastmod>2017-02-03T17:18:32+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/data-capture/</loc>
+    <loc>https://hbpmedical.github.io/specifications/data-capture/</loc>
     <lastmod>2017-02-03T16:34:51+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/data-factory/</loc>
+    <loc>https://hbpmedical.github.io/specifications/data-factory/</loc>
     <lastmod>2017-02-03T16:34:51+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/hospital-database/</loc>
+    <loc>https://hbpmedical.github.io/specifications/hospital-database/</loc>
     <lastmod>2017-02-03T17:18:42+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://hbpsp8repo.github.io/specifications/</loc>
-    <lastmod>2017-02-03T18:07:35+01:00</lastmod>
+    <loc>https://hbpmedical.github.io/specifications/</loc>
+    <lastmod>2017-02-24T16:16:30+01:00</lastmod>
     <priority>0</priority>
   </url>
   
