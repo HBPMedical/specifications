@@ -1,24 +1,47 @@
 ---
 date: 2017-02-03T18:07:35+01:00
 next: /data-factory
-prev: /data-capture
-title: output
+prev: /data-capture/input
+title: Data Capture output
 toc: true
 weight: 5
 ---
 
 The __Data Capture__ should export its data into a folder made available to the [__Data Factory__](../data-factory)
 
+There are several options possible, to adapt to the local requirements:
+
+### Depersonalised DICOM + EHR data export
+
 ```
 
   ├── DICOM
-  │   └── 20161029                              -- daily folder, date represents date of importation
+  │   └── 20161029                              -- daily folder, date represents the date of export
   │       └── scan_research_id                  -- see description below
   │           └── dicom_name_generated_01.dcm   -- set of DICOM files
   │           └── dicom_name_generated_02.dcm   -- set of DICOM files
   │           └── dicom_name_generated_03.dcm   -- set of DICOM files
   └── EHR
-      └── 20161029                              -- daily folder, date represents date of importation
+      └── 20161029                              -- daily folder, date represents the date of export
+          ├── table1.csv                        -- pre-defined name for 1st table containing EHR data, depends on hospital data
+          └── table2.csv                        -- pre-defined name for 2nd table containing EHR data, depends on hospital data
+          └── ...                               -- more (or less) tables as needed, depends on hospital data
+
+```
+
+### Depersonalised Nifti + EHR data export
+
+```
+
+  ├── NIFTI
+  │   └── 20161029                              -- daily folder, date represents the date of export
+  │       └── scan_research_id                  -- see description below
+  │           └── dicom_name_generated_01.nifti -- Nifti file
+  │           └── dicom_name_generated_01.json  -- metadata for the Nifti file
+  │           └── dicom_name_generated_02.nifti -- Nifti file
+  │           └── dicom_name_generated_02.json  -- metadata for the Nifti file
+  └── EHR
+      └── 20161029                              -- daily folder, date represents the date of export
           ├── table1.csv                        -- pre-defined name for 1st table containing EHR data, depends on hospital data
           └── table2.csv                        -- pre-defined name for 2nd table containing EHR data, depends on hospital data
           └── ...                               -- more (or less) tables as needed, depends on hospital data
