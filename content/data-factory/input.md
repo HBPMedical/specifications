@@ -8,3 +8,6 @@ weight: 5
 ---
 
 The input of Data Factory is the [output](../data-capture/output) of Data Capture.
+
+* Depersonalised DICOM + EHR data export
+* Depersonalised Nifti + EHR data export
