@@ -1,10 +1,12 @@
 ---
 chapter: true
 title: Data Factory
-icon: <b>2. </b>
+pre: <b>2. </b>
+creatordisplayname: Ludovic CLAUDE
+creatoremail: ludovic.claude@chuv.ch
+lastmodifierdisplayname: Ludovic CLAUDE
+lastmodifieremail: ludovic.claude@chuv.ch
 date: '2017-02-03T16:34:51+02:00'
-prev: /data-capture/output
-next: /data-factory/input
 weight: 0
 draft: false
 ---

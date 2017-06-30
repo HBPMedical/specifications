@@ -1,9 +1,12 @@
 ---
 chapter: true
 title: Data Capture
-icon: <b>1. </b>
+pre: <b>1. </b>
+creatordisplayname: Ludovic CLAUDE
+creatoremail: ludovic.claude@chuv.ch
+lastmodifierdisplayname: Ludovic CLAUDE
+lastmodifieremail: ludovic.claude@chuv.ch
 date: '2017-02-03T16:34:51+02:00'
-next: /data-capture/input
 weight: 0
 draft: false
 ---

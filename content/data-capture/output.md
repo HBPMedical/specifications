@@ -11,6 +11,8 @@ The __Data Capture__ should export its data into a folder made available to the 
 
 There are several options possible, to adapt to the local requirements:
 
+{{% excerpt %}}
+
 ### Depersonalised DICOM + EHR data export
 
 ```
@@ -50,6 +52,8 @@ There are several options possible, to adapt to the local requirements:
 
 scan_research_id: an ID for research, with no identifier coming the clinical database and representing one visit for one patient. During this visit, there may be more than one scan acquisition session, each session can have several sequences, a sequence can have several repetitions and acquire as many brain scan. One brain scan can be spread into several DICOM files where each file represents a slice of the brain.
 
-{{% notice warning %}}
+{{% alert theme="warning" %}}
 After de-identification, we should ensure that patient IDs present in the EHR data match patient IDs present in the DICOM headers.
-{{% /notice %}}
+{{% /alert %}}
+
+{{% /excerpt %}}
