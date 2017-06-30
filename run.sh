@@ -6,4 +6,4 @@ else
   DOCKER="sudo docker"
 fi
 
-$DOCKER run -i -t --rm -P -v $(pwd):/src -e HUGO_WATCH=t --net=host jojomi/hugo:0.19
+$DOCKER run -i -t --rm -P -v $(pwd):/src -e HUGO_WATCH=t --net=host jojomi/hugo:0.24.1
