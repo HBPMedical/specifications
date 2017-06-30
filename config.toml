@@ -1,10 +1,16 @@
 baseurl = "https://hbpmedical.github.io/specifications/"
-canonifyurls = true
-googleAnalytics = "UA-80660232-2"
 languageCode = "en-uk"
 metadataformat = "yaml"
-theme = "hugo-theme-learn"
+DefaultContentLanguage = "en"
+googleAnalytics = "UA-80660232-2"
+canonifyurls = false
+
 title = "MIP specifications"
+theme = "docdock"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
 [blackfriday]
 fractions = true
 plainIDAnchors = true
@@ -24,6 +30,10 @@ url = "/"
 weight = 0
 
 [params]
+themeVariant = "gold" # choose theme variant "green", "gold" , "gray", "blue" (default)
+noHomeIcon = false # default is false
+noSearch = false # default is false
+showVisitedLinks = true # default is false
 author = "HBP SP8 team"
 copyright = "Released under the MIT license"
 custom_css = []
