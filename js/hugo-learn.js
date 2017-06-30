@@ -17,7 +17,7 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
 };
 
 // Execute actions on images generated from Markdown pages
-var images = $("div#body-inner img");
+var images = $("div#body-inner img").not(".inline");
 // Wrap image inside a featherlight (to get a full size view in a popup)
 images.wrap(function(){
   var image =$(this);
@@ -54,10 +54,6 @@ images.each(function(index){
     }
   }
 });
-
-// Stick the top to the top of the screen when  scrolling
-$("#top-bar").stick_in_parent({spacer: false});
-
 
 jQuery(document).ready(function() {
   // Add link button for every

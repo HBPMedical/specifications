@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://hbpmedical.github.io/specifications/data-factory/output/</loc>
-    <lastmod>2017-02-24T16:16:30+01:00</lastmod>
+    <loc>https://hbpmedical.github.io/specifications/data-capture/input/</loc>
+    <lastmod>2017-02-28T20:08:35+01:00</lastmod>
   </url>
   
   <url>
@@ -14,6 +15,16 @@
   <url>
     <loc>https://hbpmedical.github.io/specifications/data-capture/output/</loc>
     <lastmod>2017-02-03T18:07:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hbpmedical.github.io/specifications/data-factory/output/</loc>
+    <lastmod>2017-02-24T16:16:30+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hbpmedical.github.io/specifications/_header/</loc>
+    <lastmod>2017-07-01T18:36:24+02:00</lastmod>
   </url>
   
   <url>
@@ -48,14 +59,7 @@
   </url>
   
   <url>
-    <loc>https://hbpmedical.github.io/specifications/data-capture/</loc>
-    <lastmod>2017-02-03T16:34:51+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://hbpmedical.github.io/specifications/data-factory/</loc>
-    <lastmod>2017-02-03T16:34:51+02:00</lastmod>
+    <loc>https://hbpmedical.github.io/specifications/categories/</loc>
     <priority>0</priority>
   </url>
   
@@ -66,8 +70,7 @@
   </url>
   
   <url>
-    <loc>https://hbpmedical.github.io/specifications/</loc>
-    <lastmod>2017-02-24T16:16:30+01:00</lastmod>
+    <loc>https://hbpmedical.github.io/specifications/tags/</loc>
     <priority>0</priority>
   </url>
   

@@ -25,11 +25,6 @@ function getScrollBarWidth() {
     return (w1 - w2);
 };
 
-function setMenuHeight() {
-    $('#sidebar .highlightable').height($('#sidebar').innerHeight() - $('#header-wrapper').height() - 40);
-    $('#sidebar .highlightable').perfectScrollbar('update');
-}
-
 function fallbackMessage(action) {
     var actionMsg = '';
     var actionKey = (action === 'cut' ? 'X' : 'C');
@@ -49,7 +44,6 @@ function fallbackMessage(action) {
 
 // for the window resize
 $(window).resize(function() {
-    setMenuHeight();
 });
 
 // debouncing function from John Hann
@@ -83,10 +77,13 @@ $(window).resize(function() {
 
 
 jQuery(document).ready(function() {
+    jQuery('#sidebar .category-icon').on('click', function() {
+        $( this ).toggleClass("fa-angle-down fa-angle-right") ;
+        $( this ).parent().parent().children('ul').toggle() ;
+        return false;
+    });
+
     var sidebarStatus = searchStatus = 'open';
-    $('#sidebar .highlightable').perfectScrollbar();
-    // set the menu height
-    setMenuHeight();
 
     jQuery('#overlay').on('click', function() {
         jQuery(document.body).toggleClass('sidebar-hidden');
@@ -139,20 +136,7 @@ jQuery(document).ready(function() {
         $(".highlightable").unhighlight({ element: 'mark' }).highlight(value, { element: 'mark' });
 
         if (ajax && ajax.abort) ajax.abort();
-        ajax = jQuery.ajax({
-            url: input.data('search-input') + ':' + value
-        }).done(function(data) {
-            if (data && data.results && data.results.length) {
-                items.css('display', 'none');
-                $('ul.topics').addClass('searched');
-                data.results.forEach(function(navitem) {
-                    jQuery('[data-nav-id="' + navitem + '"]').css('display', 'block').addClass('search-match');
-                    jQuery('[data-nav-id="' + navitem + '"]').parents('li').css('display', 'block');
-                });
-            }
-            ;
-
-        });
+        
         jQuery('[data-search-clear]').on('click', function() {
             jQuery('[data-search-input]').val('').trigger('input');
             sessionStorage.removeItem('search-input');
@@ -231,13 +215,25 @@ jQuery(document).ready(function() {
     $('#top-bar a:not(:has(img)):not(.btn)').addClass('highlight');
     $('#body-inner a:not(:has(img)):not(.btn)').addClass('highlight');
 
-    $('#toc-menu').hover(function() {
-        $('.progress').stop(true, false, true).fadeToggle(100);
-    });
+    var touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
+    if (!touchsupport){ // browser doesn't support touch
+        $('#toc-menu').hover(function() {
+            $('.progress').stop(true, false, true).fadeToggle(100);
+        });
 
-    $('.progress').hover(function() {
-        $('.progress').stop(true, false, true).fadeToggle(100);
-    });
+        $('.progress').hover(function() {
+            $('.progress').stop(true, false, true).fadeToggle(100);
+        });
+    }
+    if (touchsupport){ // browser does support touch
+        $('#toc-menu').click(function() {
+            $('.progress').stop(true, false, true).fadeToggle(100);
+        });
+        $('.progress').click(function() {
+            $('.progress').stop(true, false, true).fadeToggle(100);
+        });
+    }
+    
 });
 
 jQuery(window).on('load', function() {
