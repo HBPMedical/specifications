@@ -28,7 +28,7 @@
       
       <guid>https://hbpmedical.github.io/specifications/data-factory/input/</guid>
       <description>The input of Data Factory is the output of Data Capture.
-From Data Capture output specifications Depersonalised DICOM + EHR data export  ├── DICOM │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.dcm -- set of DICOM files │ └── dicom_name_generated_03.dcm -- set of DICOM files └── EHR └── 20161029 -- daily folder, date represents the date of export ├── table1.</description>
+From Data Capture output specifications Depersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.dcm -- set of DICOM files │ └── dicom_name_generated_03.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ From Data Capture output specifications Depersonalised DICOM + EHR data export  
       <guid>https://hbpmedical.github.io/specifications/data-capture/output/</guid>
       <description>The Data Capture should export its data into a folder made available to the Data Factory
 There are several options possible, to adapt to the local requirements:
-Depersonalised DICOM + EHR data export  ├── DICOM │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.dcm -- set of DICOM files │ └── dicom_name_generated_03.</description>
+Depersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.</description>
     </item>
     
     <item>
