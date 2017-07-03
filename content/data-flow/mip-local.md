@@ -6,7 +6,7 @@ creatoremail: ludovic.claude@chuv.ch
 lastmodifierdisplayname: Ludovic CLAUDE
 lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
-weight: 5
+weight: 11
 ---
 
 MIP Local is installed in participating hospitals and used to collect clinical data
@@ -23,12 +23,14 @@ graph BT
         in_ehr(EHR database)
         in_pacs(PACS)
         end
+
         subgraph Data Capture
         subgraph Anonymiser
         dc_anon_ehr>Depersonalisation of EHR data]
         dc_anon_mri>Depersonalisation of MRI scans]
         end
         end
+
         subgraph Data Factory
         subgraph Workflow engine
         airflow_mri_preprocessing>MRI pre-processing] --> airflow_feature_extraction>Feature Extraction]
@@ -38,9 +40,11 @@ graph BT
         airflow_feature_extraction --> df_i2b2
         airflow_ehr_harmonise --> df_i2b2
         end
+
         subgraph Algorithm Factory
         hd_features(Features database) --- af_worker(Algorithms)
         end
+
         in_ehr -->|Patients with consent| dc_anon_ehr
         in_pacs -->|Patients with consent| dc_anon_mri
         dc_anon_ehr --> airflow_ehr_version

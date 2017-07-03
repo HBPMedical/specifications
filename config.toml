@@ -16,18 +16,6 @@ fractions = true
 plainIDAnchors = true
 smartDashes = true
 smartypants = true
-[[menu.main]]
-name = "Data Capture"
-url = "/data-capture"
-weight = 10
-[[menu.main]]
-name = "Data Factory"
-url = "/data-factory"
-weight = 20
-[[menu.main]]
-name = "MIP specifications"
-url = "/"
-weight = 0
 
 [params]
 themeVariant = "gold" # choose theme variant "green", "gold" , "gray", "blue" (default)

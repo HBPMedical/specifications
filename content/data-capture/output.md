@@ -6,7 +6,7 @@ creatoremail: ludovic.claude@chuv.ch
 lastmodifierdisplayname: Ludovic CLAUDE
 lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
-weight: 5
+weight: 29
 ---
 
 The __Data Capture__ should export its data into a folder made available to the [__Data Factory__](../data-factory)
@@ -56,10 +56,10 @@ There are several options possible, to adapt to the local requirements:
 
 ```
 
+{{% /excerpt %}}
+
 scan_research_id: an ID for research, with no identifier coming the clinical database and representing one visit for one patient. During this visit, there may be more than one scan acquisition session, each session can have several sequences, a sequence can have several repetitions and acquire as many brain scan. One brain scan can be spread into several DICOM files where each file represents a slice of the brain.
 
 {{% alert theme="warning" %}}
 After de-identification, we should ensure that patient IDs present in the EHR data match patient IDs present in the DICOM headers.
 {{% /alert %}}
-
-{{% /excerpt %}}
