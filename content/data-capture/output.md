@@ -1,8 +1,10 @@
 ---
 date: 2017-02-03T18:07:35+01:00
-next: /data-factory
-prev: /data-capture/input
 title: Data Capture output
+creatordisplayname: Ludovic CLAUDE
+creatoremail: ludovic.claude@chuv.ch
+lastmodifierdisplayname: Ludovic CLAUDE
+lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
 weight: 5
 ---

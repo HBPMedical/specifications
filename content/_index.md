@@ -8,35 +8,27 @@ draft: false
 
 ## Specification for the Medical Informatics Platform
 
-### Flow of data in the Platform
+{{% children description="true" %}}
 
-{{<mermaid align="left">}}
-graph BT
-        subgraph Clinical data or research cohorts
-        in_ehr(EHR database)
-        in_pacs(PACS)
-        end
-        subgraph Data Capture
-        subgraph Anonymiser
-        dc_anon_ehr>Depersonalisation of EHR data]
-        dc_anon_mri>Depersonalisation of MRI scans]
-        end
-        end
-        subgraph Data Factory
-        subgraph Workflow engine
-        airflow_mri_preprocessing>MRI pre-processing] --> airflow_feature_extraction>Feature Extraction]
-        airflow_ehr_version>Versioning] --> airflow_ehr_harmonise>Harmonisation]
-        end
-        df_i2b2(I2B2 database)
-        airflow_feature_extraction --> df_i2b2
-        airflow_ehr_harmonise --> df_i2b2
-        end
-        subgraph Algorithm Factory
-        hd_features(Features database) --- af_worker(Algorithms)
-        end
-        in_ehr -->|Patients with consent| dc_anon_ehr
-        in_pacs -->|Patients with consent| dc_anon_mri
-        dc_anon_ehr --> airflow_ehr_version
-        dc_anon_mri --> airflow_mri_preprocessing
-        df_i2b2 --> hd_features
+### The different versions of MIP
+
+{{<mermaid>}}
+gantt
+        dateFormat  YYYY-MM-DD
+        title Phases in the MIP project
+
+        section Releases
+        MIP POC on mip.humanbrainproject.eu v1.0 :done, rel1, 2016-03-31,1d
+        MIP Local v1.0                           :done, rel2, 2017-06-28,1d
+
+        section Development
+        Ramp up phase - implementation of most building blocks :crit, done, dev1, 2013-03-31, 1095d
+        Completed Development of MIP Local       :crit, done,   dev2, after dev1, 427d
+        Development of MIP Federated             :crit, active, dev3, 2017-01-01, 270d
+
+        section Deployment
+        MIP POC on mip.humanbrainproject.eu      :done,   depl1, 2013-03-31, 2016-03-31
+        MIP Local at CHUV                        :done,   depl2, 2016-09-30, 2017-06-28
+        MIP Local in other hospitals             :active, depl3, 2017-04-01, 2017-10-30
+
 {{< /mermaid >}}

@@ -1,8 +1,10 @@
 ---
 date: 2017-02-24T16:15:35+01:00
-next: /data-factory/output
-prev: /data-factory
 title: Data Factory input
+creatordisplayname: Ludovic CLAUDE
+creatoremail: ludovic.claude@chuv.ch
+lastmodifierdisplayname: Ludovic CLAUDE
+lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
 weight: 5
 ---
