@@ -18,6 +18,7 @@ smartDashes = true
 smartypants = true
 
 [params]
+editURL = "https://github.com/HBPMedical/specifications/edit/master/content/"
 themeVariant = "gold" # choose theme variant "green", "gold" , "gray", "blue" (default)
 noHomeIcon = false # default is false
 noSearch = false # default is false
@@ -29,13 +30,10 @@ custom_js = []
 description = "Specifications for the Medical Informatics Platform of the Human Brain Project."
 favicon = ""
 highlight_css = ""
-logo = "images/hbp.png"
 permalink = "#"
 provider = ""
 repo_url = "https://github.com/HBPMedical/specifications"
 version = ""
-editURL = "https://github.com/HBPMedical/specifications/edit/master/content/"
-menu = [ "data-capture", "data-factory", "algorithm-factory", "hospital-database" ]
 [params.font]
 code = "Ubuntu Mono"
 text = "Ubuntu"
@@ -44,3 +42,21 @@ accent = "teal"
 primary = "red"
 [social]
 github = "HBPMedical"
+
+[[menu.shortcuts]]
+pre = "<h3>More</h3>"
+name = "<i class='fa fa-step-backward'></i> Back to HBP Medical Documentation"
+identifier = "hbpmeddocs"
+url = "https://github.com/HBPMedical/"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-github'></i> Github repo for this doc"
+identifier = "ghspecs"
+url = "https://github.com/HBPMedical/specifications"
+weight = 11
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-bullhorn'></i> Credits"
+url = "/credits"
+weight = 20
