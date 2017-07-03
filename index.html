@@ -14,7 +14,9 @@
     <link href="/specifications/css/hybrid.css" rel="stylesheet">
     <link href="/specifications/css/featherlight.min.css" rel="stylesheet">
     <link href="/specifications/css/horsey.css" rel="stylesheet">
-    <link href="/specifications/css/theme.css" rel="stylesheet">
+    
+      <link href="/specifications/css/theme-gold.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="/specifications/css/bootstrap.min.css">
     <script src="/specifications/js/jquery-2.x.min.js"></script>
     <style type="text/css">
@@ -23,9 +25,6 @@
       }
     </style>
 
-    
-    <link href="/specifications/css/theme-gold.css" rel="stylesheet">
-    
     
 
     
@@ -76,13 +75,60 @@ Medical Informatics Platform</p>
 
 
 
+<li data-nav-id="/specifications/data-flow/" class="dd-item 
+
+
+
+">
+  <a href="/specifications/data-flow/">
+    <span><b>1. </b>Data Flow</span>
+
+    
+    <i class="fa fa-angle-right fa-lg category-icon"></i>
+    
+    
+    <i style="color:grey" class="fa fa-check read-icon"></i>
+  </a>
+    <ul>
+        
+         
+          <li data-nav-id="/specifications/data-flow/mip-local/" class="dd-item
+         
+          ">
+            <a href="/specifications/data-flow/mip-local/">
+            <span>Flow in MIP Local</span> 
+            <i style="color:grey" class="fa fa-check read-icon"></i>
+
+            </a></li>
+         
+        
+         
+          <li data-nav-id="/specifications/data-flow/mip-federated/" class="dd-item
+         
+          ">
+            <a href="/specifications/data-flow/mip-federated/">
+            <span>Flow in MIP Federation</span> 
+            <i style="color:grey" class="fa fa-check read-icon"></i>
+
+            </a></li>
+         
+        
+        
+
+
+
+
+    </ul>
+</li>
+
+
 <li data-nav-id="/specifications/data-capture/" class="dd-item 
 
 
 
 ">
   <a href="/specifications/data-capture/">
-    <span><b>1. </b>Data Capture</span>
+    <span><b>2. </b>Data Capture</span>
 
     
     <i class="fa fa-angle-right fa-lg category-icon"></i>
@@ -129,7 +175,7 @@ Medical Informatics Platform</p>
 
 ">
   <a href="/specifications/data-factory/">
-    <span><b>2. </b>Data Factory</span>
+    <span><b>3. </b>Data Factory</span>
 
     
     <i class="fa fa-angle-right fa-lg category-icon"></i>
@@ -176,7 +222,7 @@ Medical Informatics Platform</p>
 
 ">
   <a href="/specifications/algorithm-factory/">
-    <span>Algorithm-factories</span>
+    <span><b>3. </b>Algorithm Factory</span>
 
     
     <i class="fa fa-angle-right fa-lg category-icon"></i>
@@ -185,17 +231,6 @@ Medical Informatics Platform</p>
     <i style="color:grey" class="fa fa-check read-icon"></i>
   </a>
     <ul>
-        
-         
-          <li data-nav-id="/specifications/algorithm-factory/" class="dd-item
-         
-          ">
-            <a href="/specifications/algorithm-factory/">
-            <span>Algorithm Factory</span> 
-            <i style="color:grey" class="fa fa-check read-icon"></i>
-
-            </a></li>
-         
         
         
 
@@ -212,7 +247,7 @@ Medical Informatics Platform</p>
 
 ">
   <a href="/specifications/hospital-database/">
-    <span>Hospital-databases</span>
+    <span><b>4. </b>Hospital Database</span>
 
     
     <i class="fa fa-angle-right fa-lg category-icon"></i>
@@ -221,17 +256,6 @@ Medical Informatics Platform</p>
     <i style="color:grey" class="fa fa-check read-icon"></i>
   </a>
     <ul>
-        
-         
-          <li data-nav-id="/specifications/hospital-database/" class="dd-item
-         
-          ">
-            <a href="/specifications/hospital-database/">
-            <span>Hospital Database</span> 
-            <i style="color:grey" class="fa fa-check read-icon"></i>
-
-            </a></li>
-         
         
         
 
@@ -274,38 +298,141 @@ Medical Informatics Platform</p>
 
 <h2 id="specification-for-the-medical-informatics-platform">Specification for the Medical Informatics Platform</h2>
 
-<h3 id="flow-of-data-in-the-platform">Flow of data in the Platform</h3>
 
-<div class="mermaid" align="left" >
-graph BT
-        subgraph Clinical data or research cohorts
-        in_ehr(EHR database)
-        in_pacs(PACS)
-        end
-        subgraph Data Capture
-        subgraph Anonymiser
-        dc_anon_ehr>Depersonalisation of EHR data]
-        dc_anon_mri>Depersonalisation of MRI scans]
-        end
-        end
-        subgraph Data Factory
-        subgraph Workflow engine
-        airflow_mri_preprocessing>MRI pre-processing] --> airflow_feature_extraction>Feature Extraction]
-        airflow_ehr_version>Versioning] --> airflow_ehr_harmonise>Harmonisation]
-        end
-        df_i2b2(I2B2 database)
-        airflow_feature_extraction --> df_i2b2
-        airflow_ehr_harmonise --> df_i2b2
-        end
-        subgraph Algorithm Factory
-        hd_features(Features database) --- af_worker(Algorithms)
-        end
-        in_ehr -->|Patients with consent| dc_anon_ehr
-        in_pacs -->|Patients with consent| dc_anon_mri
-        dc_anon_ehr --> airflow_ehr_version
-        dc_anon_mri --> airflow_mri_preprocessing
-        df_i2b2 --> hd_features
+
+
+
+
+
+
+<ul class="children children-li">
+	
+	
+		
+
+<li>
+<a href="/specifications/data-flow/" >Data Flow</a>
+</li>
+
+			
+				
+<p>Flow of data in the platform One of the main purpose of the Medical Informatics Platform is to collect and process clinical and research data and put into the hand of its users (clinicians, researchers in neuroscience) ready-to-use data containing the variables and features made available for research.
+The machine learning algorithms and statistical analysis methods provided by the platform are using this feature data when a user is exploring data or performing an experiment.</p>
+				
+			
+		
+
+		
+			
+
+		
+	
+		
+
+<li>
+<a href="/specifications/data-capture/" >Data Capture</a>
+</li>
+
+			
+				
+<p> Goals The main role of the Data Capture is to take data coming several clinical systems in a hospital, collect that data and remove any identifying information from them, then export that data as a collection of CSV files and DICOM/Nifti files to be processed by the Data Factory.
+ disparate clinical data =&gt; collection + de-identification =&gt; export to exchange directory  </p>
+				
+			
+		
+
+		
+			
+
+		
+	
+		
+
+<li>
+<a href="/specifications/data-factory/" >Data Factory</a>
+</li>
+
+			
+				
+<p> Goals The main role of the Data Factory is to take data coming from Data capture , process it offline (without any user interaction) then store the results into a database of the Hospital Database Bundle.
+ anonymised data =&gt; pre-processing + ETL + automated curation =&gt; data store  </p>
+				
+			
+		
+
+		
+			
+
+		
+	
+		
+
+<li>
+<a href="/specifications/algorithm-factory/" >Algorithm Factory</a>
+</li>
+
+			
+				
+<p>Chapter X Some Chapter title Lorem ipsum</p>
+				
+			
+		
+
+		
+			
+
+		
+	
+		
+
+<li>
+<a href="/specifications/hospital-database/" >Hospital Database</a>
+</li>
+
+			
+				
+<p>Chapter X Some Chapter title Lorem ipsum</p>
+				
+			
+		
+
+		
+			
+
+		
+	
+
+	
+	
+	
+</ul>
+
+
+<h3 id="the-different-versions-of-mip">The different versions of MIP</h3>
+
+<div class="mermaid" align="center" >
+gantt
+        dateFormat  YYYY-MM-DD
+        title Phases in the MIP project
+
+        section Releases
+        MIP POC on mip.humanbrainproject.eu v1.0 :done, rel1, 2016-03-31,1d
+        MIP Local v1.0                           :done, rel2, 2017-06-28,1d
+
+        section Development
+        Ramp up phase - implementation of most building blocks :crit, done, dev1, 2013-03-31, 1095d
+        Completed Development of MIP Local       :crit, done,   dev2, after dev1, 427d
+        Development of MIP Federated             :crit, active, dev3, 2017-01-01, 270d
+
+        section Deployment
+        MIP POC on mip.humanbrainproject.eu      :done,   depl1, 2013-03-31, 2016-03-31
+        MIP Local at CHUV                        :done,   depl2, 2016-09-30, 2017-06-28
+        MIP Local in other hospitals             :active, depl3, 2017-04-01, 2017-10-30
+
 </div>
+
+
+
 	
   
 
@@ -422,18 +549,6 @@ graph BT
             
         
                     
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                    
                         
             
             
@@ -446,6 +561,30 @@ graph BT
         
                     
                 
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                    
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                    
+                
             
         
         
@@ -454,7 +593,7 @@ graph BT
 
         
         
-            <a class="nav nav-next" href="/specifications/data-capture/" title="Data Capture" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/specifications/data-flow/" title="Data Flow" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

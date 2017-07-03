@@ -7,7 +7,7 @@
     <meta name="description" content="Specifications for the Medical Informatics Platform of the Human Brain Project.">
 <meta name="author" content="HBP SP8 team">
 
-    <title>Data Factory :: MIP specifications</title>
+    <title>Flow in MIP Federation :: MIP specifications</title>
     <link rel="shortcut icon" href="/specifications/images/favicon.png" type="image/x-icon" />
     <link href="/specifications/css/nucleus.css" rel="stylesheet">
     <link href="/specifications/css/font-awesome.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     
 
   </head>
-  <body class="" data-url="/specifications/data-factory/">
+  <body class="" data-url="/specifications/data-flow/mip-federated/">
     <nav id="sidebar" class="showVisitedLinks">
   <div id="header-wrapper">
     <div id="header">
@@ -76,7 +76,7 @@ Medical Informatics Platform</p>
 
 
 <li data-nav-id="/specifications/data-flow/" class="dd-item 
-
+parent
 
 
 ">
@@ -84,7 +84,7 @@ Medical Informatics Platform</p>
     <span><b>1. </b>Data Flow</span>
 
     
-    <i class="fa fa-angle-right fa-lg category-icon"></i>
+    <i class="fa fa-angle-down fa-lg category-icon"></i>
     
     
     <i style="color:grey" class="fa fa-check read-icon"></i>
@@ -104,7 +104,7 @@ Medical Informatics Platform</p>
         
          
           <li data-nav-id="/specifications/data-flow/mip-federated/" class="dd-item
-         
+         active
           ">
             <a href="/specifications/data-flow/mip-federated/">
             <span>Flow in MIP Federation</span> 
@@ -170,15 +170,15 @@ Medical Informatics Platform</p>
 
 
 <li data-nav-id="/specifications/data-factory/" class="dd-item 
-parent
-active
+
+
 
 ">
   <a href="/specifications/data-factory/">
     <span><b>3. </b>Data Factory</span>
 
     
-    <i class="fa fa-angle-down fa-lg category-icon"></i>
+    <i class="fa fa-angle-right fa-lg category-icon"></i>
     
     
     <i style="color:grey" class="fa fa-check read-icon"></i>
@@ -289,7 +289,7 @@ active
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-factory/_index.md" target="blank">
+              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-flow/mip-federated.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Edit page
               </a>
@@ -310,7 +310,12 @@ active
 
 
 
- <a href='/specifications/'>MIP specs</a> > Data Factory
+
+
+
+ <a href='/specifications/'>MIP specs</a> > <a href='/specifications/data-flow/'>Data Flow</a> > Flow in MIP Federation
+
+ 
 
  
 
@@ -323,7 +328,7 @@ active
 <ul>
 <li>
 <ul>
-<li><a href="#goals">Goals</a></li>
+<li><a href="#flow-of-data-in-mip-federation">Flow of data in MIP Federation</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -335,30 +340,96 @@ active
         
         <div id="body-inner">
           
-            <h1>Data Factory</h1>
+            <h1>Flow in MIP Federation</h1>
           
 
 
 
 
+<p>MIP Federated brings together several hospitals and clinical data centers to build a Federation.</p>
 
+<p>Data are collected at each hospital (clinical data) or clinical data centers (research data), then
+a user of MIP can query and do machine learning or statistical analyses but with the strong imperative that
+only data aggregates are exchanged between the hospital or data centers and the central node hosting the user-facing web site.</p>
 
-<h2 id="goals">Goals</h2>
+<p></p>
 
-<p>The main role of the <strong>Data Factory</strong> is to take data coming from <a href="../data-capture"><strong>Data capture</strong></a> , process it offline (without any user interaction) then store the results into a database of the <strong>Hospital Database Bundle</strong>.</p>
+<h2 id="flow-of-data-in-mip-federation">Flow of data in MIP Federation</h2>
 
-<pre><code>  anonymised data =&gt; pre-processing + ETL + automated curation =&gt; data store
-</code></pre>
+<div class="mermaid" align="left" >
+graph BT
+        subgraph Hospital #1 databases
+        in_data(EHR database, PACS)
+        end
+        subgraph MIP Local at Hospital #1
+        subgraph Data Capture
+        dc_anon>Depersonalisation]
+        end
+        subgraph Data Factory
+        df_preprocessing>Pre-processing, feature extraction]
+        end
+        subgraph Algorithm Factory and Local database
+        hd_af(Features database and algorithms)
+        end
+        end
+        in_data -->|Patients with consent| dc_anon
+        dc_anon --> df_preprocessing
+        df_preprocessing -->hd_af
 
+        subgraph Hospital #2 databases
+        in2_data(EHR database, PACS)
+        end
+        subgraph MIP Local at Hospital #2
+        subgraph Data Capture
+        dc2_anon>Depersonalisation]
+        end
+        subgraph Data Factory
+        df2_preprocessing>Pre-processing, feature extraction]
+        end
+        subgraph Algorithm Factory and Local database
+        hd2_af(Features database and algorithms)
+        end
+        end
+        in2_data -->|Patients with consent| dc2_anon
+        dc2_anon --> df2_preprocessing
+        df2_preprocessing --> hd2_af
+
+        subgraph Central node
+        inc_data(Research cohorts)
+        end
+        subgraph MIP Local on central node
+        subgraph Data Capture
+        dcc_anon>Depersonalisation]
+        end
+        subgraph Data Factory
+        dfc_preprocessing>Pre-processing, feature extraction]
+        end
+        subgraph Algorithm Factory and Local database
+        hdc_af(Features database and algorithms)
+        end
+        end
+        inc_data -->|Subjects with consent| dcc_anon
+        dcc_anon --> dfc_preprocessing
+        dfc_preprocessing --> hdc_af
+
+        subgraph Federation layer
+        web(Web analysis)
+        dist_soft(Distributed database and algorithms)
+        web --- dist_soft
+        end
+        hd_af -->|Aggregates|dist_soft
+        hd2_af -->|Aggregates|dist_soft
+        hdc_af -->|Aggregates|dist_soft
+
+        user((User)) --- web
+</div>
 
 <footer class=" footline" >
 	
-	    <i class='fa fa-user'></i> <a href="mailto:ludovic.claude@chuv.ch">Ludovic CLAUDE</a>  <i class='fa fa-calendar'></i> 03/02/2017
+	    <i class='fa fa-user'></i> <a href="mailto:ludovic.claude@chuv.ch">Ludovic CLAUDE</a>  <i class='fa fa-calendar'></i> 03/07/2017
 	    </div>
 	
 </footer>
-
-
 
 
 
@@ -387,6 +458,45 @@ active
             
                 
                     
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+                
+            
+        
+                    
+                
+                    
+            
+            
+                
+                    
                         
                         
                     
@@ -434,44 +544,6 @@ active
             
             
                 
-                    
-                
-                
-                
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                    
-                
-                    
-            
-            
-                
-                    
-                    
-                
-                
-                
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -522,10 +594,10 @@ active
 
 
         
-            <a class="nav nav-prev" href="/specifications/data-capture/output/" title="Data Capture output"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/specifications/data-flow/mip-local/" title="Flow in MIP Local"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/specifications/data-factory/input/" title="Data Factory input" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/specifications/data-capture/" title="Data Capture" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -552,3 +624,4 @@ active
 
   </body>
 </html>
+

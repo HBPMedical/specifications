@@ -7,7 +7,7 @@
     <meta name="description" content="Specifications for the Medical Informatics Platform of the Human Brain Project.">
 <meta name="author" content="HBP SP8 team">
 
-    <title>Data Factory :: MIP specifications</title>
+    <title>Data Flow :: MIP specifications</title>
     <link rel="shortcut icon" href="/specifications/images/favicon.png" type="image/x-icon" />
     <link href="/specifications/css/nucleus.css" rel="stylesheet">
     <link href="/specifications/css/font-awesome.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     
 
   </head>
-  <body class="" data-url="/specifications/data-factory/">
+  <body class="" data-url="/specifications/data-flow/">
     <nav id="sidebar" class="showVisitedLinks">
   <div id="header-wrapper">
     <div id="header">
@@ -76,15 +76,15 @@ Medical Informatics Platform</p>
 
 
 <li data-nav-id="/specifications/data-flow/" class="dd-item 
-
-
+parent
+active
 
 ">
   <a href="/specifications/data-flow/">
     <span><b>1. </b>Data Flow</span>
 
     
-    <i class="fa fa-angle-right fa-lg category-icon"></i>
+    <i class="fa fa-angle-down fa-lg category-icon"></i>
     
     
     <i style="color:grey" class="fa fa-check read-icon"></i>
@@ -170,15 +170,15 @@ Medical Informatics Platform</p>
 
 
 <li data-nav-id="/specifications/data-factory/" class="dd-item 
-parent
-active
+
+
 
 ">
   <a href="/specifications/data-factory/">
     <span><b>3. </b>Data Factory</span>
 
     
-    <i class="fa fa-angle-down fa-lg category-icon"></i>
+    <i class="fa fa-angle-right fa-lg category-icon"></i>
     
     
     <i style="color:grey" class="fa fa-check read-icon"></i>
@@ -289,7 +289,7 @@ active
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-factory/_index.md" target="blank">
+              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-flow/_index.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Edit page
               </a>
@@ -310,7 +310,7 @@ active
 
 
 
- <a href='/specifications/'>MIP specs</a> > Data Factory
+ <a href='/specifications/'>MIP specs</a> > Data Flow
 
  
 
@@ -323,7 +323,7 @@ active
 <ul>
 <li>
 <ul>
-<li><a href="#goals">Goals</a></li>
+<li><a href="#flow-of-data-in-the-platform">Flow of data in the platform</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -335,7 +335,7 @@ active
         
         <div id="body-inner">
           
-            <h1>Data Factory</h1>
+            <h1>Data Flow</h1>
           
 
 
@@ -343,17 +343,86 @@ active
 
 
 
-<h2 id="goals">Goals</h2>
+<h2 id="flow-of-data-in-the-platform">Flow of data in the platform</h2>
 
-<p>The main role of the <strong>Data Factory</strong> is to take data coming from <a href="../data-capture"><strong>Data capture</strong></a> , process it offline (without any user interaction) then store the results into a database of the <strong>Hospital Database Bundle</strong>.</p>
+<p>One of the main purpose of the Medical Informatics Platform is to collect and process clinical and research data
+and put into the hand of its users (clinicians, researchers in neuroscience) ready-to-use data containing
+the variables and features made available for research.</p>
 
-<pre><code>  anonymised data =&gt; pre-processing + ETL + automated curation =&gt; data store
-</code></pre>
+<p>The machine learning algorithms and statistical analysis methods provided by the platform are using this feature data
+when a user is exploring data or performing an experiment.</p>
+
+
+
+
+
+
+
+
+<ul class="children children-li">
+	
+	
+
+	
+	
+		
+
+<li>
+<a href="/specifications/data-flow/mip-local/" >Flow in MIP Local</a>
+</li>
+
+			
+				
+<p><p>MIP Local is installed in participating hospitals and used to collect clinical data
+provided by the hospital. Only patients with consent are selected, and no data ever leaves
+the hospital premises.</p>
+
+<p></p></p>
+				
+			
+		
+
+		
+			
+
+		
+	
+		
+
+<li>
+<a href="/specifications/data-flow/mip-federated/" >Flow in MIP Federation</a>
+</li>
+
+			
+				
+<p><p>MIP Federated brings together several hospitals and clinical data centers to build a Federation.</p>
+
+<p>Data are collected at each hospital (clinical data) or clinical data centers (research data), then
+a user of MIP can query and do machine learning or statistical analyses but with the strong imperative that
+only data aggregates are exchanged between the hospital or data centers and the central node hosting the user-facing web site.</p>
+
+<p></p></p>
+				
+			
+		
+
+		
+			
+
+		
+	
+	
+</ul>
+
+
+
+
+
 
 
 <footer class=" footline" >
 	
-	    <i class='fa fa-user'></i> <a href="mailto:ludovic.claude@chuv.ch">Ludovic CLAUDE</a>  <i class='fa fa-calendar'></i> 03/02/2017
+	    <i class='fa fa-user'></i> <a href="mailto:ludovic.claude@chuv.ch">Ludovic CLAUDE</a>  <i class='fa fa-calendar'></i> 03/07/2017
 	    </div>
 	
 </footer>
@@ -387,8 +456,43 @@ active
             
                 
                     
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
+                    
                         
                         
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                    
+                
+                    
+            
+            
+                
                     
                 
                 
@@ -434,44 +538,6 @@ active
             
             
                 
-                    
-                
-                
-                
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                    
-                
-                    
-            
-            
-                
-                    
-                    
-                
-                
-                
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -522,10 +588,10 @@ active
 
 
         
-            <a class="nav nav-prev" href="/specifications/data-capture/output/" title="Data Capture output"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/specifications/" title="MIP specs"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/specifications/data-factory/input/" title="Data Factory input" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/specifications/data-flow/mip-local/" title="Flow in MIP Local" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

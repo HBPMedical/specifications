@@ -1,52 +1,24 @@
 [
 {
-	"uri": "https://hbpmedical.github.io/specifications/data-capture/input/",
-	"title": "Data Capture input",
+	"uri": "https://hbpmedical.github.io/specifications/data-flow/",
+	"title": "Data Flow",
 	"tags": [],
 	"description": "",
-	"content": "The input of Data Capture is TODO.\n"
+	"content": " Flow of data in the platform One of the main purpose of the Medical Informatics Platform is to collect and process clinical and research data and put into the hand of its users (clinicians, researchers in neuroscience) ready-to-use data containing the variables and features made available for research.\nThe machine learning algorithms and statistical analysis methods provided by the platform are using this feature data when a user is exploring data or performing an experiment.\n Flow in MIP Local  MIP Local is installed in participating hospitals and used to collect clinical data provided by the hospital. Only patients with consent are selected, and no data ever leaves the hospital premises.\n\n Flow in MIP Federation  MIP Federated brings together several hospitals and clinical data centers to build a Federation.\nData are collected at each hospital (clinical data) or clinical data centers (research data), then a user of MIP can query and do machine learning or statistical analyses but with the strong imperative that only data aggregates are exchanged between the hospital or data centers and the central node hosting the user-facing web site.\n\n "
 },
 {
-	"uri": "https://hbpmedical.github.io/specifications/data-factory/input/",
-	"title": "Data Factory input",
+	"uri": "https://hbpmedical.github.io/specifications/data-flow/mip-local/",
+	"title": "Flow in MIP Local",
 	"tags": [],
 	"description": "",
-	"content": "The input of Data Factory is the output of Data Capture.\nFrom Data Capture output specifications Depersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.dcm -- set of DICOM files │ └── dicom_name_generated_03.dcm -- set of DICOM files └── EHR └── 2016 -- yearly folder, date represents the date of export └── 20161029 -- daily folder, date represents the date of export ├── table1.csv -- pre-defined name for 1st table containing EHR data, depends on hospital data └── table2.csv -- pre-defined name for 2nd table containing EHR data, depends on hospital data └── ... -- more (or less) tables as needed, depends on hospital data  Depersonalised Nifti + EHR data export  ├── NIFTI │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.nifti -- Nifti file │ └── dicom_name_generated_01.json -- metadata for the Nifti file │ └── dicom_name_generated_02.nifti -- Nifti file │ └── dicom_name_generated_02.json -- metadata for the Nifti file └── EHR └── 2016 -- yearly folder, date represents the date of export └── 20161029 -- daily folder, date represents the date of export ├── table1.csv -- pre-defined name for 1st table containing EHR data, depends on hospital data └── table2.csv -- pre-defined name for 2nd table containing EHR data, depends on hospital data └── ... -- more (or less) tables as needed, depends on hospital data  scan_research_id: an ID for research, with no identifier coming the clinical database and representing one visit for one patient. During this visit, there may be more than one scan acquisition session, each session can have several sequences, a sequence can have several repetitions and acquire as many brain scan. One brain scan can be spread into several DICOM files where each file represents a slice of the brain.\n{{% alert theme=\u0026ldquo;warning\u0026rdquo; %}} After de-identification, we should ensure that patient IDs present in the EHR data match patient IDs present in the DICOM headers. {{% /alert %}}   "
+	"content": "MIP Local is installed in participating hospitals and used to collect clinical data provided by the hospital. Only patients with consent are selected, and no data ever leaves the hospital premises.\n\nFlow of data in MIP Local installed at a hospital graph BT subgraph Clinical data or research cohorts in_ehr(EHR database) in_pacs(PACS) end subgraph Data Capture subgraph Anonymiser dc_anon_ehrDepersonalisation of EHR data] dc_anon_mriDepersonalisation of MRI scans] end end subgraph Data Factory subgraph Workflow engine airflow_mri_preprocessingMRI pre-processing] -- airflow_feature_extractionFeature Extraction] airflow_ehr_versionVersioning] -- airflow_ehr_harmoniseHarmonisation] end df_i2b2(I2B2 database) airflow_feature_extraction -- df_i2b2 airflow_ehr_harmonise -- df_i2b2 end subgraph Algorithm Factory hd_features(Features database) --- af_worker(Algorithms) end in_ehr --|Patients with consent| dc_anon_ehr in_pacs --|Patients with consent| dc_anon_mri dc_anon_ehr -- airflow_ehr_version dc_anon_mri -- airflow_mri_preprocessing df_i2b2 -- hd_features "
 },
 {
-	"uri": "https://hbpmedical.github.io/specifications/data-capture/output/",
-	"title": "Data Capture output",
+	"uri": "https://hbpmedical.github.io/specifications/data-flow/mip-federated/",
+	"title": "Flow in MIP Federation",
 	"tags": [],
 	"description": "",
-	"content": "The Data Capture should export its data into a folder made available to the Data Factory\nThere are several options possible, to adapt to the local requirements:\nDepersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.dcm -- set of DICOM files │ └── dicom_name_generated_03.dcm -- set of DICOM files └── EHR └── 2016 -- yearly folder, date represents the date of export └── 20161029 -- daily folder, date represents the date of export ├── table1.csv -- pre-defined name for 1st table containing EHR data, depends on hospital data └── table2.csv -- pre-defined name for 2nd table containing EHR data, depends on hospital data └── ... -- more (or less) tables as needed, depends on hospital data  Depersonalised Nifti + EHR data export  ├── NIFTI │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.nifti -- Nifti file │ └── dicom_name_generated_01.json -- metadata for the Nifti file │ └── dicom_name_generated_02.nifti -- Nifti file │ └── dicom_name_generated_02.json -- metadata for the Nifti file └── EHR └── 2016 -- yearly folder, date represents the date of export └── 20161029 -- daily folder, date represents the date of export ├── table1.csv -- pre-defined name for 1st table containing EHR data, depends on hospital data └── table2.csv -- pre-defined name for 2nd table containing EHR data, depends on hospital data └── ... -- more (or less) tables as needed, depends on hospital data  scan_research_id: an ID for research, with no identifier coming the clinical database and representing one visit for one patient. During this visit, there may be more than one scan acquisition session, each session can have several sequences, a sequence can have several repetitions and acquire as many brain scan. One brain scan can be spread into several DICOM files where each file represents a slice of the brain.\nAfter de-identification, we should ensure that patient IDs present in the EHR data match patient IDs present in the DICOM headers.\n "
-},
-{
-	"uri": "https://hbpmedical.github.io/specifications/data-factory/output/",
-	"title": "Data Factory output",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://hbpmedical.github.io/specifications/_header/",
-	"title": "header",
-	"tags": [],
-	"description": "",
-	"content": " Medical Informatics Platform\n"
-},
-{
-	"uri": "https://hbpmedical.github.io/specifications/hospital-database/",
-	"title": "Hospital Database",
-	"tags": [],
-	"description": "",
-	"content": " Chapter X Some Chapter title Lorem ipsum\n"
-},
-{
-	"uri": "https://hbpmedical.github.io/specifications/algorithm-factory/",
-	"title": "Algorithm Factory",
-	"tags": [],
-	"description": "",
-	"content": " Chapter X Some Chapter title Lorem ipsum\n"
+	"content": "MIP Federated brings together several hospitals and clinical data centers to build a Federation.\nData are collected at each hospital (clinical data) or clinical data centers (research data), then a user of MIP can query and do machine learning or statistical analyses but with the strong imperative that only data aggregates are exchanged between the hospital or data centers and the central node hosting the user-facing web site.\n\nFlow of data in MIP Federation graph BT subgraph Hospital #1 databases in_data(EHR database, PACS) end subgraph MIP Local at Hospital #1 subgraph Data Capture dc_anonDepersonalisation] end subgraph Data Factory df_preprocessingPre-processing, feature extraction] end subgraph Algorithm Factory and Local database hd_af(Features database and algorithms) end end in_data --|Patients with consent| dc_anon dc_anon -- df_preprocessing df_preprocessing --hd_af subgraph Hospital #2 databases in2_data(EHR database, PACS) end subgraph MIP Local at Hospital #2 subgraph Data Capture dc2_anonDepersonalisation] end subgraph Data Factory df2_preprocessingPre-processing, feature extraction] end subgraph Algorithm Factory and Local database hd2_af(Features database and algorithms) end end in2_data --|Patients with consent| dc2_anon dc2_anon -- df2_preprocessing df2_preprocessing -- hd2_af subgraph Central node inc_data(Research cohorts) end subgraph MIP Local on central node subgraph Data Capture dcc_anonDepersonalisation] end subgraph Data Factory dfc_preprocessingPre-processing, feature extraction] end subgraph Algorithm Factory and Local database hdc_af(Features database and algorithms) end end inc_data --|Subjects with consent| dcc_anon dcc_anon -- dfc_preprocessing dfc_preprocessing -- hdc_af subgraph Federation layer web(Web analysis) dist_soft(Distributed database and algorithms) web --- dist_soft end hd_af --|Aggregates|dist_soft hd2_af --|Aggregates|dist_soft hdc_af --|Aggregates|dist_soft user((User)) --- web "
 },
 {
 	"uri": "https://hbpmedical.github.io/specifications/data-capture/",
@@ -56,6 +28,20 @@
 	"content": " Goals The main role of the Data Capture is to take data coming several clinical systems in a hospital, collect that data and remove any identifying information from them, then export that data as a collection of CSV files and DICOM/Nifti files to be processed by the Data Factory.\n disparate clinical data =\u0026gt; collection + de-identification =\u0026gt; export to exchange directory  "
 },
 {
+	"uri": "https://hbpmedical.github.io/specifications/data-capture/input/",
+	"title": "Data Capture input",
+	"tags": [],
+	"description": "",
+	"content": " Data Capture collects available data from hospital databases or research cohorts.\nIn addition, clinical data are de-personalised to protect patient privacy.\nIt should also track consent and trigger the appropriate mechanisms to remove data from the platform in case the patient has removed her consent.\nIdeal forms of data repository for MIP The MIP has been designed to support a very wide range of methods to gather data, however some datasets are easier to include in the MIP if they meet some criteria.\nDe-personalised data It can be seen as safer and more secure for a hospital to take care of the de-personalisation of its data, especially as this procedure may expose the hospital to ethical and legal questions.\nWe encourage hospitals to provide de-personalised data to MIP, and we can also help to put in place a technical solution, FedEHR\u0026copy; Anonymizer\u0026copy;, provided by our partner Gnubila.\nI2B2 compatible databases MIP uses internally in its Data Factory several databases based on the I2B2 schema. If your data has been prepared for data sharing and follows the I2B2 standard, this effort will fasten the inclusion of your data in the platform.\nPACS system MIP can connect to and query any PACS system compatible with the DICOM standard.\nTo better protect your clinical PACS, we recommend that you put in place a research PACS that will contain only the selection of medical images available for research.\nOther ways of integrating data in the MIP Provided some development or configuration on our side, we can support the following methods of integrating data into MIP.\nFiles extract We can ingest data extract provided as a set of files.\nFor MRI data, files can be in the DICOM or NIFTI formats. We support in particular the BIDS organisation of data\nFor EHR data, files can be in CVS, TSV, JSON or XML formats.\nWeb services We can customise the data capture to use online research databases with a Web Service API.\n"
+},
+{
+	"uri": "https://hbpmedical.github.io/specifications/data-capture/output/",
+	"title": "Data Capture output",
+	"tags": [],
+	"description": "",
+	"content": "The Data Capture should export its data into a folder made available to the Data Factory\nThere are several options possible, to adapt to the local requirements:\nDepersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.dcm -- set of DICOM files │ └── dicom_name_generated_03.dcm -- set of DICOM files └── EHR └── 2016 -- yearly folder, date represents the date of export └── 20161029 -- daily folder, date represents the date of export ├── table1.csv -- pre-defined name for 1st table containing EHR data, depends on hospital data └── table2.csv -- pre-defined name for 2nd table containing EHR data, depends on hospital data └── ... -- more (or less) tables as needed, depends on hospital data  Depersonalised Nifti + EHR data export  ├── NIFTI │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.nifti -- Nifti file │ └── dicom_name_generated_01.json -- metadata for the Nifti file │ └── dicom_name_generated_02.nifti -- Nifti file │ └── dicom_name_generated_02.json -- metadata for the Nifti file └── EHR └── 2016 -- yearly folder, date represents the date of export └── 20161029 -- daily folder, date represents the date of export ├── table1.csv -- pre-defined name for 1st table containing EHR data, depends on hospital data └── table2.csv -- pre-defined name for 2nd table containing EHR data, depends on hospital data └── ... -- more (or less) tables as needed, depends on hospital data  scan_research_id: an ID for research, with no identifier coming the clinical database and representing one visit for one patient. During this visit, there may be more than one scan acquisition session, each session can have several sequences, a sequence can have several repetitions and acquire as many brain scan. One brain scan can be spread into several DICOM files where each file represents a slice of the brain.\nAfter de-identification, we should ensure that patient IDs present in the EHR data match patient IDs present in the DICOM headers.\n "
+},
+{
 	"uri": "https://hbpmedical.github.io/specifications/data-factory/",
 	"title": "Data Factory",
 	"tags": [],
@@ -63,29 +49,50 @@
 	"content": " Goals The main role of the Data Factory is to take data coming from Data capture , process it offline (without any user interaction) then store the results into a database of the Hospital Database Bundle.\n anonymised data =\u0026gt; pre-processing + ETL + automated curation =\u0026gt; data store  "
 },
 {
+	"uri": "https://hbpmedical.github.io/specifications/data-factory/input/",
+	"title": "Data Factory input",
+	"tags": [],
+	"description": "",
+	"content": "The input of Data Factory is the output of Data Capture.\nFrom Data Capture output specifications Depersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.dcm -- set of DICOM files │ └── dicom_name_generated_03.dcm -- set of DICOM files └── EHR └── 2016 -- yearly folder, date represents the date of export └── 20161029 -- daily folder, date represents the date of export ├── table1.csv -- pre-defined name for 1st table containing EHR data, depends on hospital data └── table2.csv -- pre-defined name for 2nd table containing EHR data, depends on hospital data └── ... -- more (or less) tables as needed, depends on hospital data  Depersonalised Nifti + EHR data export  ├── NIFTI │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.nifti -- Nifti file │ └── dicom_name_generated_01.json -- metadata for the Nifti file │ └── dicom_name_generated_02.nifti -- Nifti file │ └── dicom_name_generated_02.json -- metadata for the Nifti file └── EHR └── 2016 -- yearly folder, date represents the date of export └── 20161029 -- daily folder, date represents the date of export ├── table1.csv -- pre-defined name for 1st table containing EHR data, depends on hospital data └── table2.csv -- pre-defined name for 2nd table containing EHR data, depends on hospital data └── ... -- more (or less) tables as needed, depends on hospital data    "
+},
+{
+	"uri": "https://hbpmedical.github.io/specifications/data-factory/output/",
+	"title": "Data Factory output",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://hbpmedical.github.io/specifications/algorithm-factory/",
+	"title": "Algorithm Factory",
+	"tags": [],
+	"description": "",
+	"content": " Chapter X Some Chapter title Lorem ipsum\n"
+},
+{
+	"uri": "https://hbpmedical.github.io/specifications/hospital-database/",
+	"title": "Hospital Database",
+	"tags": [],
+	"description": "",
+	"content": " Chapter X Some Chapter title Lorem ipsum\n"
+},
+{
+	"uri": "https://hbpmedical.github.io/specifications/_header/",
+	"title": "header",
+	"tags": [],
+	"description": "",
+	"content": " Medical Informatics Platform\n"
+},
+{
 	"uri": "https://hbpmedical.github.io/specifications/",
 	"title": "MIP specs",
 	"tags": [],
 	"description": "",
-	"content": " Specification for the Medical Informatics Platform Flow of data in the Platform graph BT subgraph Clinical data or research cohorts in_ehr(EHR database) in_pacs(PACS) end subgraph Data Capture subgraph Anonymiser dc_anon_ehrDepersonalisation of EHR data] dc_anon_mriDepersonalisation of MRI scans] end end subgraph Data Factory subgraph Workflow engine airflow_mri_preprocessingMRI pre-processing] -- airflow_feature_extractionFeature Extraction] airflow_ehr_versionVersioning] -- airflow_ehr_harmoniseHarmonisation] end df_i2b2(I2B2 database) airflow_feature_extraction -- df_i2b2 airflow_ehr_harmonise -- df_i2b2 end subgraph Algorithm Factory hd_features(Features database) --- af_worker(Algorithms) end in_ehr --|Patients with consent| dc_anon_ehr in_pacs --|Patients with consent| dc_anon_mri dc_anon_ehr -- airflow_ehr_version dc_anon_mri -- airflow_mri_preprocessing df_i2b2 -- hd_features  "
-},
-{
-	"uri": "https://hbpmedical.github.io/specifications/algorithm-factory/",
-	"title": "Algorithm-factories",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"content": " Specification for the Medical Informatics Platform  Data Flow  Flow of data in the platform One of the main purpose of the Medical Informatics Platform is to collect and process clinical and research data and put into the hand of its users (clinicians, researchers in neuroscience) ready-to-use data containing the variables and features made available for research. The machine learning algorithms and statistical analysis methods provided by the platform are using this feature data when a user is exploring data or performing an experiment.\n Data Capture   Goals The main role of the Data Capture is to take data coming several clinical systems in a hospital, collect that data and remove any identifying information from them, then export that data as a collection of CSV files and DICOM/Nifti files to be processed by the Data Factory. disparate clinical data =\u0026gt; collection + de-identification =\u0026gt; export to exchange directory  Data Factory   Goals The main role of the Data Factory is to take data coming from Data capture , process it offline (without any user interaction) then store the results into a database of the Hospital Database Bundle. anonymised data =\u0026gt; pre-processing + ETL + automated curation =\u0026gt; data store  Algorithm Factory  Chapter X Some Chapter title Lorem ipsum\n Hospital Database  Chapter X Some Chapter title Lorem ipsum\n The different versions of MIP gantt dateFormat YYYY-MM-DD title Phases in the MIP project section Releases MIP POC on mip.humanbrainproject.eu v1.0 :done, rel1, 2016-03-31,1d MIP Local v1.0 :done, rel2, 2017-06-28,1d section Development Ramp up phase - implementation of most building blocks :crit, done, dev1, 2013-03-31, 1095d Completed Development of MIP Local :crit, done, dev2, after dev1, 427d Development of MIP Federated :crit, active, dev3, 2017-01-01, 270d section Deployment MIP POC on mip.humanbrainproject.eu :done, depl1, 2013-03-31, 2016-03-31 MIP Local at CHUV :done, depl2, 2016-09-30, 2017-06-28 MIP Local in other hospitals :active, depl3, 2017-04-01, 2017-10-30  "
 },
 {
 	"uri": "https://hbpmedical.github.io/specifications/categories/",
 	"title": "Categories",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://hbpmedical.github.io/specifications/hospital-database/",
-	"title": "Hospital-databases",
 	"tags": [],
 	"description": "",
 	"content": ""

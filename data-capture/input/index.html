@@ -14,7 +14,9 @@
     <link href="/specifications/css/hybrid.css" rel="stylesheet">
     <link href="/specifications/css/featherlight.min.css" rel="stylesheet">
     <link href="/specifications/css/horsey.css" rel="stylesheet">
-    <link href="/specifications/css/theme.css" rel="stylesheet">
+    
+      <link href="/specifications/css/theme-gold.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="/specifications/css/bootstrap.min.css">
     <script src="/specifications/js/jquery-2.x.min.js"></script>
     <style type="text/css">
@@ -23,9 +25,6 @@
       }
     </style>
 
-    
-    <link href="/specifications/css/theme-gold.css" rel="stylesheet">
-    
     
 
     
@@ -76,13 +75,60 @@ Medical Informatics Platform</p>
 
 
 
+<li data-nav-id="/specifications/data-flow/" class="dd-item 
+
+
+
+">
+  <a href="/specifications/data-flow/">
+    <span><b>1. </b>Data Flow</span>
+
+    
+    <i class="fa fa-angle-right fa-lg category-icon"></i>
+    
+    
+    <i style="color:grey" class="fa fa-check read-icon"></i>
+  </a>
+    <ul>
+        
+         
+          <li data-nav-id="/specifications/data-flow/mip-local/" class="dd-item
+         
+          ">
+            <a href="/specifications/data-flow/mip-local/">
+            <span>Flow in MIP Local</span> 
+            <i style="color:grey" class="fa fa-check read-icon"></i>
+
+            </a></li>
+         
+        
+         
+          <li data-nav-id="/specifications/data-flow/mip-federated/" class="dd-item
+         
+          ">
+            <a href="/specifications/data-flow/mip-federated/">
+            <span>Flow in MIP Federation</span> 
+            <i style="color:grey" class="fa fa-check read-icon"></i>
+
+            </a></li>
+         
+        
+        
+
+
+
+
+    </ul>
+</li>
+
+
 <li data-nav-id="/specifications/data-capture/" class="dd-item 
 parent
 
 
 ">
   <a href="/specifications/data-capture/">
-    <span><b>1. </b>Data Capture</span>
+    <span><b>2. </b>Data Capture</span>
 
     
     <i class="fa fa-angle-down fa-lg category-icon"></i>
@@ -129,7 +175,7 @@ parent
 
 ">
   <a href="/specifications/data-factory/">
-    <span><b>2. </b>Data Factory</span>
+    <span><b>3. </b>Data Factory</span>
 
     
     <i class="fa fa-angle-right fa-lg category-icon"></i>
@@ -176,7 +222,7 @@ parent
 
 ">
   <a href="/specifications/algorithm-factory/">
-    <span>Algorithm-factories</span>
+    <span><b>3. </b>Algorithm Factory</span>
 
     
     <i class="fa fa-angle-right fa-lg category-icon"></i>
@@ -185,17 +231,6 @@ parent
     <i style="color:grey" class="fa fa-check read-icon"></i>
   </a>
     <ul>
-        
-         
-          <li data-nav-id="/specifications/algorithm-factory/" class="dd-item
-         
-          ">
-            <a href="/specifications/algorithm-factory/">
-            <span>Algorithm Factory</span> 
-            <i style="color:grey" class="fa fa-check read-icon"></i>
-
-            </a></li>
-         
         
         
 
@@ -212,7 +247,7 @@ parent
 
 ">
   <a href="/specifications/hospital-database/">
-    <span>Hospital-databases</span>
+    <span><b>4. </b>Hospital Database</span>
 
     
     <i class="fa fa-angle-right fa-lg category-icon"></i>
@@ -221,17 +256,6 @@ parent
     <i style="color:grey" class="fa fa-check read-icon"></i>
   </a>
     <ul>
-        
-         
-          <li data-nav-id="/specifications/hospital-database/" class="dd-item
-         
-          ">
-            <a href="/specifications/hospital-database/">
-            <span>Hospital Database</span> 
-            <i style="color:grey" class="fa fa-check read-icon"></i>
-
-            </a></li>
-         
         
         
 
@@ -300,7 +324,24 @@ parent
             </div>
             <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ideal-forms-of-data-repository-for-mip">Ideal forms of data repository for MIP</a>
+<ul>
+<li><a href="#de-personalised-data">De-personalised data</a></li>
+<li><a href="#i2b2-compatible-databases">I2B2 compatible databases</a></li>
+<li><a href="#pacs-system">PACS system</a></li>
+</ul></li>
+<li><a href="#other-ways-of-integrating-data-in-the-mip">Other ways of integrating data in the MIP</a>
+<ul>
+<li><a href="#files-extract">Files extract</a></li>
+<li><a href="#web-services">Web services</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -315,7 +356,56 @@ parent
 
 
 
-<p>The input of Data Capture is TODO.</p>
+
+
+<p>Data Capture collects available data from hospital databases or research cohorts.</p>
+
+<p>In addition, clinical data are de-personalised to protect patient privacy.</p>
+
+<p>It should also track consent and trigger the appropriate mechanisms to remove data
+from the platform in case the patient has removed her consent.</p>
+
+<h2 id="ideal-forms-of-data-repository-for-mip">Ideal forms of data repository for MIP</h2>
+
+<p>The MIP has been designed to support a very wide range of methods to gather data,
+however some datasets are easier to include in the MIP if they meet some criteria.</p>
+
+<h3 id="de-personalised-data">De-personalised data</h3>
+
+<p>It can be seen as safer and more secure for a hospital to take care of the de-personalisation of its data,
+especially as this procedure may expose the hospital to ethical and legal questions.</p>
+
+<p>We encourage hospitals to provide de-personalised data to MIP, and we can also help to put in place a technical solution,
+FedEHR&copy; Anonymizer&copy;, provided by our partner <a href="http://gnubila.fr/"><strong>Gnubila</strong>.</a></p>
+
+<h3 id="i2b2-compatible-databases">I2B2 compatible databases</h3>
+
+<p>MIP uses internally in its <a href="../../data-factory"><strong>Data Factory</strong></a> several databases based on the I2B2 schema.
+If your data has been prepared for data sharing and follows the <a href="https://www.i2b2.org/"><strong>I2B2 standard</strong></a>,
+this effort will fasten the inclusion of your data in the platform.</p>
+
+<h3 id="pacs-system">PACS system</h3>
+
+<p>MIP can connect to and query any PACS system compatible with the DICOM standard.</p>
+
+<p>To better protect your clinical PACS, we recommend that you put in place a research PACS that
+will contain only the selection of medical images available for research.</p>
+
+<h2 id="other-ways-of-integrating-data-in-the-mip">Other ways of integrating data in the MIP</h2>
+
+<p>Provided some development or configuration on our side, we can support the following methods of integrating data into MIP.</p>
+
+<h3 id="files-extract">Files extract</h3>
+
+<p>We can ingest data extract provided as a set of files.</p>
+
+<p>For MRI data, files can be in the DICOM or NIFTI formats. We support in particular the <a href="http://bids.neuroimaging.io/"><strong>BIDS organisation of data</strong></a></p>
+
+<p>For EHR data, files can be in CVS, TSV, JSON or XML formats.</p>
+
+<h3 id="web-services">Web services</h3>
+
+<p>We can customise the data capture to use online research databases with a Web Service API.</p>
 
 
 <footer class=" footline" >
@@ -349,6 +439,43 @@ parent
             
                 
                     
+                        
+                        
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                    
+                
+                    
+            
+            
+                
+                    
                     
                 
                 
@@ -428,30 +555,8 @@ parent
             
         
                     
-                        
-            
-            
                 
                     
-                
-                
-                
-            
-        
-                    
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                    
-                        
             
             
                 

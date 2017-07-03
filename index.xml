@@ -13,22 +13,43 @@
     
     
     <item>
+      <title>Flow in MIP Local</title>
+      <link>https://hbpmedical.github.io/specifications/data-flow/mip-local/</link>
+      <pubDate>Mon, 03 Jul 2017 11:44:00 +0200</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-flow/mip-local/</guid>
+      <description>&lt;p&gt;MIP Local is installed in participating hospitals and used to collect clinical data
+provided by the hospital. Only patients with consent are selected, and no data ever leaves
+the hospital premises.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Flow in MIP Federation</title>
+      <link>https://hbpmedical.github.io/specifications/data-flow/mip-federated/</link>
+      <pubDate>Mon, 03 Jul 2017 11:44:00 +0200</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-flow/mip-federated/</guid>
+      <description>&lt;p&gt;MIP Federated brings together several hospitals and clinical data centers to build a Federation.&lt;/p&gt;
+
+&lt;p&gt;Data are collected at each hospital (clinical data) or clinical data centers (research data), then
+a user of MIP can query and do machine learning or statistical analyses but with the strong imperative that
+only data aggregates are exchanged between the hospital or data centers and the central node hosting the user-facing web site.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Data Capture input</title>
       <link>https://hbpmedical.github.io/specifications/data-capture/input/</link>
       <pubDate>Tue, 28 Feb 2017 20:08:35 +0100</pubDate>
       
       <guid>https://hbpmedical.github.io/specifications/data-capture/input/</guid>
-      <description>The input of Data Capture is TODO.</description>
-    </item>
-    
-    <item>
-      <title>Data Factory input</title>
-      <link>https://hbpmedical.github.io/specifications/data-factory/input/</link>
-      <pubDate>Fri, 24 Feb 2017 16:15:35 +0100</pubDate>
-      
-      <guid>https://hbpmedical.github.io/specifications/data-factory/input/</guid>
-      <description>The input of Data Factory is the output of Data Capture.
-From Data Capture output specifications Depersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.dcm -- set of DICOM files │ └── dicom_name_generated_03.</description>
+      <description>Data Capture collects available data from hospital databases or research cohorts.
+In addition, clinical data are de-personalised to protect patient privacy.
+It should also track consent and trigger the appropriate mechanisms to remove data from the platform in case the patient has removed her consent.
+Ideal forms of data repository for MIP The MIP has been designed to support a very wide range of methods to gather data, however some datasets are easier to include in the MIP if they meet some criteria.</description>
     </item>
     
     <item>
@@ -40,6 +61,16 @@ From Data Capture output specifications Depersonalised DICOM + EHR data export  
       <description>The Data Capture should export its data into a folder made available to the Data Factory
 There are several options possible, to adapt to the local requirements:
 Depersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.</description>
+    </item>
+    
+    <item>
+      <title>Data Factory input</title>
+      <link>https://hbpmedical.github.io/specifications/data-factory/input/</link>
+      <pubDate>Fri, 24 Feb 2017 16:15:35 +0100</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-factory/input/</guid>
+      <description>The input of Data Factory is the output of Data Capture.
+From Data Capture output specifications Depersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.dcm -- set of DICOM files │ └── dicom_name_generated_03.</description>
     </item>
     
     <item>
@@ -58,24 +89,6 @@ Depersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- ye
       
       <guid>https://hbpmedical.github.io/specifications/_header/</guid>
       <description>Medical Informatics Platform</description>
-    </item>
-    
-    <item>
-      <title>Hospital Database</title>
-      <link>https://hbpmedical.github.io/specifications/hospital-database/</link>
-      <pubDate>Fri, 03 Feb 2017 17:18:42 +0100</pubDate>
-      
-      <guid>https://hbpmedical.github.io/specifications/hospital-database/</guid>
-      <description>Chapter X Some Chapter title Lorem ipsum</description>
-    </item>
-    
-    <item>
-      <title>Algorithm Factory</title>
-      <link>https://hbpmedical.github.io/specifications/algorithm-factory/</link>
-      <pubDate>Fri, 03 Feb 2017 17:18:32 +0100</pubDate>
-      
-      <guid>https://hbpmedical.github.io/specifications/algorithm-factory/</guid>
-      <description>Chapter X Some Chapter title Lorem ipsum</description>
     </item>
     
   </channel>
