@@ -7,7 +7,7 @@
     <meta name="description" content="Specifications for the Medical Informatics Platform of the Human Brain Project.">
 <meta name="author" content="HBP SP8 team">
 
-    <title>header :: MIP specifications</title>
+    <title>Processing pipelines :: MIP specifications</title>
     <link rel="shortcut icon" href="/specifications/images/favicon.png" type="image/x-icon" />
     <link href="/specifications/css/nucleus.css" rel="stylesheet">
     <link href="/specifications/css/font-awesome.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     
 
   </head>
-  <body class="" data-url="/specifications/_header/">
+  <body class="" data-url="/specifications/data-factory/pipelines/">
     <nav id="sidebar" class="showVisitedLinks">
   <div id="header-wrapper">
     <div id="header">
@@ -170,7 +170,7 @@ Medical Informatics Platform</p>
 
 
 <li data-nav-id="/specifications/data-factory/" class="dd-item 
-
+parent
 
 
 ">
@@ -178,7 +178,7 @@ Medical Informatics Platform</p>
     <span><b>3. </b>Data Factory</span>
 
     
-    <i class="fa fa-angle-right fa-lg category-icon"></i>
+    <i class="fa fa-angle-down fa-lg category-icon"></i>
     
     
     <i style="color:grey" class="fa fa-check read-icon"></i>
@@ -198,7 +198,7 @@ Medical Informatics Platform</p>
         
          
           <li data-nav-id="/specifications/data-factory/pipelines/" class="dd-item
-         
+         active
           ">
             <a href="/specifications/data-factory/pipelines/">
             <span>Processing pipelines</span> 
@@ -360,7 +360,7 @@ Medical Informatics Platform</p>
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/_header.md" target="blank">
+              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-factory/pipelines.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Edit page
               </a>
@@ -378,7 +378,17 @@ Medical Informatics Platform</p>
                 <span class="links">
                 
 
- header
+
+
+
+
+
+
+ <a href='/specifications/'>MIP specs</a> > <a href='/specifications/data-factory/'>Data Factory</a> > Processing pipelines
+
+ 
+
+ 
 
    
                 </span>
@@ -394,17 +404,26 @@ Medical Informatics Platform</p>
         
         <div id="body-inner">
           
-            <h1>header</h1>
+            <h1>Processing pipelines</h1>
           
 
 
 
 
-<p><img src="/specifications/images/hbp.png" width="100" height="100" /><br/>
-Medical Informatics Platform</p>
+<div class="mermaid" align="left" >
+graph LR
+        data_in(Anonymised data from Data Capture)
+        data_out(Reorganised data)
+        processing> Reorganisation of MRI scans and EHR data]
+        data_in --> processing
+        processing --> data_out
+</div>
 
 
 <footer class=" footline" >
+	
+	    <i class='fa fa-user'></i> <a href="mailto:ludovic.claude@chuv.ch">Ludovic CLAUDE</a>  <i class='fa fa-calendar'></i> 04/07/2017
+	    </div>
 	
 </footer>
 
@@ -506,16 +525,6 @@ Medical Informatics Platform</p>
             
                 
                     
-                
-                
-                
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -528,6 +537,9 @@ Medical Informatics Platform</p>
             
                 
                     
+                        
+                        
+                    
                 
                 
                 
@@ -538,6 +550,21 @@ Medical Informatics Platform</p>
             
             
                 
+                    
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -610,8 +637,10 @@ Medical Informatics Platform</p>
 
 
         
+            <a class="nav nav-prev" href="/specifications/data-factory/input/" title="Data Factory input"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/specifications/data-flow/" title="Data flow" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/specifications/data-factory/data_capture_i2b2/" title="Data Capture" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.24.1" />
-    <meta name="description" content="Specifications for the Medical Informatics Platform of the Human Brain Project.">
+    <meta name="description" content="Goals of Data Factory">
 <meta name="author" content="HBP SP8 team">
 
     <title>Data Factory :: MIP specifications</title>
@@ -81,7 +81,7 @@ Medical Informatics Platform</p>
 
 ">
   <a href="/specifications/data-flow/">
-    <span><b>1. </b>Data Flow</span>
+    <span><b>1. </b>Data flow</span>
 
     
     <i class="fa fa-angle-right fa-lg category-icon"></i>
@@ -197,11 +197,22 @@ active
          
         
          
-          <li data-nav-id="/specifications/data-factory/output/" class="dd-item
+          <li data-nav-id="/specifications/data-factory/pipelines/" class="dd-item
          
           ">
-            <a href="/specifications/data-factory/output/">
-            <span>Data Factory output</span> 
+            <a href="/specifications/data-factory/pipelines/">
+            <span>Processing pipelines</span> 
+            <i style="color:grey" class="fa fa-check read-icon"></i>
+
+            </a></li>
+         
+        
+         
+          <li data-nav-id="/specifications/data-factory/data_capture_i2b2/" class="dd-item
+         
+          ">
+            <a href="/specifications/data-factory/data_capture_i2b2/">
+            <span>Data Capture</span> 
             <i style="color:grey" class="fa fa-check read-icon"></i>
 
             </a></li>
@@ -212,7 +223,29 @@ active
          
           ">
             <a href="/specifications/data-factory/cde/">
-            <span>MIP Common Data Elements</span> 
+            <span>Common Data Elements</span> 
+            <i style="color:grey" class="fa fa-check read-icon"></i>
+
+            </a></li>
+         
+        
+         
+          <li data-nav-id="/specifications/data-factory/data_normalisation_i2b2/" class="dd-item
+         
+          ">
+            <a href="/specifications/data-factory/data_normalisation_i2b2/">
+            <span>Data Normalisation</span> 
+            <i style="color:grey" class="fa fa-check read-icon"></i>
+
+            </a></li>
+         
+        
+         
+          <li data-nav-id="/specifications/data-factory/output/" class="dd-item
+         
+          ">
+            <a href="/specifications/data-factory/output/">
+            <span>Data Factory output</span> 
             <i style="color:grey" class="fa fa-check read-icon"></i>
 
             </a></li>
@@ -385,8 +418,16 @@ active
 
 <p>The main role of the <strong>Data Factory</strong> is to take data coming from <a href="../data-capture"><strong>Data capture</strong></a> , process it offline (without any user interaction) then store the results into a database of the <strong>Hospital Database Bundle</strong>.</p>
 
-<pre><code>  anonymised data =&gt; pre-processing + ETL + automated curation =&gt; data store
-</code></pre>
+<!-- more -->
+
+<div class="mermaid" align="left" >
+graph LR
+        data_in(Anonymised data)
+        data_out(Data store)
+        processing> Pre-processing + ETL + automated curation]
+        data_in --> processing
+        processing --> data_out
+</div>
 
 
 <footer class=" footline" >
@@ -510,6 +551,39 @@ active
                     
                         
                         
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 

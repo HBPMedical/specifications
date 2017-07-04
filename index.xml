@@ -74,20 +74,47 @@ From Data Capture output specifications Depersonalised DICOM + EHR data export  
     </item>
     
     <item>
+      <title>Processing pipelines</title>
+      <link>https://hbpmedical.github.io/specifications/data-factory/pipelines/</link>
+      <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-factory/pipelines/</guid>
+      <description>graph LR data_in(Anonymised data from Data Capture) data_out(Reorganised data) processing Reorganisation of MRI scans and EHR data] data_in -- processing processing -- data_out  </description>
+    </item>
+    
+    <item>
+      <title>Data Capture</title>
+      <link>https://hbpmedical.github.io/specifications/data-factory/data_capture_i2b2/</link>
+      <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-factory/data_capture_i2b2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Common Data Elements</title>
+      <link>https://hbpmedical.github.io/specifications/data-factory/cde/</link>
+      <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-factory/cde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Normalisation</title>
+      <link>https://hbpmedical.github.io/specifications/data-factory/data_normalisation_i2b2/</link>
+      <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-factory/data_normalisation_i2b2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data Factory output</title>
       <link>https://hbpmedical.github.io/specifications/data-factory/output/</link>
       <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
       
       <guid>https://hbpmedical.github.io/specifications/data-factory/output/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MIP Common Data Elements</title>
-      <link>https://hbpmedical.github.io/specifications/data-factory/cde/</link>
-      <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
-      
-      <guid>https://hbpmedical.github.io/specifications/data-factory/cde/</guid>
       <description></description>
     </item>
     
