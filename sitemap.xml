@@ -44,7 +44,12 @@
   
   <url>
     <loc>https://hbpmedical.github.io/specifications/data-factory/output/</loc>
-    <lastmod>2017-02-24T16:16:30+01:00</lastmod>
+    <lastmod>2017-07-04T11:16:30+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hbpmedical.github.io/specifications/data-factory/cde/</loc>
+    <lastmod>2017-07-04T11:16:30+01:00</lastmod>
   </url>
   
   <url>
@@ -55,6 +60,11 @@
   <url>
     <loc>https://hbpmedical.github.io/specifications/hospital-database/</loc>
     <lastmod>2017-02-03T17:18:42+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hbpmedical.github.io/specifications/credits/</loc>
+    <lastmod>2017-07-04T00:30:51+02:00</lastmod>
   </url>
   
   <url>

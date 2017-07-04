@@ -63,6 +63,13 @@
 	"content": ""
 },
 {
+	"uri": "https://hbpmedical.github.io/specifications/data-factory/cde/",
+	"title": "MIP Common Data Elements",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://hbpmedical.github.io/specifications/algorithm-factory/",
 	"title": "Algorithm Factory",
 	"tags": [],
@@ -75,6 +82,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Chapter X Some Chapter title Lorem ipsum\n"
+},
+{
+	"uri": "https://hbpmedical.github.io/specifications/credits/",
+	"title": "Credits",
+	"tags": [],
+	"description": "",
+	"content": " Github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }  Tooling  Netlify - Continuous deployment and hosting of this documentation Hugo   hugo-theme-docdock    "
 },
 {
 	"uri": "https://hbpmedical.github.io/specifications/_header/",

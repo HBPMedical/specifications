@@ -76,10 +76,28 @@ From Data Capture output specifications Depersonalised DICOM + EHR data export  
     <item>
       <title>Data Factory output</title>
       <link>https://hbpmedical.github.io/specifications/data-factory/output/</link>
-      <pubDate>Fri, 24 Feb 2017 16:16:30 +0100</pubDate>
+      <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
       
       <guid>https://hbpmedical.github.io/specifications/data-factory/output/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>MIP Common Data Elements</title>
+      <link>https://hbpmedical.github.io/specifications/data-factory/cde/</link>
+      <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-factory/cde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Credits</title>
+      <link>https://hbpmedical.github.io/specifications/credits/</link>
+      <pubDate>Tue, 04 Jul 2017 00:30:51 +0200</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/credits/</guid>
+      <description> Github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }  Tooling  Netlify - Continuous deployment and hosting of this documentation Hugo   hugo-theme-docdock    </description>
     </item>
     
     <item>

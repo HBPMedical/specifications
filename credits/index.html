@@ -7,7 +7,7 @@
     <meta name="description" content="Specifications for the Medical Informatics Platform of the Human Brain Project.">
 <meta name="author" content="HBP SP8 team">
 
-    <title>Data Capture output :: MIP specifications</title>
+    <title>Credits :: MIP specifications</title>
     <link rel="shortcut icon" href="/specifications/images/favicon.png" type="image/x-icon" />
     <link href="/specifications/css/nucleus.css" rel="stylesheet">
     <link href="/specifications/css/font-awesome.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     
 
   </head>
-  <body class="" data-url="/specifications/data-capture/output/">
+  <body class="" data-url="/specifications/credits/">
     <nav id="sidebar" class="showVisitedLinks">
   <div id="header-wrapper">
     <div id="header">
@@ -123,7 +123,7 @@ Medical Informatics Platform</p>
 
 
 <li data-nav-id="/specifications/data-capture/" class="dd-item 
-parent
+
 
 
 ">
@@ -131,7 +131,7 @@ parent
     <span><b>2. </b>Data Capture</span>
 
     
-    <i class="fa fa-angle-down fa-lg category-icon"></i>
+    <i class="fa fa-angle-right fa-lg category-icon"></i>
     
     
     <i style="color:grey" class="fa fa-check read-icon"></i>
@@ -151,7 +151,7 @@ parent
         
          
           <li data-nav-id="/specifications/data-capture/output/" class="dd-item
-         active
+         
           ">
             <a href="/specifications/data-capture/output/">
             <span>Data Capture output</span> 
@@ -327,7 +327,7 @@ parent
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-capture/output.md" target="blank">
+              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/credits.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Edit page
               </a>
@@ -345,24 +345,22 @@ parent
                 <span class="links">
                 
 
-
-
-
-
-
-
- <a href='/specifications/'>MIP specs</a> > <a href='/specifications/data-capture/'>Data Capture</a> > Data Capture output
-
- 
-
- 
+ Credits
 
    
                 </span>
             </div>
             <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#github-contributors">Github contributors</a></li>
+<li><a href="#tooling">Tooling</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -371,72 +369,57 @@ parent
         
         <div id="body-inner">
           
-            <h1>Data Capture output</h1>
+            <h1>Credits</h1>
           
 
 
 
 
-<p>The <strong>Data Capture</strong> should export its data into a folder made available to the <a href="../data-factory"><strong>Data Factory</strong></a></p>
-
-<p>There are several options possible, to adapt to the local requirements:</p>
 
 
-	<h3 id="depersonalised-dicom-ehr-data-export">Depersonalised DICOM + EHR data export</h3>
+<h2 id="github-contributors">Github contributors</h2>
 
-<pre><code>
-  ├── DICOM
-  │   └── 2016                                      -- yearly folder, date represents the date of export
-  │       └── 20161029                              -- daily folder, date represents the date of export
-  │           └── scan_research_id                  -- see description below
-  │               └── dicom_name_generated_01.dcm   -- set of DICOM files
-  │               └── dicom_name_generated_02.dcm   -- set of DICOM files
-  │               └── dicom_name_generated_03.dcm   -- set of DICOM files
-  └── EHR
-      └── 2016                                      -- yearly folder, date represents the date of export
-          └── 20161029                              -- daily folder, date represents the date of export
-              ├── table1.csv                        -- pre-defined name for 1st table containing EHR data, depends on hospital data
-              └── table2.csv                        -- pre-defined name for 2nd table containing EHR data, depends on hospital data
-              └── ...                               -- more (or less) tables as needed, depends on hospital data
+<style type="text/css">
+.ghContributors{
+display:flex;
+flex-flow:  wrap;
+align-content: flex-start
+}
+.ghContributors > div{
+width: 50% ;
+display: inline-flex;
+margin-bottom: 5px;
+}
+.ghContributors > div label{
+padding-left: 4px ;
+}
+.ghContributors > div span{
+font-size: x-small;
+padding-left: 4px ;
+}
+</style>
+<div class="ghContributors">
+  
+  
 
-</code></pre>
+<h2 id="tooling">Tooling</h2>
 
-<h3 id="depersonalised-nifti-ehr-data-export">Depersonalised Nifti + EHR data export</h3>
+<ul>
+<li><a href="https://www.netlify.com">Netlify</a> - Continuous deployment and hosting of this documentation</li>
+<li><a href="https://gohugo.io/">Hugo</a> 
 
-<pre><code>
-  ├── NIFTI
-  │   └── 2016                                      -- yearly folder, date represents the date of export
-  │       └── 20161029                              -- daily folder, date represents the date of export
-  │           └── scan_research_id                  -- see description below
-  │               └── dicom_name_generated_01.nifti -- Nifti file
-  │               └── dicom_name_generated_01.json  -- metadata for the Nifti file
-  │               └── dicom_name_generated_02.nifti -- Nifti file
-  │               └── dicom_name_generated_02.json  -- metadata for the Nifti file
-  └── EHR
-      └── 2016                                      -- yearly folder, date represents the date of export
-          └── 20161029                              -- daily folder, date represents the date of export
-              ├── table1.csv                        -- pre-defined name for 1st table containing EHR data, depends on hospital data
-              └── table2.csv                        -- pre-defined name for 2nd table containing EHR data, depends on hospital data
-              └── ...                               -- more (or less) tables as needed, depends on hospital data
+<span class="fa fa-smile-o" aria-hidden="true"></span>
 
-</code></pre>
+</li>
+<li><a href="https://github.com/vjeantet/hugo-theme-docdock/">hugo-theme-docdock</a> 
 
+<span class="fa fa-book" aria-hidden="true"></span>
 
-
-<p>scan_research_id: an ID for research, with no identifier coming the clinical database and representing one visit for one patient. During this visit, there may be more than one scan acquisition session, each session can have several sequences, a sequence can have several repetitions and acquire as many brain scan. One brain scan can be spread into several DICOM files where each file represents a slice of the brain.</p>
-
-<p><div class="alert 
-alert-warning"
- 
-role="alert"><p>After de-identification, we should ensure that patient IDs present in the EHR data match patient IDs present in the DICOM headers.</p>
-</div>
-</p>
+</li>
+</ul>
 
 
 <footer class=" footline" >
-	
-	    <i class='fa fa-user'></i> <a href="mailto:ludovic.claude@chuv.ch">Ludovic CLAUDE</a>  <i class='fa fa-calendar'></i> 03/02/2017
-	    </div>
 	
 </footer>
 
@@ -504,6 +487,16 @@ role="alert"><p>After de-identification, we should ensure that patient IDs prese
             
                 
                     
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -516,21 +509,6 @@ role="alert"><p>After de-identification, we should ensure that patient IDs prese
             
                 
                     
-                        
-                        
-                    
-                
-                
-                
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
                 
                 
                 
@@ -542,9 +520,6 @@ role="alert"><p>After de-identification, we should ensure that patient IDs prese
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -617,10 +592,8 @@ role="alert"><p>After de-identification, we should ensure that patient IDs prese
 
 
         
-            <a class="nav nav-prev" href="/specifications/data-capture/input/" title="Data Capture input"> <i class="fa fa-chevron-left"></i></a>
         
-        
-            <a class="nav nav-next" href="/specifications/data-factory/" title="Data Factory" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/specifications/data-flow/" title="Data Flow" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
