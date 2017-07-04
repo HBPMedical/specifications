@@ -1,6 +1,7 @@
 ---
 chapter: true
-title: Data Flow
+title: Data flow
+description: Flow of data in the platform
 pre: <b>1. </b>
 creatordisplayname: Ludovic CLAUDE
 creatoremail: ludovic.claude@chuv.ch
@@ -10,8 +11,6 @@ date: 2017-07-03T11:44:00+02:00
 weight: 10
 draft: false
 ---
-
-## Flow of data in the platform
 
 One of the main purpose of the Medical Informatics Platform is to collect and process clinical and research data
 and put into the hand of its users (clinicians, researchers in neuroscience) ready-to-use data containing
