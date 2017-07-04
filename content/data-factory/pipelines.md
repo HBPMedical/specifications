@@ -9,9 +9,27 @@ toc: true
 weight: 32
 ---
 
+The processing pipelines provided out-of-the-box by the Data Factory enable an
+automated processing of data made available to MIP Local or MIP Federated.
+
+
+## Overview of all pipelines
+
 {{<mermaid align="left">}}
 graph LR
-        data_in(Anonymised data from Data Capture)
+        data_in(Anonymised data from Data Capture or other sources)
+        data_out(Reorganised data)
+        reorg_pipeline> Reorganisation pipeline]
+        data_in --> reorg_pipeline
+        reorg_pipeline --> data_out
+{{< /mermaid >}}
+
+
+## Reorganisation pipeline
+
+{{<mermaid align="left">}}
+graph LR
+        data_in(Anonymised data from Data Capture or other sources)
         data_out(Reorganised data)
         processing> Reorganisation of MRI scans and EHR data]
         data_in --> processing
