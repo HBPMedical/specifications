@@ -12,23 +12,5 @@ draft: false
 
 ### The different versions of MIP
 
-{{<mermaid>}}
-gantt
-        dateFormat  YYYY-MM-DD
-        title Phases in the MIP project
-
-        section Releases
-        MIP POC on mip.humanbrainproject.eu v1.0 :done, rel1, 2016-03-31,1d
-        MIP Local v1.0                           :done, rel2, 2017-06-28,1d
-
-        section Development
-        Ramp up phase - implementation of most building blocks :crit, done, dev1, 2013-03-31, 1095d
-        Completed Development of MIP Local       :crit, done,   dev2, after dev1, 427d
-        Development of MIP Federated             :crit, active, dev3, 2017-01-01, 270d
-
-        section Deployment
-        MIP POC on mip.humanbrainproject.eu      :done,   depl1, 2013-03-31, 2016-03-31
-        MIP Local at CHUV                        :done,   depl2, 2016-09-30, 2017-06-28
-        MIP Local in other hospitals             :active, depl3, 2017-04-01, 2017-10-30
-
-{{< /mermaid >}}
+* MIP Local: installed at hospitals and providing only local access to the hospital data
+* MIP Federated

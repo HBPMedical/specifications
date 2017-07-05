@@ -79,11 +79,20 @@ graph LR
 
 ## MRI pre-processing and feature extraction pipeline
 
+This pipeline takes MRI data organised following the directory structure /PatientID/StudyID/SeriesProtocol/SeriesID/
+and applies a series of processing steps on it, including:
+
+* conversion from DICOM to Nifti
+* Neuromorphometric pipeline
+* Quality control
+
+For each step, data provenance is tracked and stored in a 'Data Catalog' database.
+
 {{<mermaid align="left">}}
 graph LR
         data_in(MRI scans)
         data_out(Features stored into 'I2B2 capture' database)
-        processing> Neuromorphometric pipeline + storage of features and provenance]
+        processing> Neuromorphometric pipeline + quality control + provenance]
         data_in --> processing
         processing --> data_out
 {{< /mermaid >}}

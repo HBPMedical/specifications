@@ -47,7 +47,7 @@ github = "HBPMedical"
 pre = "<h3>More</h3>"
 name = "<i class='fa fa-step-backward'></i> Back to HBP Medical Documentation"
 identifier = "hbpmeddocs"
-url = "https://github.com/HBPMedical/"
+url = "https://hbpmedical.github.io/"
 weight = 10
 
 [[menu.shortcuts]]
