@@ -9,3 +9,5 @@ lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
 weight: 33
 ---
+
+![I2B2 star schema](/specifications/images/i2b2_schema.gif)

@@ -51,6 +51,9 @@ graph LR
 
 ## EHR pipeline
 
+This pipeline captures as many variables as possible from the patient records and stores the
+data into a database compliant with I2B2 schema [('I2B2 capture' database)](../data_capture_i2b2)
+
 {{<mermaid align="left">}}
 graph LR
         data_in(CSV files or other files containing EHR data)
@@ -62,6 +65,9 @@ graph LR
 
 ## Metadata pipeline
 
+This pipeline collects the information associated with MRI scans and present either in
+DICOM headers or in associated metadata files and store in into the [('I2B2 capture' database)](../data_capture_i2b2)
+
 {{<mermaid align="left">}}
 graph LR
         data_in(Metadata extracted from MRI scans)
@@ -69,4 +75,30 @@ graph LR
         processing> ETL with light mapping of metadata to I2B2 schema]
         data_in --> processing
         processing --> data_out
+{{< /mermaid >}}
+
+## MRI pre-processing and feature extraction pipeline
+
+{{<mermaid align="left">}}
+graph LR
+        data_in(MRI scans)
+        data_out(Features stored into 'I2B2 capture' database)
+        processing> Neuromorphometric pipeline + storage of features and provenance]
+        data_in --> processing
+        processing --> data_out
+{{< /mermaid >}}
+
+## Normalisation and data export pipeline
+
+{{<mermaid align="left">}}
+graph LR
+        data_in('I2B2 capture' database)
+        data_normalised('I2B2 MIP CDE' database)
+        data_out(Features table containing research-grade data)
+        processing> Neuromorphometric pipeline + storage of features and provenance]
+        export> Export of MIP CDE variables and specific variables to a Features table]
+        data_in --> processing
+        processing --> data_normalised
+        data_normalised --> export
+        export --> data_out
 {{< /mermaid >}}
