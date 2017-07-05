@@ -327,7 +327,7 @@ parent
             
                 <li class="" role="">
                     <h3>More</h3>
-                    <a href="https://github.com/HBPMedical/"><i class='fa fa-step-backward'></i> Back to HBP Medical Documentation</a>
+                    <a href="https://hbpmedical.github.io/"><i class='fa fa-step-backward'></i> Back to HBP Medical Documentation</a>
                     
                 </li>
             
@@ -503,11 +503,22 @@ graph LR
 
 <h2 id="mri-pre-processing-and-feature-extraction-pipeline">MRI pre-processing and feature extraction pipeline</h2>
 
+<p>This pipeline takes MRI data organised following the directory structure /PatientID/StudyID/SeriesProtocol/SeriesID/
+and applies a series of processing steps on it, including:</p>
+
+<ul>
+<li>conversion from DICOM to Nifti</li>
+<li>Neuromorphometric pipeline</li>
+<li>Quality control</li>
+</ul>
+
+<p>For each step, data provenance is tracked and stored in a &lsquo;Data Catalog&rsquo; database.</p>
+
 <div class="mermaid" align="left" >
 graph LR
         data_in(MRI scans)
         data_out(Features stored into 'I2B2 capture' database)
-        processing> Neuromorphometric pipeline + storage of features and provenance]
+        processing> Neuromorphometric pipeline + quality control + provenance]
         data_in --> processing
         processing --> data_out
 </div>
