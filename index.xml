@@ -79,7 +79,8 @@ From Data Capture output specifications Depersonalised DICOM + EHR data export  
       <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
       
       <guid>https://hbpmedical.github.io/specifications/data-factory/pipelines/</guid>
-      <description>graph LR data_in(Anonymised data from Data Capture) data_out(Reorganised data) processing Reorganisation of MRI scans and EHR data] data_in -- processing processing -- data_out  </description>
+      <description>The processing pipelines provided out-of-the-box by the Data Factory enable an automated processing of data made available to MIP Local or MIP Federated.
+Overview of all pipelines graph LR data_in(Anonymised data from Data Capture or other sources) data_out(Research-grade data) reorg_pipeline Reorganisation pipeline] ehr_pipeline EHR ingestion pipeline] metadata_pipeline Metadata ingestion pipeline] preprocessing_pipeline MRI pre-processing and feature extraction pipeline] normalisation_pipeline Normalisation and data export pipeline] data_in -- reorg_pipeline reorg_pipeline -- ehr_pipeline reorg_pipeline -- metadata_pipeline reorg_pipeline -- preprocessing_pipeline ehr_pipeline -- normalisation_pipeline metadata_pipeline -- normalisation_pipeline preprocessing_pipeline -- normalisation_pipeline normalisation_pipeline -- data_out  Reorganisation pipeline This pipeline takes data organised on the disk in its original format and reorganise it into something that fits the layout expected by the following pipelines (EHR, pre-processing, metadata).</description>
     </item>
     
     <item>
@@ -97,6 +98,15 @@ From Data Capture output specifications Depersonalised DICOM + EHR data export  
       <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
       
       <guid>https://hbpmedical.github.io/specifications/data-factory/cde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Provenance</title>
+      <link>https://hbpmedical.github.io/specifications/data-factory/provenance/</link>
+      <pubDate>Tue, 04 Jul 2017 11:16:30 +0100</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-factory/provenance/</guid>
       <description></description>
     </item>
     

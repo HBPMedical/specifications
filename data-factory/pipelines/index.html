@@ -230,6 +230,17 @@ parent
          
         
          
+          <li data-nav-id="/specifications/data-factory/provenance/" class="dd-item
+         
+          ">
+            <a href="/specifications/data-factory/provenance/">
+            <span>Provenance</span> 
+            <i style="color:grey" class="fa fa-check read-icon"></i>
+
+            </a></li>
+         
+        
+         
           <li data-nav-id="/specifications/data-factory/data_normalisation_i2b2/" class="dd-item
          
           ">
@@ -395,7 +406,19 @@ parent
             </div>
             <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#overview-of-all-pipelines">Overview of all pipelines</a></li>
+<li><a href="#reorganisation-pipeline">Reorganisation pipeline</a></li>
+<li><a href="#ehr-pipeline">EHR pipeline</a></li>
+<li><a href="#metadata-pipeline">Metadata pipeline</a></li>
+<li><a href="#mri-pre-processing-and-feature-extraction-pipeline">MRI pre-processing and feature extraction pipeline</a></li>
+<li><a href="#normalisation-and-data-export-pipeline">Normalisation and data export pipeline</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -410,13 +433,98 @@ parent
 
 
 
+
+
+<p>The processing pipelines provided out-of-the-box by the Data Factory enable an
+automated processing of data made available to MIP Local or MIP Federated.</p>
+
+<h2 id="overview-of-all-pipelines">Overview of all pipelines</h2>
+
 <div class="mermaid" align="left" >
 graph LR
-        data_in(Anonymised data from Data Capture)
+        data_in(Anonymised data from Data Capture or other sources)
+        data_out(Research-grade data)
+        reorg_pipeline> Reorganisation pipeline]
+        ehr_pipeline> EHR ingestion pipeline]
+        metadata_pipeline> Metadata ingestion pipeline]
+        preprocessing_pipeline> MRI pre-processing and feature extraction pipeline]
+        normalisation_pipeline> Normalisation and data export pipeline]
+        data_in --> reorg_pipeline
+        reorg_pipeline --> ehr_pipeline
+        reorg_pipeline --> metadata_pipeline
+        reorg_pipeline --> preprocessing_pipeline
+        ehr_pipeline --> normalisation_pipeline
+        metadata_pipeline --> normalisation_pipeline
+        preprocessing_pipeline --> normalisation_pipeline
+        normalisation_pipeline --> data_out
+</div>
+
+<h2 id="reorganisation-pipeline">Reorganisation pipeline</h2>
+
+<p>This pipeline takes data organised on the disk in its original format and reorganise it into
+something that fits the layout expected by the following pipelines (EHR, pre-processing, metadata).</p>
+
+<div class="mermaid" align="left" >
+graph LR
+        data_in(Anonymised data from Data Capture or other sources)
         data_out(Reorganised data)
         processing> Reorganisation of MRI scans and EHR data]
         data_in --> processing
         processing --> data_out
+</div>
+
+<h2 id="ehr-pipeline">EHR pipeline</h2>
+
+<p>This pipeline captures as many variables as possible from the patient records and stores the
+data into a database compliant with I2B2 schema <a href="../data_capture_i2b2">(&lsquo;I2B2 capture&rsquo; database)</a></p>
+
+<div class="mermaid" align="left" >
+graph LR
+        data_in(CSV files or other files containing EHR data)
+        data_out(I2B2 capture database)
+        processing> ETL with light mapping of EHR data to I2B2 schema]
+        data_in --> processing
+        processing --> data_out
+</div>
+
+<h2 id="metadata-pipeline">Metadata pipeline</h2>
+
+<p>This pipeline collects the information associated with MRI scans and present either in
+DICOM headers or in associated metadata files and store in into the <a href="../data_capture_i2b2">(&lsquo;I2B2 capture&rsquo; database)</a></p>
+
+<div class="mermaid" align="left" >
+graph LR
+        data_in(Metadata extracted from MRI scans)
+        data_out(I2B2 capture database)
+        processing> ETL with light mapping of metadata to I2B2 schema]
+        data_in --> processing
+        processing --> data_out
+</div>
+
+<h2 id="mri-pre-processing-and-feature-extraction-pipeline">MRI pre-processing and feature extraction pipeline</h2>
+
+<div class="mermaid" align="left" >
+graph LR
+        data_in(MRI scans)
+        data_out(Features stored into 'I2B2 capture' database)
+        processing> Neuromorphometric pipeline + storage of features and provenance]
+        data_in --> processing
+        processing --> data_out
+</div>
+
+<h2 id="normalisation-and-data-export-pipeline">Normalisation and data export pipeline</h2>
+
+<div class="mermaid" align="left" >
+graph LR
+        data_in('I2B2 capture' database)
+        data_normalised('I2B2 MIP CDE' database)
+        data_out(Features table containing research-grade data)
+        processing> Neuromorphometric pipeline + storage of features and provenance]
+        export> Export of MIP CDE variables and specific variables to a Features table]
+        data_in --> processing
+        processing --> data_normalised
+        data_normalised --> export
+        export --> data_out
 </div>
 
 
@@ -565,6 +673,17 @@ graph LR
                     
                         
                         
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 

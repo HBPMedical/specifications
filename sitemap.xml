@@ -58,6 +58,11 @@
   </url>
   
   <url>
+    <loc>https://hbpmedical.github.io/specifications/data-factory/provenance/</loc>
+    <lastmod>2017-07-04T11:16:30+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hbpmedical.github.io/specifications/data-factory/data_normalisation_i2b2/</loc>
     <lastmod>2017-07-04T11:16:30+01:00</lastmod>
   </url>
