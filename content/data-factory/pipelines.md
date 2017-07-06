@@ -20,8 +20,8 @@ graph LR
         data_in(Anonymised data from Data Capture or other sources)
         data_out(Research-grade data)
         reorg_pipeline> Reorganisation pipeline]
-        ehr_pipeline> EHR ingestion pipeline]
-        metadata_pipeline> Metadata ingestion pipeline]
+        ehr_pipeline> EHR curation pipeline]
+        metadata_pipeline> Metadata curation pipeline]
         preprocessing_pipeline> MRI pre-processing and feature extraction pipeline]
         normalisation_pipeline> Normalisation and data export pipeline]
         data_in --> reorg_pipeline
@@ -49,10 +49,10 @@ graph LR
         processing --> data_out
 {{< /mermaid >}}
 
-## EHR pipeline
+## EHR curation pipeline
 
 This pipeline captures as many variables as possible from the patient records and stores the
-data into a database compliant with I2B2 schema [('I2B2 capture' database)](../data_capture_i2b2)
+data into a database compliant with I2B2 schema [('I2B2 capture' database)](../capture_i2b2)
 
 {{<mermaid align="left">}}
 graph LR
@@ -63,10 +63,10 @@ graph LR
         processing --> data_out
 {{< /mermaid >}}
 
-## Metadata pipeline
+## Metadata curation pipeline
 
 This pipeline collects the information associated with MRI scans and present either in
-DICOM headers or in associated metadata files and store in into the [('I2B2 capture' database)](../data_capture_i2b2)
+DICOM headers or in associated metadata files and stores in into the [('I2B2 capture' database)](../data_capture_i2b2)
 
 {{<mermaid align="left">}}
 graph LR
@@ -82,7 +82,7 @@ graph LR
 This pipeline takes MRI data organised following the directory structure /PatientID/StudyID/SeriesProtocol/SeriesID/
 and applies a series of processing steps on it, including:
 
-* conversion from DICOM to Nifti
+* Conversion from DICOM to Nifti
 * Neuromorphometric pipeline
 * Quality control
 
@@ -99,15 +99,24 @@ graph LR
 
 ## Normalisation and data export pipeline
 
+This pipeline is triggered on a patient record when there is enough information collected
+(both EHR and biomarkers from MRI are required). It uses the data mapping and transformation
+specifications provided by the DGDS committee to select the variables of interest and normalise
+them into the [MIP Common Data Elements](../cde) reference.
+
 {{<mermaid align="left">}}
 graph LR
         data_in('I2B2 capture' database)
         data_normalised('I2B2 MIP CDE' database)
         data_out(Features table containing research-grade data)
-        processing> Neuromorphometric pipeline + storage of features and provenance]
-        export> Export of MIP CDE variables and specific variables to a Features table]
+        processing> Selection of variables and normalisation]
+        export> Export MIP CDE variables and other variables to a Features table]
         data_in --> processing
         processing --> data_normalised
         data_normalised --> export
         export --> data_out
 {{< /mermaid >}}
+
+This pipeline provides the final results produced by the Data Factory.
+
+{{% excerpt-include filename="data-factory/output.md" panel="From Data Factory output specifications" /%}}

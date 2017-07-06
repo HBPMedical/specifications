@@ -34,12 +34,16 @@ permalink = "#"
 provider = ""
 repo_url = "https://github.com/HBPMedical/specifications"
 version = ""
+cde_version = "0.1.6"
+
 [params.font]
 code = "Ubuntu Mono"
 text = "Ubuntu"
+
 [params.palette]
 accent = "teal"
 primary = "red"
+
 [social]
 github = "HBPMedical"
 

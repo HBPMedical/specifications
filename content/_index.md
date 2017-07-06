@@ -13,4 +13,4 @@ draft: false
 ### The different versions of MIP
 
 * MIP Local: installed at hospitals and providing only local access to the hospital data
-* MIP Federated
+* MIP Federated: the next version that will connect hospitals to a master node and enable distributed queries and statistical analysis.

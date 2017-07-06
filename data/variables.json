@@ -1,0 +1,1671 @@
+{
+	"code": "root",
+	"groups": [{
+			"code": "brain",
+			"groups": [{
+				"code": "brain_anatomy",
+				"groups": [{
+					"code": "lren_atlas",
+					"groups": [{
+							"code": "csf",
+							"label": "CSF",
+							"variables": [{
+									"code": "rightinflatvent",
+									"description": "",
+									"label": "Right inferior lateral ventricle",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								},
+								{
+									"code": "leftinflatvent",
+									"description": "",
+									"label": "Left inferior lateral ventricle",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								},
+								{
+									"code": "rightlateralventricle",
+									"description": "",
+									"label": "Right lateral ventricle",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								},
+								{
+									"code": "leftlateralventricle",
+									"description": "",
+									"label": "Left lateral ventricle",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								},
+								{
+									"code": "3rdventricle",
+									"description": "",
+									"label": "3rd Ventricle",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								},
+								{
+									"code": "4thventricle",
+									"description": "",
+									"label": "4th Ventricle",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								},
+								{
+									"code": "csfglobal",
+									"description": "",
+									"label": "CSF global",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								}
+							]
+						},
+						{
+							"code": "white_matter_volume",
+							"label": "White matter volume",
+							"variables": [{
+									"code": "rightcerebellumwhitematter",
+									"description": "",
+									"label": "Right Cerebellum White Matter",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								},
+								{
+									"code": "leftcerebellumwhitematter",
+									"description": "",
+									"label": "Left Cerebellum White Matter",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								},
+								{
+									"code": "rightcerebralwhitematter",
+									"description": "",
+									"label": "Right Cerebral White Matter",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								},
+								{
+									"code": "leftcerebralwhitematter",
+									"description": "",
+									"label": "Left Cerebral White Matter",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								},
+								{
+									"code": "opticchiasm",
+									"description": "",
+									"label": "Optic chiasm",
+									"length": 20,
+									"methodology": "lren-nmm-volumes",
+									"type": "real",
+									"units": "cm3"
+								}
+							]
+						},
+						{
+							"code": "grey_matter_volume",
+							"groups": [{
+									"code": "cerebellum",
+									"label": "Cerebellum",
+									"variables": [{
+											"code": "cerebellarvermallobulesviiix",
+											"description": "",
+											"label": "Cerebellar Vermal Lobules VIII-X",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "cerebellarvermallobulesvivii",
+											"description": "",
+											"label": "Cerebellar Vermal Lobules VI-VII",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "cerebellarvermallobulesiv",
+											"description": "",
+											"label": "Cerebellar Vermal Lobules I-V",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftcerebellumexterior",
+											"description": "",
+											"label": "Left Cerebellum Exterior",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightcerebellumexterior",
+											"description": "",
+											"label": "Right Cerebellum Exterior",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										}
+									]
+								},
+								{
+									"code": "cerebral_nuclei",
+									"groups": [{
+											"code": "basal_ganglia",
+											"label": "Basal Ganglia",
+											"variables": [{
+													"code": "rightbasalforebrain",
+													"description": "",
+													"label": "Right Basal Forebrain",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												},
+												{
+													"code": "leftbasalforebrain",
+													"description": "",
+													"label": "Left Basal Forebrain",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												},
+												{
+													"code": "rightaccumbensarea",
+													"description": "",
+													"label": "Right Accumbens Area",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												},
+												{
+													"code": "leftaccumbensarea",
+													"description": "",
+													"label": "Left Accumbens Area",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												},
+												{
+													"code": "rightcaudate",
+													"description": "",
+													"label": "Right Caudate",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												},
+												{
+													"code": "leftcaudate",
+													"description": "",
+													"label": "Left Caudate",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												},
+												{
+													"code": "rightpallidum",
+													"description": "",
+													"label": "Right Pallidum",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												},
+												{
+													"code": "leftpallidum",
+													"description": "",
+													"label": "Left Pallidum",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												},
+												{
+													"code": "rightputamen",
+													"description": "",
+													"label": "Right Putamen",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												},
+												{
+													"code": "leftputamen",
+													"description": "",
+													"label": "Left Putamen",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												}
+											]
+										},
+										{
+											"code": "amygdala",
+											"label": "Amygdala",
+											"variables": [{
+													"code": "rightamygdala",
+													"description": "",
+													"label": "Right Amygdala",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												},
+												{
+													"code": "leftamygdala",
+													"description": "",
+													"label": "Left Amygdala",
+													"length": 20,
+													"methodology": "lren-nmm-volumes",
+													"type": "real",
+													"units": "cm3"
+												}
+											]
+										}
+									],
+									"label": "Cerebral nuclei"
+								},
+								{
+									"code": "limbic",
+									"label": "Limbic",
+									"variables": [{
+											"code": "righthippocampus",
+											"description": "",
+											"label": "Right Hippocampus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "lefthippocampus",
+											"description": "",
+											"label": "Left Hippocampus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightthalamusproper",
+											"description": "",
+											"label": "Right Thalamus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftthalamusproper",
+											"description": "",
+											"label": "Left Thalamus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightacgganteriorcingulategyrus",
+											"description": "",
+											"label": "Right anterior cingulate gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftacgganteriorcingulategyrus",
+											"description": "",
+											"label": "Left anterior cingulate gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightententorhinalarea",
+											"description": "",
+											"label": "Right entorhinal area",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftententorhinalarea",
+											"description": "",
+											"label": "Left entorhinal area",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightmcggmiddlecingulategyrus",
+											"description": "",
+											"label": "Right middle cingulate gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftmcggmiddlecingulategyrus",
+											"description": "",
+											"label": "Left middle cingulate gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightpcggposteriorcingulategyrus",
+											"description": "",
+											"label": "Right posterior cingulate gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftpcggposteriorcingulategyrus",
+											"description": "",
+											"label": "Left posterior cingulate gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightphgparahippocampalgyrus",
+											"description": "",
+											"label": "Right parahippocampal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftphgparahippocampalgyrus",
+											"description": "",
+											"label": "Left parahippocampal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										}
+									]
+								},
+								{
+									"code": "temporal",
+									"label": "Temporal",
+									"variables": [{
+											"code": "rightfugfusiformgyrus",
+											"description": "",
+											"label": "Right fusiform gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftfugfusiformgyrus",
+											"description": "",
+											"label": "Left fusiform gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightitginferiortemporalgyrus",
+											"description": "",
+											"label": "Right inferior temporal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftitginferiortemporalgyrus",
+											"description": "",
+											"label": "Left inferior temporal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightmtgmiddletemporalgyrus",
+											"description": "",
+											"label": "Right middle temporal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftmtgmiddletemporalgyrus",
+											"description": "",
+											"label": "Left middle temporal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightppplanumpolare",
+											"description": "",
+											"label": "Right planum polare",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftppplanumpolare",
+											"description": "",
+											"label": "Left planum polare",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightptplanumtemporale",
+											"description": "",
+											"label": "Right planum temporale",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftptplanumtemporale",
+											"description": "",
+											"label": "Left planum temporale",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightstgsuperiortemporalgyrus",
+											"description": "",
+											"label": "Right superior temporal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftstgsuperiortemporalgyrus",
+											"description": "",
+											"label": "Left superior temporal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "righttmptemporalpole",
+											"description": "",
+											"label": "Right temporal pole",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "lefttmptemporalpole",
+											"description": "",
+											"label": "Left temporal pole",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightttgtransversetemporalgyrus",
+											"description": "",
+											"label": "Right transverse temporal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftttgtransversetemporalgyrus",
+											"description": "",
+											"label": "Left transverse temporal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										}
+									]
+								},
+								{
+									"code": "occipital",
+									"label": "Occipital",
+									"variables": [{
+											"code": "rightcalccalcarinecortex",
+											"description": "",
+											"label": "Right calcarine cortex",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftcalccalcarinecortex",
+											"description": "",
+											"label": "Left calcarine cortex",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightcuncuneus",
+											"description": "",
+											"label": "Right cuneus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftcuncuneus",
+											"description": "",
+											"label": "Left cuneus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightioginferioroccipitalgyrus",
+											"description": "",
+											"label": "Right inferior occipital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftioginferioroccipitalgyrus",
+											"description": "",
+											"label": "Left inferior occipital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightliglingualgyrus",
+											"description": "",
+											"label": "Right lingual gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftliglingualgyrus",
+											"description": "",
+											"label": "Left lingual gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightmogmiddleoccipitalgyrus",
+											"description": "",
+											"label": "Right middle occipital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftmogmiddleoccipitalgyrus",
+											"description": "",
+											"label": "Left middle occipital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightocpoccipitalpole",
+											"description": "",
+											"label": "Right occipital pole",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftocpoccipitalpole",
+											"description": "",
+											"label": "Left occipital pole",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightofugoccipitalfusiformgyrus",
+											"description": "",
+											"label": "Right occipital fusiform gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftofugoccipitalfusiformgyrus",
+											"description": "",
+											"label": "Left occipital fusiform gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightsogsuperioroccipitalgyrus",
+											"description": "",
+											"label": "Right superior occipital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftsogsuperioroccipitalgyrus",
+											"description": "",
+											"label": "Left superior occipital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										}
+									]
+								},
+								{
+									"code": "parietal",
+									"label": "Parietal",
+									"variables": [{
+											"code": "rightangangulargyrus",
+											"description": "",
+											"label": "Right angular gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftangangulargyrus",
+											"description": "",
+											"label": "Left angular gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightmpogpostcentralgyrusmedialsegment",
+											"description": "",
+											"label": "Right postcentral gyrus medial segment",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftmpogpostcentralgyrusmedialsegment",
+											"description": "",
+											"label": "Left postcentral gyrus medial segment",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightpcuprecuneus",
+											"description": "",
+											"label": "Right precuneus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftpcuprecuneus",
+											"description": "",
+											"label": "Left precuneus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightpogpostcentralgyrus",
+											"description": "",
+											"label": "Right postcentral gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftpogpostcentralgyrus",
+											"description": "",
+											"label": "Left postcentral gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightsmgsupramarginalgyrus",
+											"description": "",
+											"label": "Right supramarginal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftsmgsupramarginalgyrus",
+											"description": "",
+											"label": "Left supramarginal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightsplsuperiorparietallobule",
+											"description": "",
+											"label": "Right superior parietal lobule",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftsplsuperiorparietallobule",
+											"description": "",
+											"label": "Left superior parietal lobule",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										}
+									]
+								},
+								{
+									"code": "frontal",
+									"label": "Frontal",
+									"variables": [{
+											"code": "rightaorganteriororbitalgyrus",
+											"description": "",
+											"label": "Right anterior orbital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftaorganteriororbitalgyrus",
+											"description": "",
+											"label": "Left anterior orbital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightcocentraloperculum",
+											"description": "",
+											"label": "Right central operculum",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftcocentraloperculum",
+											"description": "",
+											"label": "Left central operculum",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightfofrontaloperculum",
+											"description": "",
+											"label": "Right frontal operculum",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftfofrontaloperculum",
+											"description": "",
+											"label": "Left frontal operculum",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightfrpfrontalpole",
+											"description": "",
+											"label": "Right frontal pole",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftfrpfrontalpole",
+											"description": "",
+											"label": "Left frontal pole",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightgregyrusrectus",
+											"description": "",
+											"label": "Right gyrus rectus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftgregyrusrectus",
+											"description": "",
+											"label": "Left gyrus rectus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightlorglateralorbitalgyrus",
+											"description": "",
+											"label": "Right lateral orbital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftlorglateralorbitalgyrus",
+											"description": "",
+											"label": "Left lateral orbital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightmfcmedialfrontalcortex",
+											"description": "",
+											"label": "Right medial frontal cortex",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftmfcmedialfrontalcortex",
+											"description": "",
+											"label": "Left medial frontal cortex",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightmfgmiddlefrontalgyrus",
+											"description": "",
+											"label": "Right middle frontal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftmfgmiddlefrontalgyrus",
+											"description": "",
+											"label": "Left middle frontal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightmorgmedialorbitalgyrus",
+											"description": "",
+											"label": "Right medial orbital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftmorgmedialorbitalgyrus",
+											"description": "",
+											"label": "Left medial orbital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightmprgprecentralgyrusmedialsegment",
+											"description": "",
+											"label": "Right precentral gyrus medial segment",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftmprgprecentralgyrusmedialsegment",
+											"description": "",
+											"label": "Left precentral gyrus medial segment",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightmsfgsuperiorfrontalgyrusmedialsegment",
+											"description": "",
+											"label": "Right superior frontal gyrus medial segment",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftmsfgsuperiorfrontalgyrusmedialsegment",
+											"description": "",
+											"label": "Left superior frontal gyrus medial segment",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightopifgopercularpartoftheinferiorfrontalgyrus",
+											"description": "",
+											"label": "Right opercular part of the inferior frontal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftopifgopercularpartoftheinferiorfrontalgyrus",
+											"description": "",
+											"label": "Left opercular part of the inferior frontal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightorifgorbitalpartoftheinferiorfrontalgyrus",
+											"description": "",
+											"label": "Right orbital part of the inferior frontal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftorifgorbitalpartoftheinferiorfrontalgyrus",
+											"description": "",
+											"label": "Left orbital part of the inferior frontal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightpoparietaloperculum",
+											"description": "",
+											"label": "Right parietal operculum",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftpoparietaloperculum",
+											"description": "",
+											"label": "Left parietal operculum",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightporgposteriororbitalgyrus",
+											"description": "",
+											"label": "Right posterior orbital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftporgposteriororbitalgyrus",
+											"description": "",
+											"label": "Left posterior orbital gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightprgprecentralgyrus",
+											"description": "",
+											"label": "Right precentral gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftprgprecentralgyrus",
+											"description": "",
+											"label": "Left precentral gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightscasubcallosalarea",
+											"description": "",
+											"label": "Right subcallosal area",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftscasubcallosalarea",
+											"description": "",
+											"label": "Left subcallosal area",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightsfgsuperiorfrontalgyrus",
+											"description": "",
+											"label": "Right superior frontal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftsfgsuperiorfrontalgyrus",
+											"description": "",
+											"label": "Left superior frontal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightsmcsupplementarymotorcortex",
+											"description": "",
+											"label": "Right supplementary motor cortex",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftsmcsupplementarymotorcortex",
+											"description": "",
+											"label": "Left supplementary motor cortex",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "righttrifgtriangularpartoftheinferiorfrontalgyrus",
+											"description": "",
+											"label": "Right triangular part of the inferior frontal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "lefttrifgtriangularpartoftheinferiorfrontalgyrus",
+											"description": "",
+											"label": "Left triangular part of the inferior frontal gyrus",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										}
+									]
+								},
+								{
+									"code": "insula",
+									"label": "Insula",
+									"variables": [{
+											"code": "rightainsanteriorinsula",
+											"description": "",
+											"label": "Right anterior insula",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftainsanteriorinsula",
+											"description": "",
+											"label": "Left anterior insula",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "rightpinsposteriorinsula",
+											"description": "",
+											"label": "Right posterior insula",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftpinsposteriorinsula",
+											"description": "",
+											"label": "Left posterior insula",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										}
+									]
+								},
+								{
+									"code": "diencephalon",
+									"label": "Diencephalon",
+									"variables": [{
+											"code": "rightventraldc",
+											"description": "",
+											"label": "Right Ventral DC",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										},
+										{
+											"code": "leftventraldc",
+											"description": "",
+											"label": "Left Ventral DC",
+											"length": 20,
+											"methodology": "lren-nmm-volumes",
+											"type": "real",
+											"units": "cm3"
+										}
+									]
+								}
+							],
+							"label": "Grey matter volume"
+						}
+					],
+					"label": "LREN Atlas",
+					"variables": [{
+							"code": "tiv",
+							"description": "Total intra-cranial volume",
+							"label": "TIV",
+							"methodology": "lren-nmm-volumes",
+							"type": "real",
+							"units": "cm3"
+						},
+						{
+							"code": "brainstem",
+							"description": "Brainstem volume",
+							"label": "Brainstem",
+							"methodology": "lren-nmm-volumes",
+							"type": "real",
+							"units": "cm3"
+						}
+					]
+				}],
+				"label": "Brain anatomy"
+			}],
+			"label": "Brain"
+		},
+		{
+			"code": "demographics",
+			"label": "Demographics",
+			"variables": [{
+					"code": "subjectageyears",
+					"description": "Subject age in years.",
+					"label": "Age Years",
+					"length": 3,
+					"maxValue": 130,
+					"methodology": "mip-cde",
+					"minValue": 0,
+					"type": "integer",
+					"units": "years"
+				},
+				{
+					"code": "subjectagemonths",
+					"description": "Months part of subject age. (Add it to subject age in years to get a better precision).",
+					"label": "Age Months",
+					"length": 2,
+					"maxValue": 11,
+					"methodology": "mip-cde",
+					"minValue": 0,
+					"type": "integer",
+					"units": "months"
+				},
+				{
+					"code": "agegroup",
+					"description": "Age Group",
+					"enumerations": [{
+							"code": "-50y",
+							"label": "-50y"
+						},
+						{
+							"code": "50-59y",
+							"label": "50-59y"
+						},
+						{
+							"code": "60-69y",
+							"label": "60-69y"
+						},
+						{
+							"code": "70-79y",
+							"label": "70-79y"
+						},
+						{
+							"code": "+80y",
+							"label": "+80y"
+						}
+					],
+					"label": "Age Group",
+					"methodology": "mip-cde",
+					"type": "polynominal"
+				},
+				{
+					"code": "gender",
+					"description": "Gender of the patient - Sex assigned at birth",
+					"enumerations": [{
+							"code": "M",
+							"label": "Male"
+						},
+						{
+							"code": "F",
+							"label": "Female"
+						}
+					],
+					"label": "Gender",
+					"length": 1,
+					"methodology": "mip-cde",
+					"type": "binominal"
+				},
+				{
+					"code": "handedness",
+					"description": "Describes the tendency of the patient to use either the right or the left hand more naturally than the other.",
+					"enumerations": [{
+							"code": "R",
+							"label": "Right"
+						},
+						{
+							"code": "L",
+							"label": "Left"
+						},
+						{
+							"code": "A",
+							"label": "Ambidextrous"
+						}
+					],
+					"label": "Handedness",
+					"length": 1,
+					"methodology": "mip-cde",
+					"type": "polynominal"
+				}
+			]
+		},
+		{
+			"code": "clinical",
+			"groups": [{
+					"code": "diagnosis",
+					"label": "Diagnosis",
+					"variables": [{
+						"code": "clmcategory",
+						"description": "Terms aggregating illnesses into classes. Note that the diagnosis in this categories are given only for the CLM data set.",
+						"enumerations": [{
+								"code": "Alzheimer''s disease, atypical or mixed type",
+								"label": "Alzheimer''s disease, atypical or mixed type"
+							},
+							{
+								"code": "Alzheimer''s disease",
+								"label": "Alzheimer''s disease"
+							},
+							{
+								"code": "Transient global amnesia",
+								"label": "Transient global amnesia"
+							},
+							{
+								"code": "Dementia - other",
+								"label": "Dementia - other"
+							},
+							{
+								"code": "Frontotemporal dementia",
+								"label": "Frontotemporal dementia"
+							},
+							{
+								"code": "HIV",
+								"label": "HIV"
+							},
+							{
+								"code": "MCI",
+								"label": "MCI"
+							},
+							{
+								"code": "Parkinson''s disease",
+								"label": "Parkinson''s disease"
+							},
+							{
+								"code": "Subjective cognitive complaints",
+								"label": "Subjective cognitive complaints"
+							},
+							{
+								"code": "Subjective cognitive complaints with multiple etiology",
+								"label": "Subjective cognitive complaints with multiple etiology"
+							},
+							{
+								"code": "Cognitive impairments - other",
+								"label": "Cognitive impairments - other"
+							},
+							{
+								"code": "Cognitive impairments with mixed etiology",
+								"label": "Cognitive impairments with mixed etiology"
+							},
+							{
+								"code": "Cognitive impairments with psychiatric etiology",
+								"label": "Cognitive impairments with psychiatric etiology"
+							},
+							{
+								"code": "Vascular",
+								"label": "Vascular"
+							}
+						],
+						"label": "CLM Category",
+						"methodology": "mip-cde",
+						"type": "polynominal"
+					}, {
+						"code": "alzheimerbroadcategory",
+						"description": "There will be two broad categories taken into account. Alzheimer''s disease (AD) in which the diagnostic is 100% certain and \"Other\" comprising the rest of Alzheimer''s related categories. The \"Other\" category refers to Alzheime''s related diagnosis which origin can be traced to other pathology eg. vascular. In this category MCI diagnosis can also be found. In summary, all Alzheimer''s related diagnosis that are not pure.",
+						"enumerations": [{
+							"code": "AD",
+							"label": "Alzheimer''s disease"
+						}, {
+							"code": "CN",
+							"label": "Cognitively Normal"
+						}, {
+							"code": "Other",
+							"label": "Other"
+						}],
+						"label": "Alzheimer Broad Category",
+						"methodology": "mip-cde",
+						"type": "polynominal"
+					}, {
+						"code": "parkinsonbroadcategory",
+						"description": "There will be two broad categories taken into account. Parkinson''s disease without disability or light disability: Without fluctuation of the effect. Dementia in Parkinson''s disease",
+						"enumerations": [{
+							"code": "PD",
+							"label": "Dementia in Parkinson''s disease"
+						}, {
+							"code": "CN",
+							"label": "Healthy control"
+						}, {
+							"code": "Other",
+							"label": "Parkinson''s disease without disability or light disability: Without fluctuation of the effect"
+						}],
+						"label": "Parkinson Broad Category",
+						"methodology": "mip-cde",
+						"type": "polynominal"
+					}, {
+						"code": "neurogenerativescategories",
+						"description": "There will be two broad categories taken into account. Parkinson''s disease without disability or light disability: Without fluctuation of the effect. Dementia in Parkinson''s disease",
+						"enumerations": [{
+							"code": "PD",
+							"label": "Parkinson''s disease"
+						}, {
+							"code": "AD",
+							"label": "Alzheimer''s disease"
+						}, {
+							"code": "HD",
+							"label": "Huntington''s disease"
+						}, {
+							"code": "ALS",
+							"label": "Amyotrophic lateral sclerosis"
+						}, {
+							"code": "BD",
+							"label": "Batten disease"
+						}, {
+							"code": "MCI",
+							"label": "MCI"
+						}, {
+							"code": "LBD",
+							"label": "Lewy body dementia"
+						}, {
+							"code": "CJD",
+							"label": "Maladie de Creutzfeldt-Jakob"
+						}],
+						"label": "Neurogeneratives categories",
+						"methodology": "mip-cde",
+						"type": "polynominal"
+					}, {
+						"code": "adnicategory",
+						"description": "Terms aggregating illnesses into classes. Note that the diagnosis in this categories are given only for the ADNI data set.",
+						"enumerations": [{
+							"code": "AD",
+							"label": "Alzheimer''s Disease"
+						}, {
+							"code": "MCI",
+							"label": "Mild Cognitive Impairment"
+						}, {
+							"code": "CN",
+							"label": "Cognitively Normal"
+						}],
+						"label": "ADNI category",
+						"methodology": "mip-cde",
+						"type": "polynominal"
+					}, {
+						"code": "edsdcategory",
+						"description": "Terms aggregating illnesses into classes. Note that the diagnosis in this categories are given only for the EDSD data set.",
+						"enumerations": [{
+							"code": "AD",
+							"label": "Alzheimer''s Disease"
+						}, {
+							"code": "MCI",
+							"label": "Mild Cognitive Impairment"
+						}, {
+							"code": "CN",
+							"label": "Cognitively Normal"
+						}],
+						"label": "EDSD category",
+						"methodology": "mip-cde",
+						"type": "polynominal"
+					}, {
+						"code": "ppmicategory",
+						"description": "Terms aggregating the Parkinson''s diseases into classes. For this instance the diagnosis given at enrollment is taken as the clinical diagnosis. Note that the diagnosis in this categories are given only for the PPMI data set.",
+						"enumerations": [{
+							"code": "PD",
+							"label": "Parkinson disease"
+						}, {
+							"code": "HC",
+							"label": "Healthy controls"
+						}, {
+							"code": "PRODROMA",
+							"label": "Prodromal"
+						}, {
+							"code": "GENPD",
+							"label": "Genetic PD patients with a mutation (LRRK2, GBA or SNCA)"
+						}, {
+							"code": "REGUN",
+							"label": "Genetic Unaffected patients with a mutation (LRRK2, GBA or SNCA)"
+						}, {
+							"code": "REGPD",
+							"label": "Genetic registry PD subjects with a mutation (LRRK2, GBA, or SNCA)"
+						}, {
+							"code": "REGUN",
+							"label": "Genetic registry unaffected subjects with a mutation (LRRK2, GBA, or SNCA)"
+						}],
+						"label": "PPMI category",
+						"methodology": "mip-cde",
+						"type": "polynominal"
+					}]
+				},
+				{
+					"code": "score",
+					"groups": [{
+							"code": "mmse",
+							"label": "MMSE",
+							"variables": [{
+								"code": "minimentalstate",
+								"description": "The Mini–Mental State Examination (MMSE) or Folstein test is a 30-point questionnaire that is used extensively in clinical and research settings to measure cognitive impairment. It is commonly used to screen for dementia.",
+								"label": "MMSE Total scores",
+								"maxValue": 30,
+								"methodology": "mip-cde",
+								"minValue": 0,
+								"type": "integer"
+							}]
+						}, {
+							"code": "moca",
+							"label": "MoCA",
+							"variables": [{
+								"code": "montrealcognitiveassessment",
+								"description": "The Montreal Cognitive Assessment (MoCA) was designed as a rapid screening instrument for mild cognitive dysfunction. It assesses different cognitive domains: attention and concentration, executive functions, memory, language, visuoconstructional skills, conceptual thinking, calculations, and orientation. MoCA Total Scores refer to the final count obtained by patients after the complete test is performed.",
+								"label": "MoCA Total",
+								"maxValue": 30,
+								"methodology": "mip-cde",
+								"minValue": 0,
+								"type": "integer"
+							}]
+						}, {
+							"code": "updrs",
+							"label": "UPDRS",
+							"variables": [{
+									"code": "updrstotal",
+									"description": "The unified Parkinson''s disease rating scale (UPDRS) is used to follow the longitudinal course of Parkinson''s disease. The UPD rating scale is the most commonly used scale in the clinical study of Parkinson''s disease.",
+									"label": "UPDRS Total",
+									"maxValue": 172,
+									"methodology": "mip-cde",
+									"minValue": 0,
+									"type": "integer"
+								},
+								{
+									"code": "updrshy",
+									"description": "The Hoehn and Yahr scale (HY) is a widely used clinical rating scale, which defines broad categories of motor function in Parkinson’s disease (PD). It captures typical patterns of progressive motor impairment.",
+									"label": "UPDRS HY",
+									"maxValue": 5,
+									"methodology": "mip-cde",
+									"minValue": 0,
+									"type": "integer"
+								}
+							]
+						}
+
+					],
+					"label": "Score"
+				}
+			],
+			"label": "Clinical"
+		},
+		{
+			"code": "provenance",
+			"label": "Provenance",
+			"variables": [{
+				"code": "dataset",
+				"label": "Dataset",
+				"description": "Variable used to differentiate datasets.",
+				"type": "polynominal",
+				"enumerations": [{
+						"code": "clm",
+						"label": "CLM"
+					},
+					{
+						"code": "edsd",
+						"label": "EDSD"
+					},
+					{
+						"code": "adni",
+						"label": "ADNI"
+					},
+					{
+						"code": "ppmi",
+						"label": "PPMI"
+					}
+				]
+			}]
+		}
+	],
+	"label": "root"
+}
