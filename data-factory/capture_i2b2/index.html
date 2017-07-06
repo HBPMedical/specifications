@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.24.1" />
-    <meta name="description" content="Specifications for the Medical Informatics Platform of the Human Brain Project.">
+    <meta name="description" content="Database with an I2B2 schema for storing all information harvested onsite">
 <meta name="author" content="HBP SP8 team">
 
-    <title>Credits :: MIP specifications</title>
+    <title>Capture Database :: MIP specifications</title>
     <link rel="shortcut icon" href="/specifications/images/favicon.png" type="image/x-icon" />
     <link href="/specifications/css/nucleus.css" rel="stylesheet">
     <link href="/specifications/css/font-awesome.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     
 
   </head>
-  <body class="" data-url="/specifications/credits/">
+  <body class="" data-url="/specifications/data-factory/capture_i2b2/">
     <nav id="sidebar" class="showVisitedLinks">
   <div id="header-wrapper">
     <div id="header">
@@ -170,7 +170,7 @@ Medical Informatics Platform</p>
 
 
 <li data-nav-id="/specifications/data-factory/" class="dd-item 
-
+parent
 
 
 ">
@@ -178,7 +178,7 @@ Medical Informatics Platform</p>
     <span><b>3. </b>Data Factory</span>
 
     
-    <i class="fa fa-angle-right fa-lg category-icon"></i>
+    <i class="fa fa-angle-down fa-lg category-icon"></i>
     
     
     <i style="color:grey" class="fa fa-check read-icon"></i>
@@ -209,7 +209,7 @@ Medical Informatics Platform</p>
         
          
           <li data-nav-id="/specifications/data-factory/capture_i2b2/" class="dd-item
-         
+         active
           ">
             <a href="/specifications/data-factory/capture_i2b2/">
             <span>Capture Database</span> 
@@ -382,7 +382,7 @@ Medical Informatics Platform</p>
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/credits.md" target="blank">
+              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-factory/capture_i2b2.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Edit page
               </a>
@@ -400,7 +400,17 @@ Medical Informatics Platform</p>
                 <span class="links">
                 
 
- Credits
+
+
+
+
+
+
+ <a href='/specifications/'>MIP specs</a> > <a href='/specifications/data-factory/'>Data Factory</a> > Capture Database
+
+ 
+
+ 
 
    
                 </span>
@@ -411,8 +421,10 @@ Medical Informatics Platform</p>
 <ul>
 <li>
 <ul>
-<li><a href="#github-contributors">Github contributors</a></li>
-<li><a href="#tooling">Tooling</a></li>
+<li>
+<ul>
+<li><a href="#database-with-an-i2b2-schema-storing-all-information-harvested-onsite">Database with an I2B2 schema storing all information harvested onsite</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -424,7 +436,7 @@ Medical Informatics Platform</p>
         
         <div id="body-inner">
           
-            <h1>Credits</h1>
+            <h1>Capture Database</h1>
           
 
 
@@ -432,57 +444,28 @@ Medical Informatics Platform</p>
 
 
 
-<h2 id="github-contributors">Github contributors</h2>
+<h3 id="database-with-an-i2b2-schema-storing-all-information-harvested-onsite">Database with an I2B2 schema storing all information harvested onsite</h3>
 
-<style type="text/css">
-.ghContributors{
-display:flex;
-flex-flow:  wrap;
-align-content: flex-start
-}
-.ghContributors > div{
-width: 50% ;
-display: inline-flex;
-margin-bottom: 5px;
-}
-.ghContributors > div label{
-padding-left: 4px ;
-}
-.ghContributors > div span{
-font-size: x-small;
-padding-left: 4px ;
-}
-</style>
-<div class="ghContributors">
-  
-  
-  <div>
-    <img src="https://avatars1.githubusercontent.com/u/104937?v=3" class="inline" width="32" height="32" style="height: 32px;height: 32px;margin-bottom:.25em; vertical-align:middle; ">
-    <label><a href="https://github.com/ludovicc">@ludovicc</a></label>
-    <span class="contributions">35 commits</span>
-  </div>
-  
-</div>
+<p>The <strong>Capture</strong> database enables the collection of lots of information coming from the hospital EHR data or
+from research cohort metadata in an unaltered way.</p>
 
+<p>At this point, no attempt is made to select or transform the data to fit into the <a href="../cde">MIP Common Data Elements</a>.</p>
 
-<h2 id="tooling">Tooling</h2>
+<p>This database serves purely the data curation process: data elements are identified, described, collected and managed in a database.</p>
 
-<ul>
-<li><a href="https://www.netlify.com">Netlify</a> - Continuous deployment and hosting of this documentation</li>
-<li><a href="https://gohugo.io/">Hugo</a> 
+<p>To support the capture of as much information as possible, we have adopted the widely used I2B2 database schema,
+a variant of the star schema commonly used in <a href="https://en.wikipedia.org/wiki/Data_mart">data marts</a></p>
 
-<span class="fa fa-smile-o" aria-hidden="true"></span>
+<p><img src="/specifications/images/i2b2_schema.gif" alt="I2B2 star schema" /></p>
 
-</li>
-<li><a href="https://github.com/vjeantet/hugo-theme-docdock/">hugo-theme-docdock</a> 
-
-<span class="fa fa-book" aria-hidden="true"></span>
-
-</li>
-</ul>
+<p>An interesting consequence of this choice is that as several research databases and hospital data exports for research use I2B2,
+the data importation process is a simple database copy.</p>
 
 
 <footer class=" footline" >
+	
+	    <i class='fa fa-user'></i> <a href="mailto:ludovic.claude@chuv.ch">Ludovic CLAUDE</a>  <i class='fa fa-calendar'></i> 04/07/2017
+	    </div>
 	
 </footer>
 
@@ -584,6 +567,21 @@ padding-left: 4px ;
             
                 
                     
+                    
+                
+                
+                
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
                 
@@ -606,16 +604,6 @@ padding-left: 4px ;
             
                 
                     
-                
-                
-                
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -627,6 +615,9 @@ padding-left: 4px ;
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -710,8 +701,10 @@ padding-left: 4px ;
 
 
         
+            <a class="nav nav-prev" href="/specifications/data-factory/pipelines/" title="Processing pipelines"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/specifications/data-flow/" title="Data flow" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/specifications/data-factory/cde/" title="Common Data Elements" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

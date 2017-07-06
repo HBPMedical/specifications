@@ -60,20 +60,27 @@
 	"title": "Processing pipelines",
 	"tags": [],
 	"description": "",
-	"content": " The processing pipelines provided out-of-the-box by the Data Factory enable an automated processing of data made available to MIP Local or MIP Federated.\nOverview of all pipelines graph LR data_in(Anonymised data from Data Capture or other sources) data_out(Research-grade data) reorg_pipeline Reorganisation pipeline] ehr_pipeline EHR ingestion pipeline] metadata_pipeline Metadata ingestion pipeline] preprocessing_pipeline MRI pre-processing and feature extraction pipeline] normalisation_pipeline Normalisation and data export pipeline] data_in -- reorg_pipeline reorg_pipeline -- ehr_pipeline reorg_pipeline -- metadata_pipeline reorg_pipeline -- preprocessing_pipeline ehr_pipeline -- normalisation_pipeline metadata_pipeline -- normalisation_pipeline preprocessing_pipeline -- normalisation_pipeline normalisation_pipeline -- data_out  Reorganisation pipeline This pipeline takes data organised on the disk in its original format and reorganise it into something that fits the layout expected by the following pipelines (EHR, pre-processing, metadata).\ngraph LR data_in(Anonymised data from Data Capture or other sources) data_out(Reorganised data) processing Reorganisation of MRI scans and EHR data] data_in -- processing processing -- data_out  EHR pipeline This pipeline captures as many variables as possible from the patient records and stores the data into a database compliant with I2B2 schema (\u0026lsquo;I2B2 capture\u0026rsquo; database)\ngraph LR data_in(CSV files or other files containing EHR data) data_out(I2B2 capture database) processing ETL with light mapping of EHR data to I2B2 schema] data_in -- processing processing -- data_out  Metadata pipeline This pipeline collects the information associated with MRI scans and present either in DICOM headers or in associated metadata files and store in into the (\u0026lsquo;I2B2 capture\u0026rsquo; database)\ngraph LR data_in(Metadata extracted from MRI scans) data_out(I2B2 capture database) processing ETL with light mapping of metadata to I2B2 schema] data_in -- processing processing -- data_out  MRI pre-processing and feature extraction pipeline This pipeline takes MRI data organised following the directory structure /PatientID/StudyID/SeriesProtocol/SeriesID/ and applies a series of processing steps on it, including:\n conversion from DICOM to Nifti Neuromorphometric pipeline Quality control  For each step, data provenance is tracked and stored in a \u0026lsquo;Data Catalog\u0026rsquo; database.\ngraph LR data_in(MRI scans) data_out(Features stored into 'I2B2 capture' database) processing Neuromorphometric pipeline + quality control + provenance] data_in -- processing processing -- data_out  Normalisation and data export pipeline graph LR data_in('I2B2 capture' database) data_normalised('I2B2 MIP CDE' database) data_out(Features table containing research-grade data) processing Neuromorphometric pipeline + storage of features and provenance] export Export of MIP CDE variables and specific variables to a Features table] data_in -- processing processing -- data_normalised data_normalised -- export export -- data_out  "
+	"content": " The processing pipelines provided out-of-the-box by the Data Factory enable an automated processing of data made available to MIP Local or MIP Federated.\nOverview of all pipelines graph LR data_in(Anonymised data from Data Capture or other sources) data_out(Research-grade data) reorg_pipeline Reorganisation pipeline] ehr_pipeline EHR curation pipeline] metadata_pipeline Metadata curation pipeline] preprocessing_pipeline MRI pre-processing and feature extraction pipeline] normalisation_pipeline Normalisation and data export pipeline] data_in -- reorg_pipeline reorg_pipeline -- ehr_pipeline reorg_pipeline -- metadata_pipeline reorg_pipeline -- preprocessing_pipeline ehr_pipeline -- normalisation_pipeline metadata_pipeline -- normalisation_pipeline preprocessing_pipeline -- normalisation_pipeline normalisation_pipeline -- data_out  Reorganisation pipeline This pipeline takes data organised on the disk in its original format and reorganise it into something that fits the layout expected by the following pipelines (EHR, pre-processing, metadata).\ngraph LR data_in(Anonymised data from Data Capture or other sources) data_out(Reorganised data) processing Reorganisation of MRI scans and EHR data] data_in -- processing processing -- data_out  EHR curation pipeline This pipeline captures as many variables as possible from the patient records and stores the data into a database compliant with I2B2 schema (\u0026lsquo;I2B2 capture\u0026rsquo; database)\ngraph LR data_in(CSV files or other files containing EHR data) data_out(I2B2 capture database) processing ETL with light mapping of EHR data to I2B2 schema] data_in -- processing processing -- data_out  Metadata curation pipeline This pipeline collects the information associated with MRI scans and present either in DICOM headers or in associated metadata files and stores in into the (\u0026lsquo;I2B2 capture\u0026rsquo; database)\ngraph LR data_in(Metadata extracted from MRI scans) data_out(I2B2 capture database) processing ETL with light mapping of metadata to I2B2 schema] data_in -- processing processing -- data_out  MRI pre-processing and feature extraction pipeline This pipeline takes MRI data organised following the directory structure /PatientID/StudyID/SeriesProtocol/SeriesID/ and applies a series of processing steps on it, including:\n Conversion from DICOM to Nifti Neuromorphometric pipeline Quality control  For each step, data provenance is tracked and stored in a \u0026lsquo;Data Catalog\u0026rsquo; database.\ngraph LR data_in(MRI scans) data_out(Features stored into 'I2B2 capture' database) processing Neuromorphometric pipeline + quality control + provenance] data_in -- processing processing -- data_out  Normalisation and data export pipeline This pipeline is triggered on a patient record when there is enough information collected (both EHR and biomarkers from MRI are required). It uses the data mapping and transformation specifications provided by the DGDS committee to select the variables of interest and normalise them into the MIP Common Data Elements reference.\ngraph LR data_in('I2B2 capture' database) data_normalised('I2B2 MIP CDE' database) data_out(Features table containing research-grade data) processing Selection of variables and normalisation] export Export MIP CDE variables and other variables to a Features table] data_in -- processing processing -- data_normalised data_normalised -- export export -- data_out  This pipeline provides the final results produced by the Data Factory.\nFrom Data Factory output specifications The ouput of Data Factory is a set of research-grade data containing the biomarkers extracted from MRI scans and the variables extracted from the patient (or research subject) EHR records.\nThis information is sent to the Hospital Database and provided to the machine learning and statistical analysis algorithms of the Algorithm Factory as well as the distributed queries when the instance of MIP at a hospital is connected to the Federation.   "
 },
 {
-	"uri": "https://hbpmedical.github.io/specifications/data-factory/data_capture_i2b2/",
-	"title": "Data Capture",
+	"uri": "https://hbpmedical.github.io/specifications/data-factory/capture_i2b2/",
+	"title": "Capture Database",
 	"tags": [],
-	"description": "Capture available data and store in into an I2B2 database",
-	"content": ""
+	"description": "Database with an I2B2 schema for storing all information harvested onsite",
+	"content": " Database with an I2B2 schema storing all information harvested onsite The Capture database enables the collection of lots of information coming from the hospital EHR data or from research cohort metadata in an unaltered way.\nAt this point, no attempt is made to select or transform the data to fit into the MIP Common Data Elements.\nThis database serves purely the data curation process: data elements are identified, described, collected and managed in a database.\nTo support the capture of as much information as possible, we have adopted the widely used I2B2 database schema, a variant of the star schema commonly used in data marts\nAn interesting consequence of this choice is that as several research databases and hospital data exports for research use I2B2, the data importation process is a simple database copy.\n"
 },
 {
 	"uri": "https://hbpmedical.github.io/specifications/data-factory/cde/",
 	"title": "Common Data Elements",
 	"tags": [],
 	"description": "Definition of variables for MIP",
+	"content": ""
+},
+{
+	"uri": "https://hbpmedical.github.io/specifications/data-factory/cde_i2b2/",
+	"title": "CDE-normalised database",
+	"tags": [],
+	"description": "Normalise captured data and store it into an I2B2 database",
 	"content": ""
 },
 {
@@ -84,18 +91,11 @@
 	"content": ""
 },
 {
-	"uri": "https://hbpmedical.github.io/specifications/data-factory/data_normalisation_i2b2/",
-	"title": "Data Normalisation",
-	"tags": [],
-	"description": "Normalise captured data and store it into an I2B2 database",
-	"content": ""
-},
-{
 	"uri": "https://hbpmedical.github.io/specifications/data-factory/output/",
 	"title": "Data Factory output",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " The ouput of Data Factory is a set of research-grade data containing the biomarkers extracted from MRI scans and the variables extracted from the patient (or research subject) EHR records.\nThis information is sent to the Hospital Database and provided to the machine learning and statistical analysis algorithms of the Algorithm Factory as well as the distributed queries when the instance of MIP at a hospital is connected to the Federation.\n"
 },
 {
 	"uri": "https://hbpmedical.github.io/specifications/algorithm-factory/",
@@ -103,6 +103,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Chapter X Some Chapter title Lorem ipsum\n"
+},
+{
+	"uri": "https://hbpmedical.github.io/specifications/hospital-database/distributed-queries/",
+	"title": "Distributed queries",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "https://hbpmedical.github.io/specifications/hospital-database/",
@@ -116,7 +123,7 @@
 	"title": "Credits",
 	"tags": [],
 	"description": "",
-	"content": " Github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }  Tooling  Netlify - Continuous deployment and hosting of this documentation Hugo   hugo-theme-docdock    "
+	"content": " Github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @ludovicc 35 commits   Tooling  Netlify - Continuous deployment and hosting of this documentation Hugo   hugo-theme-docdock    "
 },
 {
 	"uri": "https://hbpmedical.github.io/specifications/_header/",
@@ -130,7 +137,7 @@
 	"title": "MIP specs",
 	"tags": [],
 	"description": "",
-	"content": " Specification for the Medical Informatics Platform  Data flow  Flow of data in the platform\n Data Capture  Goals of Data Capture\n Data Factory  Goals of Data Factory\n Algorithm Factory  Chapter X Some Chapter title Lorem ipsum\n Hospital Database  Chapter X Some Chapter title Lorem ipsum\n The different versions of MIP  MIP Local: installed at hospitals and providing only local access to the hospital data MIP Federated  "
+	"content": " Specification for the Medical Informatics Platform  Data flow  Flow of data in the platform\n Data Capture  Goals of Data Capture\n Data Factory  Goals of Data Factory\n Algorithm Factory  Chapter X Some Chapter title Lorem ipsum\n Hospital Database  Chapter X Some Chapter title Lorem ipsum\n The different versions of MIP  MIP Local: installed at hospitals and providing only local access to the hospital data MIP Federated: the next version that will connect hospitals to a master node and enable distributed queries and statistical analysis.  "
 },
 {
 	"uri": "https://hbpmedical.github.io/specifications/categories/",

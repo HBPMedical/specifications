@@ -208,11 +208,11 @@ parent
          
         
          
-          <li data-nav-id="/specifications/data-factory/data_capture_i2b2/" class="dd-item
+          <li data-nav-id="/specifications/data-factory/capture_i2b2/" class="dd-item
          
           ">
-            <a href="/specifications/data-factory/data_capture_i2b2/">
-            <span>Data Capture</span> 
+            <a href="/specifications/data-factory/capture_i2b2/">
+            <span>Capture Database</span> 
             <i style="color:grey" class="fa fa-check read-icon"></i>
 
             </a></li>
@@ -230,22 +230,22 @@ parent
          
         
          
-          <li data-nav-id="/specifications/data-factory/provenance/" class="dd-item
+          <li data-nav-id="/specifications/data-factory/cde_i2b2/" class="dd-item
          
           ">
-            <a href="/specifications/data-factory/provenance/">
-            <span>Provenance</span> 
+            <a href="/specifications/data-factory/cde_i2b2/">
+            <span>CDE-normalised database</span> 
             <i style="color:grey" class="fa fa-check read-icon"></i>
 
             </a></li>
          
         
          
-          <li data-nav-id="/specifications/data-factory/data_normalisation_i2b2/" class="dd-item
+          <li data-nav-id="/specifications/data-factory/provenance/" class="dd-item
          
           ">
-            <a href="/specifications/data-factory/data_normalisation_i2b2/">
-            <span>Data Normalisation</span> 
+            <a href="/specifications/data-factory/provenance/">
+            <span>Provenance</span> 
             <i style="color:grey" class="fa fa-check read-icon"></i>
 
             </a></li>
@@ -311,6 +311,17 @@ parent
     <i style="color:grey" class="fa fa-check read-icon"></i>
   </a>
     <ul>
+        
+         
+          <li data-nav-id="/specifications/hospital-database/distributed-queries/" class="dd-item
+         
+          ">
+            <a href="/specifications/hospital-database/distributed-queries/">
+            <span>Distributed queries</span> 
+            <i style="color:grey" class="fa fa-check read-icon"></i>
+
+            </a></li>
+         
         
         
 
@@ -412,8 +423,8 @@ parent
 <ul>
 <li><a href="#overview-of-all-pipelines">Overview of all pipelines</a></li>
 <li><a href="#reorganisation-pipeline">Reorganisation pipeline</a></li>
-<li><a href="#ehr-pipeline">EHR pipeline</a></li>
-<li><a href="#metadata-pipeline">Metadata pipeline</a></li>
+<li><a href="#ehr-curation-pipeline">EHR curation pipeline</a></li>
+<li><a href="#metadata-curation-pipeline">Metadata curation pipeline</a></li>
 <li><a href="#mri-pre-processing-and-feature-extraction-pipeline">MRI pre-processing and feature extraction pipeline</a></li>
 <li><a href="#normalisation-and-data-export-pipeline">Normalisation and data export pipeline</a></li>
 </ul></li>
@@ -445,8 +456,8 @@ graph LR
         data_in(Anonymised data from Data Capture or other sources)
         data_out(Research-grade data)
         reorg_pipeline> Reorganisation pipeline]
-        ehr_pipeline> EHR ingestion pipeline]
-        metadata_pipeline> Metadata ingestion pipeline]
+        ehr_pipeline> EHR curation pipeline]
+        metadata_pipeline> Metadata curation pipeline]
         preprocessing_pipeline> MRI pre-processing and feature extraction pipeline]
         normalisation_pipeline> Normalisation and data export pipeline]
         data_in --> reorg_pipeline
@@ -473,10 +484,10 @@ graph LR
         processing --> data_out
 </div>
 
-<h2 id="ehr-pipeline">EHR pipeline</h2>
+<h2 id="ehr-curation-pipeline">EHR curation pipeline</h2>
 
 <p>This pipeline captures as many variables as possible from the patient records and stores the
-data into a database compliant with I2B2 schema <a href="../data_capture_i2b2">(&lsquo;I2B2 capture&rsquo; database)</a></p>
+data into a database compliant with I2B2 schema <a href="../capture_i2b2">(&lsquo;I2B2 capture&rsquo; database)</a></p>
 
 <div class="mermaid" align="left" >
 graph LR
@@ -487,10 +498,10 @@ graph LR
         processing --> data_out
 </div>
 
-<h2 id="metadata-pipeline">Metadata pipeline</h2>
+<h2 id="metadata-curation-pipeline">Metadata curation pipeline</h2>
 
 <p>This pipeline collects the information associated with MRI scans and present either in
-DICOM headers or in associated metadata files and store in into the <a href="../data_capture_i2b2">(&lsquo;I2B2 capture&rsquo; database)</a></p>
+DICOM headers or in associated metadata files and stores in into the <a href="../data_capture_i2b2">(&lsquo;I2B2 capture&rsquo; database)</a></p>
 
 <div class="mermaid" align="left" >
 graph LR
@@ -507,7 +518,7 @@ graph LR
 and applies a series of processing steps on it, including:</p>
 
 <ul>
-<li>conversion from DICOM to Nifti</li>
+<li>Conversion from DICOM to Nifti</li>
 <li>Neuromorphometric pipeline</li>
 <li>Quality control</li>
 </ul>
@@ -525,18 +536,45 @@ graph LR
 
 <h2 id="normalisation-and-data-export-pipeline">Normalisation and data export pipeline</h2>
 
+<p>This pipeline is triggered on a patient record when there is enough information collected
+(both EHR and biomarkers from MRI are required). It uses the data mapping and transformation
+specifications provided by the DGDS committee to select the variables of interest and normalise
+them into the <a href="../cde">MIP Common Data Elements</a> reference.</p>
+
 <div class="mermaid" align="left" >
 graph LR
         data_in('I2B2 capture' database)
         data_normalised('I2B2 MIP CDE' database)
         data_out(Features table containing research-grade data)
-        processing> Neuromorphometric pipeline + storage of features and provenance]
-        export> Export of MIP CDE variables and specific variables to a Features table]
+        processing> Selection of variables and normalisation]
+        export> Export MIP CDE variables and other variables to a Features table]
         data_in --> processing
         processing --> data_normalised
         data_normalised --> export
         export --> data_out
 </div>
+
+<p>This pipeline provides the final results produced by the Data Factory.</p>
+
+
+
+	
+		<div class="panel panel-default">
+			<div class="panel-heading">From Data Factory output specifications</div>
+			<div class="panel-body">
+				The ouput of Data Factory is a set of research-grade data containing the biomarkers extracted
+from MRI scans and the variables extracted from the patient (or research subject) EHR records.</p>
+
+<p>This information is sent to the <a href="../../hospital-database">Hospital Database</a> and provided to the
+machine learning and statistical analysis algorithms of the <a href="../algorithm-factory">Algorithm Factory</a>
+as well as the <a href="../../hospital-database/distributed-queries">distributed queries</a> when the instance of
+MIP at a hospital is connected to the Federation.
+			</div>
+		</div>
+	
+
+
+
 
 
 <footer class=" footline" >
@@ -759,6 +797,17 @@ graph LR
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                    
                 
             
         
@@ -770,7 +819,7 @@ graph LR
             <a class="nav nav-prev" href="/specifications/data-factory/input/" title="Data Factory input"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/specifications/data-factory/data_capture_i2b2/" title="Data Capture" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/specifications/data-factory/capture_i2b2/" title="Capture Database" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

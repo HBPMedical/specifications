@@ -48,7 +48,7 @@
   </url>
   
   <url>
-    <loc>https://hbpmedical.github.io/specifications/data-factory/data_capture_i2b2/</loc>
+    <loc>https://hbpmedical.github.io/specifications/data-factory/capture_i2b2/</loc>
     <lastmod>2017-07-04T11:16:30+01:00</lastmod>
   </url>
   
@@ -58,12 +58,12 @@
   </url>
   
   <url>
-    <loc>https://hbpmedical.github.io/specifications/data-factory/provenance/</loc>
+    <loc>https://hbpmedical.github.io/specifications/data-factory/cde_i2b2/</loc>
     <lastmod>2017-07-04T11:16:30+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hbpmedical.github.io/specifications/data-factory/data_normalisation_i2b2/</loc>
+    <loc>https://hbpmedical.github.io/specifications/data-factory/provenance/</loc>
     <lastmod>2017-07-04T11:16:30+01:00</lastmod>
   </url>
   
@@ -75,6 +75,11 @@
   <url>
     <loc>https://hbpmedical.github.io/specifications/algorithm-factory/</loc>
     <lastmod>2017-02-03T17:18:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hbpmedical.github.io/specifications/hospital-database/distributed-queries/</loc>
+    <lastmod>2017-02-03T17:18:42+01:00</lastmod>
   </url>
   
   <url>
