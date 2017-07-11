@@ -9,17 +9,17 @@ toc: true
 weight: 31
 ---
 
-# Requirements
+## Requirements
 
 In order to be pre-processed by the Data Factory, the imaging data have to meet some requirements, both regarding the images format and the images meta-data.
 
-## Images format
+### Images format
 
 - The images must be provided either in DICOM or NIFTI format.
 - The images must be high-resolution (< 1.5 mm) T1-weighted sagittal images.
 - If the dataset contains other types of images (e.g. any fMRI data, T2 images, etc) in addition to the compatible ones, a list of protocol names used and their compatibility status regarding the above criterion has to be provided.
 
-## Images Meta-data
+### Images Meta-data
 
 Imaging meta-data typically are the information contained in the DICOM tags. If the images are provided in NIFTI format or some of the mandatory DICOM tags are missing from the images, those meta-data must be provided in one or several extra file(s) (e.g. json or csv files).
 
