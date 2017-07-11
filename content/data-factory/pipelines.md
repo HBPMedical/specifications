@@ -6,7 +6,7 @@ creatoremail: ludovic.claude@chuv.ch
 lastmodifierdisplayname: Ludovic CLAUDE
 lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
-weight: 32
+weight: 33
 ---
 
 The processing pipelines provided out-of-the-box by the Data Factory enable an
