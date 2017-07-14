@@ -17,7 +17,7 @@ In order to be pre-processed by the Data Factory, the imaging data have to meet 
 
 - The images must be provided either in DICOM or NIFTI format.
 - The images must be high-resolution (max. 1.5 mm) T1-weighted sagittal images.
-- If the dataset contains other types of images (e.g. any fMRI data, T2 images, etc) in addition to the compatible ones, a list of protocol names used and their compatibility status regarding the above criterion has to be provided.
+- If the dataset contains other types of images (that is not meeting the above description, e.g. fMRI data, T2 images, etc), a list of protocol names used and their compatibility status regarding the above criterion has to be provided.
 
 ### Images Meta-data
 
