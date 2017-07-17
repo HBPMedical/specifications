@@ -1,6 +1,6 @@
 ---
 date: 2017-07-11T16:00:35.000Z
-title: Imaging data
+title: Requirements for imaging data
 creatordisplayname: Mirco NASUTI
 creatoremail: mirco.nasuti@chuv.ch
 lastmodifierdisplayname: Mirco NASUTI
@@ -9,19 +9,19 @@ toc: true
 weight: 31
 ---
 
-## Requirements
-
 In order to be pre-processed by the Data Factory, the imaging data have to meet some requirements, both regarding the images format and the images meta-data.
 
-### Images format
+## Images format
 
+- The images must be full brain scans.
 - The images must be provided either in DICOM or NIFTI format.
 - The images must be high-resolution (max. 1.5 mm) T1-weighted sagittal images.
 - If the dataset contains other types of images (that is not meeting the above description, e.g. fMRI data, T2 images, etc), a list of protocol names used and their compatibility status regarding the above criterion has to be provided.
+- The images must contain at least 40 slices.
 
-### Images Meta-data
+## Images Meta-data
 
-Imaging meta-data typically are the information contained in the DICOM tags. If the images are provided in NIFTI format or some of the mandatory DICOM tags are missing from the images, those meta-data must be provided in one or several extra file(s) (e.g. json or csv files).
+Imaging meta-data typically are the information contained in the DICOM tags. If the images are provided in NIFTI format or some of the mandatory DICOM tags are missing from the images, those meta-data must be provided in one or several extra file(s) (e.g. JSON, CSV, etc).
 
 Here is a list of DICOM tags we are interested in :
 
@@ -29,7 +29,7 @@ TAG                        | TYPE | MANDATORY | DESCRIPTION
 -------------------------- | ---- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------
 PatientID                  | LO   | Yes       | Patient identifier.
 StudyID                    | SH   | Yes       | Study identifier. Used to identify a visit. (Unique per dataset or per patient)
-SeriesDescription          | LO   | Yes       | Series description. Used to describe the scanning sequence/protocol.
+SeriesDescription          | LO   | Yes       | Series description. Used to describe the scanning sequence/protocol. **Must be stable over time.**
 SeriesNumber               | IS   | Yes       | Series number. Used to identify a scan run.
 InstanceNumber             | IS   | Yes       | Image (slice) identifier.
 ImagePosition              | DS   | Yes       | Image (slice) position.
