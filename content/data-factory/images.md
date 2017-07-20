@@ -6,7 +6,7 @@ creatoremail: mirco.nasuti@chuv.ch
 lastmodifierdisplayname: Mirco NASUTI
 lastmodifieremail: mirco.nasuti@chuv.ch
 toc: true
-weight: 31
+weight: 302
 ---
 
 In order to be pre-processed by the Data Factory, the imaging data have to meet some requirements, both regarding the images format and the images meta-data.

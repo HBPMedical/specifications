@@ -6,7 +6,7 @@ creatoremail: ludovic.claude@chuv.ch
 lastmodifierdisplayname: Ludovic CLAUDE
 lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
-weight: 31
+weight: 301
 ---
 
 The input of Data Factory is the [output](../../data-capture/output) of Data Capture.

@@ -8,11 +8,12 @@ creatoremail: ludovic.claude@chuv.ch
 lastmodifierdisplayname: Ludovic CLAUDE
 lastmodifieremail: ludovic.claude@chuv.ch
 date: '2017-02-03T16:34:51+02:00'
-weight: 20
+weight: 200
 draft: false
 ---
 
-The main role of the __Data Capture__ is to take data coming several clinical systems in a hospital, collect that data and remove any identifying information from them, then export that data as a collection of CSV files and DICOM/Nifti files to be processed by the [__Data Factory__](../data-factory).
+The main role of the __Data Capture__ is to take data coming several clinical systems in a hospital, collect that data and remove any identifying information
+from them, then export that data as a collection of CSV files and DICOM/Nifti files to be processed by the [__Data Factory__](../data-factory).
 
 <!-- more -->
 

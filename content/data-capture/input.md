@@ -2,7 +2,7 @@
 date: 2017-02-28T20:08:35+01:00
 title: Data Capture input
 toc: true
-weight: 21
+weight: 201
 ---
 
 Data Capture collects available data from hospital databases or research cohorts.

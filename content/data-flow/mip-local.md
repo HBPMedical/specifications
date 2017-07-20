@@ -6,7 +6,7 @@ creatoremail: ludovic.claude@chuv.ch
 lastmodifierdisplayname: Ludovic CLAUDE
 lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
-weight: 11
+weight: 101
 ---
 
 MIP Local is installed in participating hospitals and used to collect clinical data

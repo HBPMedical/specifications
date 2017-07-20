@@ -6,7 +6,7 @@ creatoremail: ludovic.claude@chuv.ch
 lastmodifierdisplayname: Ludovic CLAUDE
 lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
-weight: 19
+weight: 102
 ---
 
 MIP Federated brings together several hospitals and clinical data centers to build a Federation.
