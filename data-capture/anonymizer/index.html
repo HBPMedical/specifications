@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.25" />
-    <meta name="description" content="Flow of data in the platform">
+    <meta name="description" content="Specifications for the Medical Informatics Platform of the Human Brain Project.">
 <meta name="author" content="HBP SP8 team">
 
-    <title>Data flow :: MIP specifications</title>
+    <title>Anonymisation module :: MIP specifications</title>
     <link rel="shortcut icon" href="/specifications/images/favicon.png" type="image/x-icon" />
     <link href="/specifications/css/nucleus.css" rel="stylesheet">
     <link href="/specifications/css/font-awesome.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
     
 
   </head>
-  <body class="" data-url="/specifications/data-flow/">
+  <body class="" data-url="/specifications/data-capture/anonymizer/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -81,8 +81,8 @@ Medical Informatics Platform</p>
  
   
     <li data-nav-id="/specifications/data-flow/" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/specifications/data-flow/">
@@ -92,7 +92,7 @@ Medical Informatics Platform</p>
         
 
           
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
           
 
         
@@ -161,7 +161,7 @@ Medical Informatics Platform</p>
  
   
     <li data-nav-id="/specifications/data-capture/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -172,7 +172,7 @@ Medical Informatics Platform</p>
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -215,7 +215,7 @@ Medical Informatics Platform</p>
   
     
       <li data-nav-id="/specifications/data-capture/anonymizer/" class="dd-item
-     
+     active
       ">
         <a href="/specifications/data-capture/anonymizer/">
         <span>Anonymisation module</span> 
@@ -590,7 +590,7 @@ Medical Informatics Platform</p>
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-flow/_index.md" target="blank">
+              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-capture/anonymizer.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Edit page
               </a>
@@ -611,7 +611,12 @@ Medical Informatics Platform</p>
 
 
 
- <a href='/specifications/'>MIP specs</a> > Data flow
+
+
+
+ <a href='/specifications/'>MIP specs</a> > <a href='/specifications/data-capture/'>Data Capture</a> > Anonymisation module
+
+ 
 
  
 
@@ -629,101 +634,50 @@ Medical Informatics Platform</p>
         
         <div id="body-inner">
           
-            <h1>Data flow</h1>
+            <h1>Anonymisation module</h1>
           
 
 
 
 
-<p>One of the main purpose of the Medical Informatics Platform is to collect and process clinical and research data
-and put into the hand of its users (clinicians, researchers in neuroscience) ready-to-use data containing
-the variables and features made available for research.</p>
+<p>A module that performs anonymisation is provided by MIP when the hospital does not have the tools to perform the de-personalisation of all data.</p>
 
-<p>The machine learning algorithms and statistical analysis methods provided by the platform are using this feature data
-when a user is exploring data or performing an experiment.</p>
-
-
-
+<div class="alert 
+alert-warning"
+ 
+role="alert"><p>The following is used only when the GNUBILA Pandora FedEHR anonymiser has been setup.</p>
+</div>
 
 
 
+	<h3 id="data-folder-organisation-for-the-anonymisation-processing">Data folder organisation for the anonymisation processing</h3>
 
+<p>The software <a href="https://corporate.gnubila.fr/fedehr">GNUBILA Pandora FedEHR</a> is used to perform the de-personalisation of all EHR and imaging data.</p>
 
-<ul class="children children-li">
-	
-    
-    
-
-	
-		
-	
-		
-  
-
-
-<li>
-<a href="/specifications/data-flow/mip-local/" >Flow in MIP Local</a>
-</li>
-
-
-
-
-
-
-			
-				
-<p></p>
-				
-			
-		
-
-		
-			
-
-		
-	
-		
-  
-
-
-<li>
-<a href="/specifications/data-flow/mip-federated/" >Flow in MIP Federation</a>
-</li>
+<pre><code>  /data
+  ├── anonymiser             -- This folder contains all the data being processed.
+  │   ├── db                 -- This contains the database of the internal IDs to public IDs mappings.
+  │   ├── in                 -- Files to be processed.
+  │   ├── out                -- Files successfuly anonymised.
+  │   ├── quarantine         -- Files for which the anonymisation failed:
+  │   │   ├── csv            --   * EHR data files
+  │   │   ├── dicom          --   * Imaging data files
+  │   │   ├── pacs_csv       --   * EHR data retrieved through a PACS connexion
+  │   │   └── unknown        --   * Any other kind of failures
+  │   └── scripts            -- Anonymisation configurations for:
+  │       ├── csv            --   * EHR data files
+  │       └── dicom          --   * Imaging data files
+  └── ldsm
+</code></pre>
 
 
 
-
-
-
-			
-				
-<p></p>
-				
-			
-		
-
-		
-			
-
-		
-	
-
-	
-</ul>
-
-
-
-
+<p>Please be aware that as part of the anonymisation, files are <strong>moved</strong> from the input folder either to the quarantine folder, or to the output folder (and modified).</p>
 
 
 <footer class=" footline" >
 	
-	    <i class='fa fa-user'></i> <a href="mailto:ludovic.claude@chuv.ch">Ludovic CLAUDE</a>  <i class='fa fa-calendar'></i> 03/07/2017
-	    </div>
-	
 </footer>
-
-
 
 
 
@@ -759,57 +713,8 @@ when a user is exploring data or performing an experiment.</p>
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -851,10 +756,66 @@ when a user is exploring data or performing an experiment.</p>
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -882,22 +843,6 @@ when a user is exploring data or performing an experiment.</p>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1011,6 +956,22 @@ when a user is exploring data or performing an experiment.</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1069,10 +1030,10 @@ when a user is exploring data or performing an experiment.</p>
 
 
         
-            <a class="nav nav-prev" href="/specifications/" title="MIP specs"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/specifications/data-capture/input/" title="Data Capture input"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/specifications/data-flow/mip-local/" title="Flow in MIP Local" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/specifications/data-capture/output/" title="Data Capture output" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1099,3 +1060,4 @@ when a user is exploring data or performing an experiment.</p>
 
   </body>
 </html>
+

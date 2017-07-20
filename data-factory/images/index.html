@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.25" />
-    <meta name="description" content="Flow of data in the platform">
+    <meta name="description" content="Specifications for the Medical Informatics Platform of the Human Brain Project.">
 <meta name="author" content="HBP SP8 team">
 
-    <title>Data flow :: MIP specifications</title>
+    <title>Requirements for imaging data :: MIP specifications</title>
     <link rel="shortcut icon" href="/specifications/images/favicon.png" type="image/x-icon" />
     <link href="/specifications/css/nucleus.css" rel="stylesheet">
     <link href="/specifications/css/font-awesome.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
     
 
   </head>
-  <body class="" data-url="/specifications/data-flow/">
+  <body class="" data-url="/specifications/data-factory/images/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -81,8 +81,8 @@ Medical Informatics Platform</p>
  
   
     <li data-nav-id="/specifications/data-flow/" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/specifications/data-flow/">
@@ -92,7 +92,7 @@ Medical Informatics Platform</p>
         
 
           
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
           
 
         
@@ -261,7 +261,7 @@ Medical Informatics Platform</p>
  
   
     <li data-nav-id="/specifications/data-factory/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -272,7 +272,7 @@ Medical Informatics Platform</p>
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -315,7 +315,7 @@ Medical Informatics Platform</p>
   
     
       <li data-nav-id="/specifications/data-factory/images/" class="dd-item
-     
+     active
       ">
         <a href="/specifications/data-factory/images/">
         <span>Requirements for imaging data</span> 
@@ -590,7 +590,7 @@ Medical Informatics Platform</p>
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-flow/_index.md" target="blank">
+              <a class="github-link" href="https://github.com/HBPMedical/specifications/edit/master/content/data-factory/images.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Edit page
               </a>
@@ -611,7 +611,12 @@ Medical Informatics Platform</p>
 
 
 
- <a href='/specifications/'>MIP specs</a> > Data flow
+
+
+
+ <a href='/specifications/'>MIP specs</a> > <a href='/specifications/data-factory/'>Data Factory</a> > Requirements for imaging data
+
+ 
 
  
 
@@ -620,7 +625,15 @@ Medical Informatics Platform</p>
             </div>
             <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#images-format">Images format</a></li>
+<li><a href="#images-meta-data">Images Meta-data</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -629,101 +642,308 @@ Medical Informatics Platform</p>
         
         <div id="body-inner">
           
-            <h1>Data flow</h1>
+            <h1>Requirements for imaging data</h1>
           
 
 
 
 
-<p>One of the main purpose of the Medical Informatics Platform is to collect and process clinical and research data
-and put into the hand of its users (clinicians, researchers in neuroscience) ready-to-use data containing
-the variables and features made available for research.</p>
-
-<p>The machine learning algorithms and statistical analysis methods provided by the platform are using this feature data
-when a user is exploring data or performing an experiment.</p>
 
 
+<p>In order to be pre-processed by the Data Factory, the imaging data have to meet some requirements, both regarding the images format and the images meta-data.</p>
 
+<h2 id="images-format">Images format</h2>
 
-
-
-
-
-<ul class="children children-li">
-	
-    
-    
-
-	
-		
-	
-		
-  
-
-
-<li>
-<a href="/specifications/data-flow/mip-local/" >Flow in MIP Local</a>
-</li>
-
-
-
-
-
-
-			
-				
-<p></p>
-				
-			
-		
-
-		
-			
-
-		
-	
-		
-  
-
-
-<li>
-<a href="/specifications/data-flow/mip-federated/" >Flow in MIP Federation</a>
-</li>
-
-
-
-
-
-
-			
-				
-<p></p>
-				
-			
-		
-
-		
-			
-
-		
-	
-
-	
+<ul>
+<li>The images must be full brain scans.</li>
+<li>The images must be provided either in DICOM or NIFTI format.</li>
+<li>The images must be high-resolution (max. 1.5 mm) T1-weighted sagittal images.</li>
+<li>If the dataset contains other types of images (that is not meeting the above description, e.g. fMRI data, T2 images, etc), a list of protocol names used and their compatibility status regarding the above criterion has to be provided.</li>
+<li>The images must contain at least 40 slices.</li>
 </ul>
 
+<h2 id="images-meta-data">Images Meta-data</h2>
 
+<p>Imaging meta-data typically are the information contained in the DICOM tags. If the images are provided in NIFTI format or some of the mandatory DICOM tags are missing from the images, those meta-data must be provided in one or several extra file(s) (e.g. JSON, CSV, etc).</p>
 
+<p>Here is a list of DICOM tags we are interested in :</p>
 
+<table>
+<thead>
+<tr>
+<th>TAG</th>
+<th>TYPE</th>
+<th>MANDATORY</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>PatientID</td>
+<td>LO</td>
+<td>Yes</td>
+<td>Patient identifier.</td>
+</tr>
+
+<tr>
+<td>StudyID</td>
+<td>SH</td>
+<td>Yes</td>
+<td>Study identifier. Used to identify a visit. (Unique per dataset or per patient)</td>
+</tr>
+
+<tr>
+<td>SeriesDescription</td>
+<td>LO</td>
+<td>Yes</td>
+<td>Series description. Used to describe the scanning sequence/protocol. <strong>Must be stable over time.</strong></td>
+</tr>
+
+<tr>
+<td>SeriesNumber</td>
+<td>IS</td>
+<td>Yes</td>
+<td>Series number. Used to identify a scan run.</td>
+</tr>
+
+<tr>
+<td>InstanceNumber</td>
+<td>IS</td>
+<td>Yes</td>
+<td>Image (slice) identifier.</td>
+</tr>
+
+<tr>
+<td>ImagePosition</td>
+<td>DS</td>
+<td>Yes</td>
+<td>Image (slice) position.</td>
+</tr>
+
+<tr>
+<td>ImageOrientation</td>
+<td>DS</td>
+<td>Yes</td>
+<td>Image (slice) orientation.</td>
+</tr>
+
+<tr>
+<td>SliceLocation</td>
+<td>DS</td>
+<td>Yes</td>
+<td>Slice location.</td>
+</tr>
+
+<tr>
+<td>SamplesPerPixel</td>
+<td>US</td>
+<td>Yes</td>
+<td>Number of samples (planes) per pixel. Usually, 1 for monochrome (gray scale) and palette color images, or 3 for RGB images.</td>
+</tr>
+
+<tr>
+<td>Rows</td>
+<td>US</td>
+<td>Yes</td>
+<td>Number of rows in the image.</td>
+</tr>
+
+<tr>
+<td>Columns</td>
+<td>US</td>
+<td>Yes</td>
+<td>Number of columns in the image.</td>
+</tr>
+
+<tr>
+<td>PixelSpacing</td>
+<td>DS</td>
+<td>Yes</td>
+<td>Distance between the center of each pixel.</td>
+</tr>
+
+<tr>
+<td>BitsAllocated</td>
+<td>US</td>
+<td>Yes</td>
+<td>Number of bits allocated for each pixel sample.</td>
+</tr>
+
+<tr>
+<td>BitsStored</td>
+<td>US</td>
+<td>Yes</td>
+<td>Number of bits stored for each pixel sample.</td>
+</tr>
+
+<tr>
+<td>HighBit</td>
+<td>US</td>
+<td>Yes</td>
+<td>Most significant bit for pixel sample data.</td>
+</tr>
+
+<tr>
+<td>AcquisitionDate</td>
+<td>DA</td>
+<td>1</td>
+<td>Acquisition date. We try to use it as the scan date.</td>
+</tr>
+
+<tr>
+<td>SeriesDate</td>
+<td>DA</td>
+<td>1</td>
+<td>Series (scan run) date. If AcquisitionDate is missing, we use it as a scan date.</td>
+</tr>
+
+<tr>
+<td>PatientAge</td>
+<td>AS</td>
+<td>2</td>
+<td>Patient age at scan date.</td>
+</tr>
+
+<tr>
+<td>PatientBirthDate</td>
+<td>DA</td>
+<td>2</td>
+<td>Patient&rsquo;s birth date.</td>
+</tr>
+
+<tr>
+<td>MagneticFieldStrength</td>
+<td>DS</td>
+<td>No</td>
+<td>Magnetic field strength.</td>
+</tr>
+
+<tr>
+<td>PatientSex</td>
+<td>LO</td>
+<td>No</td>
+<td>Patient gender.</td>
+</tr>
+
+<tr>
+<td>Manufacturer</td>
+<td>LO</td>
+<td>No</td>
+<td>Scanner manufacturer.</td>
+</tr>
+
+<tr>
+<td>ManufacturerModelName</td>
+<td>LO</td>
+<td>No</td>
+<td>Scanner model name.</td>
+</tr>
+
+<tr>
+<td>InstitutionName</td>
+<td>LO</td>
+<td>No</td>
+<td>Institution name.</td>
+</tr>
+
+<tr>
+<td>StudyDescription</td>
+<td>LO</td>
+<td>No</td>
+<td>Study (visit) description.</td>
+</tr>
+
+<tr>
+<td>SliceThickness</td>
+<td>DS</td>
+<td>No</td>
+<td>Slice thickness in mm.</td>
+</tr>
+
+<tr>
+<td>RepetitionTime</td>
+<td>DS</td>
+<td>No</td>
+<td>The period of time in msec between the beginning of a pulse sequence and the beginning of the succeeding (essentially identical) pulse sequence.</td>
+</tr>
+
+<tr>
+<td>EchoTime</td>
+<td>DS</td>
+<td>No</td>
+<td>Time in ms between the middle of the excitation pulse and the peak of the echo produced (kx=0).</td>
+</tr>
+
+<tr>
+<td>SpacingBetweenSlices</td>
+<td>DS</td>
+<td>No</td>
+<td>Spacing between slices in mm (from center to center).</td>
+</tr>
+
+<tr>
+<td>NumberOfPhaseEncodingSteps</td>
+<td>IS</td>
+<td>No</td>
+<td>Total number of lines in k-space in the &lsquo;y&rsquo; direction collected during acquisition.</td>
+</tr>
+
+<tr>
+<td>EchoTrainLength</td>
+<td>IS</td>
+<td>No</td>
+<td>Number of lines in k-space acquired per excitation per image.</td>
+</tr>
+
+<tr>
+<td>PercentPhaseFieldOfView</td>
+<td>DS</td>
+<td>No</td>
+<td>Ratio of field of view dimension in phase direction to field of view dimension in frequency direction, expressed as a percent.</td>
+</tr>
+
+<tr>
+<td>PixelBandwidth</td>
+<td>DS</td>
+<td>No</td>
+<td>Reciprocal of the total sampling period, in hertz per pixel.</td>
+</tr>
+
+<tr>
+<td>FlipAngle</td>
+<td>DS</td>
+<td>No</td>
+<td>Steady state angle in degrees to which the magnetic vector is flipped from the magnetic vector of the primary field.</td>
+</tr>
+
+<tr>
+<td>PercentSampling</td>
+<td>DS</td>
+<td>No</td>
+<td>Fraction of acquisition matrix lines acquired, expressed as a percent.</td>
+</tr>
+
+<tr>
+<td>EchoNumber</td>
+<td>IS</td>
+<td>No</td>
+<td>The echo number used in generating this image. In the case of segmented k-space, it is the effective Echo Number.</td>
+</tr>
+</tbody>
+</table>
+
+<p>For more information about the attributes type, have a look at : <a href="http://northstar-www.dartmouth.edu/doc/idl/html_6.2/Value_Representations.html">http://northstar-www.dartmouth.edu/doc/idl/html_6.2/Value_Representations.html</a>.</p>
+
+<p>NOTE: If the &lsquo;MANDATORY&rsquo; column contains a number, only one of the tags marked with the same number is needed (e.g. only one of the &lsquo;PatientAge&rsquo; and &lsquo;PatientBirthDate&rsquo; tags is needed).</p>
 
 
 <footer class=" footline" >
 	
-	    <i class='fa fa-user'></i> <a href="mailto:ludovic.claude@chuv.ch">Ludovic CLAUDE</a>  <i class='fa fa-calendar'></i> 03/07/2017
+	    <i class='fa fa-user'></i> <a href="mailto:mirco.nasuti@chuv.ch">Mirco NASUTI</a>  <i class='fa fa-calendar'></i> 11/07/2017
 	    </div>
 	
 </footer>
-
-
 
 
 
@@ -759,20 +979,6 @@ when a user is exploring data or performing an experiment.</p>
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -783,57 +989,6 @@ when a user is exploring data or performing an experiment.</p>
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -931,6 +1086,78 @@ when a user is exploring data or performing an experiment.</p>
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -1069,10 +1296,10 @@ when a user is exploring data or performing an experiment.</p>
 
 
         
-            <a class="nav nav-prev" href="/specifications/" title="MIP specs"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/specifications/data-factory/input/" title="Data Factory input"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/specifications/data-flow/mip-local/" title="Flow in MIP Local" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/specifications/data-factory/pipelines/" title="Processing pipelines" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1099,3 +1326,4 @@ when a user is exploring data or performing an experiment.</p>
 
   </body>
 </html>
+

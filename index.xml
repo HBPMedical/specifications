@@ -53,6 +53,18 @@ Ideal forms of data repository for MIP The MIP has been designed to support a ve
     </item>
     
     <item>
+      <title>Anonymisation module</title>
+      <link>https://hbpmedical.github.io/specifications/data-capture/anonymizer/</link>
+      <pubDate>Tue, 28 Feb 2017 20:08:35 +0100</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-capture/anonymizer/</guid>
+      <description>A module that performs anonymisation is provided by MIP when the hospital does not have the tools to perform the de-personalisation of all data.
+The following is used only when the GNUBILA Pandora FedEHR anonymiser has been setup.
+ Data folder organisation for the anonymisation processing The software GNUBILA Pandora FedEHR is used to perform the de-personalisation of all EHR and imaging data.
+ /data ├── anonymiser -- This folder contains all the data being processed.</description>
+    </item>
+    
+    <item>
       <title>Data Capture output</title>
       <link>https://hbpmedical.github.io/specifications/data-capture/output/</link>
       <pubDate>Fri, 03 Feb 2017 18:07:35 +0100</pubDate>
@@ -71,6 +83,16 @@ Depersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- ye
       <guid>https://hbpmedical.github.io/specifications/data-factory/input/</guid>
       <description>The input of Data Factory is the output of Data Capture.
 From Data Capture output specifications Depersonalised DICOM + EHR data export  ├── DICOM │ └── 2016 -- yearly folder, date represents the date of export │ └── 20161029 -- daily folder, date represents the date of export │ └── scan_research_id -- see description below │ └── dicom_name_generated_01.dcm -- set of DICOM files │ └── dicom_name_generated_02.dcm -- set of DICOM files │ └── dicom_name_generated_03.</description>
+    </item>
+    
+    <item>
+      <title>Requirements for imaging data</title>
+      <link>https://hbpmedical.github.io/specifications/data-factory/images/</link>
+      <pubDate>Tue, 11 Jul 2017 16:00:35 +0000</pubDate>
+      
+      <guid>https://hbpmedical.github.io/specifications/data-factory/images/</guid>
+      <description>In order to be pre-processed by the Data Factory, the imaging data have to meet some requirements, both regarding the images format and the images meta-data.
+Images format  The images must be full brain scans. The images must be provided either in DICOM or NIFTI format. The images must be high-resolution (max. 1.5 mm) T1-weighted sagittal images. If the dataset contains other types of images (that is not meeting the above description, e.</description>
     </item>
     
     <item>
@@ -146,7 +168,7 @@ This information is sent to the Hospital Database and provided to the machine le
       <pubDate>Tue, 04 Jul 2017 00:30:51 +0200</pubDate>
       
       <guid>https://hbpmedical.github.io/specifications/credits/</guid>
-      <description> Github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @ludovicc 35 commits   Tooling  Netlify - Continuous deployment and hosting of this documentation Hugo   hugo-theme-docdock    </description>
+      <description> Github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @ludovicc 39 commits   @sambuc 1 commits   @dianeperez 1 commits   Tooling  Netlify - Continuous deployment and hosting of this documentation Hugo   hugo-theme-docdock    </description>
     </item>
     
     <item>
