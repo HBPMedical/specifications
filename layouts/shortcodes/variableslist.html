@@ -1,5 +1,5 @@
 <ul class="varList">
-  {{ $url := printf "https://raw.githubusercontent.com/HBPMedical/mip-cde-meta-db-setup/%s/variables.json" .Site.Params.cde_version }}
+  {{ $url := "https://github.com/HBPMedical/mip-cde-meta-db-setup/blob/" + .Site.params.cde_version + "/variables.json" }}
   {{ range getJSON $url }}
     {{ $p := . }}
     <li>

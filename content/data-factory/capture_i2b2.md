@@ -7,7 +7,7 @@ creatoremail: ludovic.claude@chuv.ch
 lastmodifierdisplayname: Ludovic CLAUDE
 lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
-weight: 340
+weight: 33
 ---
 
 ### Database with an I2B2 schema storing all information harvested onsite

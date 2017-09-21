@@ -6,7 +6,7 @@ creatoremail: ludovic.claude@chuv.ch
 lastmodifierdisplayname: Ludovic CLAUDE
 lastmodifieremail: ludovic.claude@chuv.ch
 toc: true
-weight: 209
+weight: 29
 ---
 
 The __Data Capture__ should export its data into a folder made available to the [__Data Factory__](../data-factory)

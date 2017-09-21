@@ -1,4 +1,4 @@
-baseurl = "https://hbpmedical.github.io/specifications/"
+baseurl = "localhost/"
 languageCode = "en-uk"
 metadataformat = "yaml"
 DefaultContentLanguage = "en"
