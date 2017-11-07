@@ -6,6 +6,12 @@ It also lists possible approaches for the anonymisation of DICOM files.
 
 The anonymiser can treat CSV files and DICOM files. Its functionalities are described below, with [future functionalities] identified with brackets.
 
+## Context
+
+The anonymisation step documented here is only one mechanism in the overall privacy protection approach of the MIP. Strictly speaking, this step should be called "pseudonymisation": once it is performed, individual patients can still be distinguished based on pseudonymised identifiers, but they are not identified with personal data anymore.
+
+The pseudonymised DICOM files are not intended to be available for the MIP users either locally or at the Federation level. Still, pseudonymisation is a valuable tool to decrease risks, also considering that the pseudonymised files might be hosted on a server which will be accessible from the web at the Federation stage.
+
 ## Anonymisation principles [to be confirmed]
 
 Following the general principles defined in the <a href="https://drive.google.com/drive/folders/0B5CgbpurVVlHZlRpeG40ZlVoTjA"> Medical Informatics Platform (SP8): Privacy Impact Assessment</a>  and further internal consultations, the MIP anonymisation principles can be summarised as:
