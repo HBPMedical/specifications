@@ -3,14 +3,15 @@
 This goal of the document is to clarify how anonymisation is performed in MIP, using Gnubila FedEHR software.
 It also lists possible approaches for the anonymisation of DICOM files.
 
-
 The anonymiser can treat CSV files and DICOM files. Its functionalities are described below, with [future functionalities] identified with brackets.
+
 
 ## Context
 
 The anonymisation step documented here is only one mechanism in the overall privacy protection approach of the MIP. Strictly speaking, this step should be called "pseudonymisation": once it is performed, individual patients can still be distinguished based on pseudonymised identifiers, but they are not identified with personal data anymore.
 
 The pseudonymised DICOM files are not intended to be available for the MIP users either locally or at the Federation level. Still, pseudonymisation is a valuable tool to decrease risks, also considering that the pseudonymised files might be hosted on a server which will be accessible from the web at the Federation stage.
+
 
 ## Anonymisation principles [to be confirmed]
 
@@ -19,10 +20,18 @@ Following the general principles defined in the <a href="https://drive.google.co
 - Patients should be identified with a unique identifier specific to the partner providing the data. This identifier will be pseudonymised, i.e. replaced with a generated pseudo-identifier (hash). The link between the original identifier and the pseudo-identifier is stored by the anonymiser in a dedicated database.
 - All other identifiers present in the original data (visit id, etc.) will also be pseudonymised.
 - The birth dates will be reduced to the year.
-- All other dates will be reduced to the year by default, or to the month if explicitly requested. [To be confirmed]
-- Patient names, addresses and similar information should not appear in documents provided for the platform. If they do, they are removed at the anonymisation level.
-- Specific rules can be defined for other fields based on the requirements.
+- All other dates will be reduced to the month by default, or to the year if explicitly requested. [To be confirmed]
+- Patient names, addresses and similar personal information should not appear in documents provided for the platform. If they do, they are removed at the anonymisation level.
+- Specific rules can be defined for other fields based on the MIP or the partner's requirements.
 - By default, information that is not needed for research purposes should be removed.
+- The anonymisation rules for EHR data (CSV files) are defined in collaboration with the partner institution. The rules and the result of the anonymisation must be validated by the partner.
+- DICOM files will be anonymised in two steps, the first one rejecting the DICOM tagged as "secondary" (see details below in the _DICOM files_ section), and the second one including them. The partner institution must be informed of the limitations of the imaging anonymisation process, chose whether secondary DICOMs must be rejected or included, and validate the result of the anonymisation. 
+
+## Requirement regarding identifiers
+
+Information regarding common identifiers shared among different data sources must be provided to the anonymisation team. This is particularily important for identifiers used to link two data sources: they must be anonymised in an identical manner in both sources in order to keep the links.
+
+Note: this information must also be transfered to the teams working on the pre-processing and harmonisation of the data for coordination purposes.
 
 
 
