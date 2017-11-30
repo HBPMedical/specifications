@@ -29,9 +29,9 @@ Following the general principles defined in the <a href="https://drive.google.co
 
 ## Requirement regarding identifiers
 
-Information regarding common identifiers shared among different data sources must be provided to the anonymisation team. This is particularily important for identifiers used to link two data sources: they must be anonymised in an identical manner in both sources in order to keep the links.
+Information regarding common identifiers shared among different data sources (multiple EHR CSV files, DICOM files) must be provided to the anonymisation team. This is particularly important for identifiers used to link two or more data sources (for instance linking a scan to a patient visit): these identifiers must be anonymised in an identical manner in all sources in order to keep the links.
 
-Note: this information must also be transfered to the teams working on the pre-processing and harmonisation of the data for coordination purposes.
+Note: this information must also be transferred to the teams working on the pre-processing and harmonisation of the data for coordination purposes.
 
 
 
@@ -90,7 +90,7 @@ The anonymisation contains three parts:
 2. Removal or anonymisation of information stored in DICOM tags.
 3. Blanking of pixels in the image (to erase potential embedded private information).
 
-The anonymiser must be configured for the last two parts (dicom anonymisation profile and dicom pixel anonymisation profile). Once defined, the same anonymisation profiles are used for all DICOM files.
+The anonymiser must be configured for the last two parts (DICOM anonymisation profile and DICOM pixel anonymisation profile). Once defined, the same anonymisation profiles are used for all DICOM files.
 
 ### 1. File and folder names
 
@@ -134,7 +134,7 @@ The anonymiser provides "removeActions" functionalities for removing tags on a g
 
 - tag: unspecifiedelements # Remove all unchecked elements (i.e. all tags not explicitly mentioned in the anonymisation profile). 
 
-In theory the last option should cover the previous three options, but Gnubila recommand to use all together to increase security.
+In theory the last option should cover the previous three options, but Gnubila recommends to use all together to increase security.
 
 By default, these rules keep a certain number of tags:
 
@@ -161,7 +161,7 @@ The pixel anonymisation step allows to blank a part of the image based on its co
 
 Gnubila has provided a default pixel-anonymiser script, which deletes the image zones where personal informations might have been written directly on the image by the producing machine. The machine that generated the image is recognised based on the tags, among a broad list of machines used by Gnubila's partners and clients. 
 
-This profile is used by default in MIP. In case the producing machine model is not recognised, the pixel anonymiser will fail and the image will be put in quarantine. They can be anonymised by adding a new rule for the unrecognised model, or by explicitely skipping this step.
+This profile is used by default in MIP. In case the producing machine model is not recognised, the pixel anonymiser will fail and the image will be put in quarantine. They can be anonymised by adding a new rule for the unrecognised model, or by explicitly skipping this step.
 
 #### Manual annotation of images
 
