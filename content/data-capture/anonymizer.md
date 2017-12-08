@@ -11,6 +11,9 @@ A module that performs anonymisation is provided by MIP when the hospital does n
 The following is used only when the GNUBILA Pandora FedEHR anonymiser has been setup.
 {{% /alert %}}
 
+More detailed documentation regarding the anonymisation process in MIP can be found here: [MIP anonymisation strategy](https://github.com/HBPMedical/specifications/blob/master/content/data-capture/mip_anonymisation_strategy.md)
+
+
 {{% excerpt %}}
 ### Data folder organisation for the anonymisation processing
 
