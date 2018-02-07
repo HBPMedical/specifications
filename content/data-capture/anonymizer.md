@@ -47,3 +47,8 @@ modification have been applied).
 
 Make sure to place a copy into the input folder, if you need to keep the 
 original file.
+
+
+Once the DICOM files are anonymised and validated, they should be moved to the `/data/df/in/` folder to be processed by the Data Factory.
+
+Once the EHR files are anonymised and validated, they should be moved to the `/data/mipmap/in/` folder to be harmonized by MIPMap.

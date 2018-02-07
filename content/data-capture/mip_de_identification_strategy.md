@@ -1,9 +1,9 @@
 # MIP de-identification strategy
 
-This goal of the document is to clarify how de-identification is performed in MIP, using Gnubila's Pandora FedEHR software.
+This goal of the document is to clarify how de-identification is performed in MIP, using Gnubila's Pandora FedEHR software, version 2.0.2.
 It also lists possible approaches for the de-identification of DICOM files.
 
-Pandora FedEHR can treat CSV files and DICOM files. Its functionalities are described below, with [future functionalities] identified with brackets.
+Pandora FedEHR can treat CSV files and DICOM files. The functionalities used for MIP de-identification are described below. Also see the [documentation](https://nexus.gnubila.fr/service/local/repositories/maatg-fr-releases/content/fr/maatg/pandora/clients/pandora-clients-fedehr-anonymiser-all/2.0.2/pandora-clients-fedehr-anonymiser-all-2.0.2.pdf) available online.
 
 
 ## Context
@@ -13,9 +13,14 @@ The de-identification step documented here is only one mechanism in the overall 
 The pseudonymised DICOM files are not intended to be available for the MIP users either locally or at the Federation level. Still, pseudonymisation is a valuable tool to decrease risks, also considering that the pseudonymised files might be hosted on a server which will be accessible from the web at the Federation stage.
 
 
+## Responsibilities
+
+The partners providing data are responsible of the satisfactory de-identification of their data. HBP SP8 provides guidelines and help regarding the functionalities of the FedEHR software and its configuration.
+
+
 ## De-identification principles [to be confirmed]
 
-Following the general principles defined in the <a href="https://drive.google.com/drive/folders/0B5CgbpurVVlHZlRpeG40ZlVoTjA"> Medical Informatics Platform (SP8): Privacy Impact Assessment</a>  and further internal consultations, the MIP de-identification principles can be summarised as:
+Following the general principles defined in the [Medical Informatics Platform (SP8): Privacy Impact Assessment](https://drive.google.com/drive/folders/0B5CgbpurVVlHZlRpeG40ZlVoTjA) and further internal consultations, the MIP de-identification principles (recommendations) can be summarised as:
 
 - Patients should be identified with a unique identifier specific to the partner providing the data. This identifier will be pseudonymised, i.e. replaced with a generated pseudo-identifier (hash). The link between the original identifier and the pseudo-identifier is stored by Pandora FedEHR in a dedicated database.
 - All other identifiers present in the original data (visit id, etc.) will also be pseudonymised.
@@ -25,12 +30,7 @@ Following the general principles defined in the <a href="https://drive.google.co
 - Specific rules can be defined for other fields based on the MIP or the partner's requirements.
 - By default, information that is not needed for research purposes should be removed.
 - The de-identification rules for EHR data (CSV files) are defined in collaboration with the partner institution. The rules and the result of the de-identification must be validated by the partner.
-- DICOM files will be de-identification in two steps, the first one rejecting the DICOM tagged as "secondary" (see details below in the _DICOM files_ section), and the second one including them. The partner institution must be informed of the limitations of the imaging de-identification process, chose whether secondary DICOMs must be rejected or included, and validate the result of the de-identification.
-
-
-## Responsibilities
-
-The partners providing data are responsible of the satisfactory de-identification and anonymisation of their data. HBP SP8 provides guidelines and help regarding the functionalities of the FedEHR software and its configuration.
+- DICOM files will be de-identification in two steps, the first one rejecting the DICOM tagged as "secondary" (see details below in the [DICOM files section](#dicom_files)), and the second one including them. The partner institution must be informed of the limitations of the imaging de-identification process, chose whether secondary DICOMs must be rejected or included, and validate the result of the de-identification.
 
 
 ## Requirement regarding identifiers
@@ -53,7 +53,7 @@ A clean csv file format is required for running the de-identification software a
 - Quote all text fields. Problems appear if some text fields contains the separator characters or new lines.
 - Follow a unique and well-defined pattern for dates, such as dd/MM/yyyy (any pattern is acceptable).
 - Enter only one type of data per column (either numerical, date, text, etc.)
-- If possible, leave the field empty for null values (i.e. two separators without any character in between ',,'). If other tags are used for null values, inform the MIP de-identification contact.
+- If possible, leave the field empty for null values (i.e. two separators without any character in between, such as ',,' if the comma is used as separator). If other tags are used for null values, inform the MIP de-identification contact.
 - Use the unicode file encoding UTF-8. If another encoding is used, inform the MIP de-identification contact.
 
 
@@ -70,12 +70,9 @@ The de-identification will fail if:
 
 - A column defined in the profile is not found in the file.
 - The data in a column (for instance a date) does not fit the expected format.
-- [requested, not yet available] The file contains a column for which no rule has been defined.
+- The file contains a column for which no rule has been defined.
 
-
-As an alternative to the last rule [not yet available either], if the file contains a column for which no rule has been defined, this column will be removed.
-
-The current status is not satisfactory to automate the de-identification step: if the file contains a column for which no rule has been defined, this column is kept without raising any alarm. If the de-identification process is automated, this means that a column containing private information could be added to a know schema and it would pass through the FedEHR step untouched.
+This behaviour allows to automate the de-identification step: if a data file contains a new column for which no rule has been defined, it will not be accepted. The anonymisation will fail and further configuration will be required.
 
 
 
